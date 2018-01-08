@@ -29,15 +29,45 @@ main {
   width: 94%;
   height: 90%;
   margin: auto;
-  background-color: #000000;
+  background-image: url(img/desktop_background.jpg);
+  background-position: center center;
+  background-size: cover;
   border-radius: 5px;
+/*  display: flex;*/
+}
+
+.taskbar {
+  width: 100%;
+  height: 10%;
+  background-color: #000000;
+  position: relative;
+  top: 90%;
+  border-top: 1px solid gray;
+}
+
+.start {
+  background-color: #000000;
+  color: #ffffff;
+  height: 100%;
+  width: 15%;
+  cursor: pointer;
+}
+
+.test {
+  height: 70%;
+  width: 35%;
+  background-color: #000000;
+  position: relative;
+  top: 10%;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
 }
 
 .keyboard {
-  width: 60%;
+  width: 15%;
   height: 5%;
   background-color: #99938f;
-  margin: 0 2%;
+  margin: 0 24.5%;
   border-left: 1px solid black;
   border-right: 1px solid black;
   display: flex;
@@ -47,16 +77,19 @@ main {
 .board {
   height: 50%;
   width: 35%;
-/*
-  background-image: url(img/board_background.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center left;
-*/
   position: absolute;
   top: 0;
   right: 0;
-  margin: 2%;
+  margin: 4% 2%;
+  background-image: url(img/whiteboard.jpg);
+  background-size: cover;
+  border: 6px solid #000000;
+}
+
+.board p {
+  font-family: 'Permanent Marker', cursive;
+  padding: 5px;
+  font-size: 2rem;
 }
 
 .desk {
