@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+  background-color: burlywood;
+  overflow: hidden;
+  
+}
+
+.upperCover {
+  width: 60%;
+  height: 60%;
+  background-color: #99938f;
+  display: flex;
+  margin: 2% 2% 0 2%;
+  border: 1px solid black;
+}
+
+.screen {
+  width: 94%;
+  height: 90%;
+  margin: auto;
+  background-color: #000000;
+  border-radius: 5px;
+}
+
+.keyboard {
+  width: 60%;
+  height: 5%;
+  background-color: #99938f;
+  margin: 0 2%;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  display: flex;
+  flex-direction: row;
+}
+
+.board {
+  height: 50%;
+  width: 35%;
+/*
+  background-image: url(img/board_background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center left;
+*/
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 2%;
+}
+
+.desk {
+  width: 100%;
+  height: 10%;
+  background-color: #7a5132;
+  border: 1px solid black;
+}
+
+.underDesk {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background-color: #9b805e;
+}
+
+
+.leftLeg, .rightLeg {
+  height: 23%;
+  width: 5%;
+  background-color: #7a5132;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.socket {
+  height: 12vh;
+  width: 8vh;
+  background-color: #ffffff;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-top: 5vh;
+  background-image: url(img/socket.jpg);
+  background-size: cover;
+}
+
+.rightLeg {
+ margin-right: 0;
+}
+
+.drawer {
+  width: 23%;
+  height: 14%;
+  background-color: #7a5132;
+  margin-left: auto;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  display: flex;
+}
+
+.handle {
+  height: 3.5vh;
+  width: 3.5vh;
+  background-color: gold;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin: auto;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
