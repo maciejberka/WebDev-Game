@@ -4,8 +4,11 @@ var day = 0;
 var month = 1;
 var year = 2018;
 var zero = "0";
+var paused = false;
+  
   
 function changeDate(){
+ if (!$(".pause").hasClass("gamePaused")){  
   //Increment day
   day++;
   //Remove previous day
@@ -29,6 +32,7 @@ function changeDate(){
     day = 0;
     //Increment month but don't display yet
     month++;
+    console.log("pay bills");
   }
   
   
@@ -64,11 +68,29 @@ function changeDate(){
     $(".year").append(year);
   }
 
-//end of function  
-}  
 
-var dayInterval = setInterval(changeDate, 500);
+ }  
+}//end of function  
 
+ $(".pause").on("click", function(){
+  $(".pause").toggleClass("gamePaused");
+}); 
+  
+setInterval(changeDate, 1000);
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   

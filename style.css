@@ -52,6 +52,7 @@ main {
   height: 100%;
   width: 15%;
   cursor: pointer;
+  border: none;
 }
 
 .date {
@@ -134,7 +135,7 @@ main {
   position: absolute;
   top: 0;
   right: 0;
-  margin: 4% 2%;
+  margin: 2% 2%;
   background-image: url(img/whiteboard.jpg);
   background-size: cover;
   border: 6px solid #000000;
@@ -144,6 +145,26 @@ main {
   font-family: 'Permanent Marker', cursive;
   padding: 5px;
   font-size: 2rem;
+}
+
+.menu {
+  background-color: #99938f;
+  width: 35%;
+  height: 6%;
+  position: absolute;
+  right: 0;
+  top: 52%;
+  margin: 2%;
+  border: 1px solid black;
+}
+
+.pause {
+  width: 15%;
+  background-color: #99938f; 
+  height: 100%;
+  font-size: 2rem;
+  cursor: pointer;
+  color: forestgreen;
 }
 
 .desk {
@@ -206,8 +227,9 @@ main {
   
 }
 
-
-
+.gamePaused {
+  color: red;
+}
 
 
 
