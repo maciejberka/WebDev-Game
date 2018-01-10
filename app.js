@@ -87,9 +87,15 @@ $(".start").on("click", function(){
 
 //After click at .close button close .window  
 $(".close").on("click", function(){
-  $(".window").toggleClass("windowClose");
+  $(".window").removeClass("windowOpen");
 });  
 
+$(".menuOption").on("click", function(){
+  $(".window")
+  $(".window").addClass("windowOpen");
+});  
+  
+  
 $(".fullscreen").on("click", function(){
   document.fullscreenEnabled;
 });  
