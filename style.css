@@ -170,6 +170,7 @@ button:focus {
 
 .windowOpen {
   display: flex;
+  flex-direction: column;
 }
 
 .windowClose {
@@ -197,6 +198,87 @@ button:focus {
   color: #ffffff;
   font-size: 2rem;
 }
+
+.textEditorContent {
+  width: 20%;
+  height: 20%;
+  margin: auto;
+  background-color: green;
+  display: none;
+}
+
+.textEditorContentVisible {
+  display: flex;
+}
+
+.mailContent {
+  width: 20%;
+  height: 20%;
+  margin: auto;
+  background-color: red;
+  display: none;
+}
+
+.mailContentVisible {
+  display: flex;
+}
+
+.bankContent {
+  display: none;
+}
+
+.bankContentVisible {
+  display: flex;
+}
+
+.shopContent {
+  display: none;
+}
+
+.shopContentVisible {
+  display: flex;
+}
+
+.statsContent {
+  display: none;
+}
+
+.statsContentVisible {
+  display: flex;
+}
+
+.settingsContent {
+  display: none;
+}
+
+.settingsContentVisible {
+  display: flex;
+}
+
+.helpContent {
+  display: none;
+}
+
+.helpContentVisible {
+  display: flex;
+}
+
+.authorContent {
+  display: none;
+}
+
+.authorContentVisible {
+  display: flex;
+}
+
+
+/*coś nie tak ze statsami*/
+
+
+
+
+
+
 
 .keyboard {
   width: 15%;

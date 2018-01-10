@@ -85,31 +85,139 @@ $(".start").on("click", function(){
   $(".menuStart").toggleClass("visible");
 });
 
-//After click at .close button close .window  
-$(".close").on("click", function(){
-  $(".window").removeClass("windowOpen");
-});  
+//SECTION "OPENING/CLOSING WINDOWS"  
 
+//Open empty window after click at menuOption
 $(".menuOption").on("click", function(){
   $(".window")
   $(".window").addClass("windowOpen");
 });  
   
+//After click at .close button close .window  
+$(".close").on("click", function(){
+  $(".window").removeClass("windowOpen");
+  //and remove all content from window
+  $(".textEditorContent").removeClass("textEditorContentVisible");
+  $(".mailContent").removeClass("mailContentVisible");
+  $(".bankContent").removeClass("bankContentVisible");
+  $(".shopContent").removeClass("shopContentVisible");
+  $(".statsContent").removeClass("statsContentVisible");
+  $(".settingsContent").removeClass("settingsContentVisible");
+  $(".helpContent").removeClass("helpContentVisible");
+  $(".authorContent").removeClass("authorContentVisible");
+});
   
-$(".fullscreen").on("click", function(){
-  document.fullscreenEnabled;
+//After click at .textEditor menuOption make content of text editor visible  
+$(".textEditor").on("click", function(){
+  $(".textEditorContent").addClass("textEditorContentVisible");
+  
+  //and remove all the content except text editor
+  $(".mailContent").removeClass("mailContentVisible");
+  $(".bankContent").removeClass("bankContentVisible");
+  $(".shopContent").removeClass("shopContentVisible");
+  $(".statsContent").removeClass("statsContentVisible");
+  $(".settingsContent").removeClass("settingsContentVisible");
+  $(".helpContent").removeClass("helpContentVisible");
+  $(".authorContent").removeClass("authorContentVisible");
+});
+
+//After click at .mail menuOption make content of mail visible  
+$(".mail").on("click", function(){
+  $(".mailContent").addClass("mailContentVisible");
+  
+  //and remove all the content except mail
+  $(".textEditorContent").removeClass("textEditorContentVisible");
+  $(".bankContent").removeClass("bankContentVisible");
+  $(".shopContent").removeClass("shopContentVisible");
+  $(".statsContent").removeClass("statsContentVisible");
+  $(".settingsContent").removeClass("settingsContentVisible");
+  $(".helpContent").removeClass("helpContentVisible");
+  $(".authorContent").removeClass("authorContentVisible"); 
 });  
+
+//After click at .bank menuOption make content of bank visible  
+$(".bank").on("click", function(){
+  $(".bankContent").addClass("bankContentVisible");
   
+  //and remove all the content except bank
+  $(".textEditorContent").removeClass("textEditorContentVisible");
+  $(".mailContent").removeClass("mailContentVisible");
+  $(".shopContent").removeClass("shopContentVisible");
+  $(".statsContent").removeClass("statsContentVisible");
+  $(".settingsContent").removeClass("settingsContentVisible");
+  $(".helpContent").removeClass("helpContentVisible");
+  $(".authorContent").removeClass("authorContentVisible");
+});  
+
+//After click at .shop menuOption make content of shop visible  
+$(".shop").on("click", function(){
+  $(".shopContent").addClass("shopContentVisible");
   
+  //and remove all the content except shop
+  $(".textEditorContent").removeClass("textEditorContentVisible");
+  $(".mailContent").removeClass("mailContentVisible");
+  $(".bankContent").removeClass("bankContentVisible");
+  $(".statsContent").removeClass("statsContentVisible");
+  $(".settingsContent").removeClass("settingsContentVisible");
+  $(".helpContent").removeClass("helpContentVisible");
+  $(".authorContent").removeClass("authorContentVisible");
+});  
+
+//After click at .stats menuOption make content of stats visible  
+$(".stats").on("click", function(){
+  $(".statsContent").addClass("statsContentVisible");
   
+  //and remove all the content except stats
+  $(".textEditorContent").removeClass("textEditorContentVisible");
+  $(".mailContent").removeClass("mailContentVisible");
+  $(".bankContent").removeClass("bankContentVisible");
+  $(".shopContent").removeClass("shopContentVisible");
+  $(".settingsContent").removeClass("settingsContentVisible");
+  $(".helpContent").removeClass("helpContentVisible");
+  $(".authorContent").removeClass("authorContentVisible");
+});  
+ 
+//After click at .settings menuOption make content of settings visible  
+$(".settings").on("click", function(){
+  $(".settingsContent").addClass("settingsContentVisible");
   
+  //and remove all the content except settings
+  $(".textEditorContent").removeClass("textEditorContentVisible");
+  $(".mailContent").removeClass("mailContentVisible");
+  $(".bankContent").removeClass("bankContentVisible");
+  $(".shopContent").removeClass("shopContentVisible");
+  $(".statsContent").removeClass("statsContentVisible");
+  $(".helpContent").removeClass("helpContentVisible");
+  $(".authorContent").removeClass("authorContentVisible");
+});  
+
+//After click at .help menuOption make content of help visible  
+$(".help").on("click", function(){
+  $(".helpContent").addClass("helpContentVisible");
   
+  //and remove all the content except help
+  $(".textEditorContent").removeClass("textEditorContentVisible");
+  $(".mailContent").removeClass("mailContentVisible");
+  $(".bankContent").removeClass("bankContentVisible");
+  $(".shopContent").removeClass("shopContentVisible");
+  $(".statsContent").removeClass("statsContentVisible");
+  $(".settingsContent").removeClass("settingsContentVisible");
+  $(".authorContent").removeClass("authorContentVisible");
+});  
+
+//After click at .author menuOption make content of author visible  
+$(".author").on("click", function(){
+  $(".authorContent").addClass("authorContentVisible");
   
-  
-  
-  
-  
-  
+  //and remove all the content except author
+  $(".textEditorContent").removeClass("textEditorContentVisible");
+  $(".mailContent").removeClass("mailContentVisible");
+  $(".bankContent").removeClass("bankContentVisible");
+  $(".shopContent").removeClass("shopContentVisible");
+  $(".statsContent").removeClass("statsContentVisible");
+  $(".settingsContent").removeClass("settingsContentVisible");
+  $(".helpContent").removeClass("helpContentVisible");
+});  
   
   
   
