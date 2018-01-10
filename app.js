@@ -89,6 +89,10 @@ $(".start").on("click", function(){
 $(".close").on("click", function(){
   $(".window").toggleClass("windowClose");
 });  
+
+$(".fullscreen").on("click", function(){
+  document.fullscreenEnabled;
+});  
   
   
   
