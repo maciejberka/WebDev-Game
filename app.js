@@ -72,13 +72,24 @@ function changeDate(){
  }  
 }//end of function  
 
+ //When player click at pause button
  $(".pause").on("click", function(){
-  $(".pause").toggleClass("gamePaused");
+   //Toggle class ".gamePaused" at ".pause" button
+   $(".pause").toggleClass("gamePaused");
 }); 
-  
-setInterval(changeDate, 1000);
+//Day interval  
+setInterval(changeDate, 10000);
 
-  
+//Open/close .menuStart by clicking .start button  
+$(".start").on("click", function(){
+  $(".menuStart").toggleClass("visible");
+});  
+//
+//$(".screen").on("click", function(){
+//  if($(".menuStart").hasClass("visible")){
+//   $(".menuStart").removeClass("visible");
+//  }
+//});  
   
   
   
