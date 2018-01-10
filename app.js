@@ -83,13 +83,12 @@ setInterval(changeDate, 10000);
 //Open/close .menuStart by clicking .start button  
 $(".start").on("click", function(){
   $(".menuStart").toggleClass("visible");
+});
+
+//After click at .close button close .window  
+$(".close").on("click", function(){
+  $(".window").toggleClass("windowClose");
 });  
-//
-//$(".screen").on("click", function(){
-//  if($(".menuStart").hasClass("visible")){
-//   $(".menuStart").removeClass("visible");
-//  }
-//});  
   
   
   
