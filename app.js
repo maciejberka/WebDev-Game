@@ -80,11 +80,33 @@ function changeDate(){
 //Day interval  
 setInterval(changeDate, 10000);
 
+  
+  
+//OPENING/CLOSING .MENUSTART SECTION  
+  
 //Open/close .menuStart by clicking .start button  
 $(".start").on("click", function(){
   $(".menuStart").toggleClass("visible");
 });
+  
+//Close menuStart by clicking at window  
+$(".window").on("click", function(){
+  $(".menuStart").removeClass("visible");
+});   
 
+//If you click anywhere at the screen (except .start button) .menuStart will disappear  
+$(".screen").on("click", function(e){
+  var target = $(e.target);
+  if(target.hasClass("start")){
+  } else {
+      $(".menuStart").removeClass("visible");
+    }
+});
+
+//THE END OF OPENING/CLOSING .MENUSTART SECTION  
+  
+
+  
 //SECTION "OPENING/CLOSING WINDOWS"  
 
 //Open empty window after click at menuOption
@@ -218,6 +240,25 @@ $(".author").on("click", function(){
   $(".settingsContent").removeClass("settingsContentVisible");
   $(".helpContent").removeClass("helpContentVisible");
 });  
+  
+//THE END OF THIS FUCKING "OPENING/CLOSING WINDOWS" SECTION  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
