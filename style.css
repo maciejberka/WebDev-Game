@@ -58,6 +58,7 @@ main {
   height: 100%;
   width: 15%;
   cursor: pointer;
+  font-family: 'Ubuntu', arial, sans-sefir;
 /*  border: none;*/
 }
 
@@ -99,14 +100,16 @@ button:focus {
   width: 100%;
   height: 11.25%;
   color: #ffffff;
-  text-transform: uppercase;
+/*  text-transform: uppercase;*/
   font-family: 'Ubuntu', sans-serif;
   font-size: 1.5rem;
   display: flex;
+  cursor: pointer;
 }
 
 .menuOption p {
   margin-left: 4%;
+  
 }
 
 .textEditor {
@@ -200,10 +203,12 @@ button:focus {
 }
 
 .textEditorContent {
-  width: 20%;
-  height: 20%;
+  width: 98%;
+  height: 90%;
   margin: auto;
   background-color: green;
+  flex-direction: column;
+  
   display: none;
 }
 
@@ -300,7 +305,7 @@ button:focus {
   margin: 2% 2%;
   background-image: url(img/whiteboard.jpg);
   background-size: cover;
-  border: 6px solid #000000;
+  border: 6px solid #caccce;
 }
 
 .board p {
@@ -402,17 +407,6 @@ button:focus {
   visibility: visible;
 }
 
-
-/*
-.fullScreen {
-  cała ta klaso to gówno, zmienić
-  width: 100%;
-  height: 90%;
-  margin: auto;
-  z-index: 500;
-  
-}
-*/
 
 
 
