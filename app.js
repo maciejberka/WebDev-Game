@@ -243,7 +243,130 @@ $(".author").on("click", function(){
   
 //THE END OF THIS FUCKING "OPENING/CLOSING WINDOWS" SECTION  
   
-
+$(".firstNextButton").on("click", function(){
+  //Points = 0
+  var points = 0;
+  
+  //Save book title in var
+  var title = $(".bookTitle").val();
+  
+  //If choosed book genre is adventure
+  if($(".genre").val() == "adventure"){
+    //and if the target is the best 
+    if($(".target").val() == "youth"){
+      //add two points
+      points = points + 2;
+      //else if target is semi
+    } else if($(".target").val() == "everyone"){
+      //add one point
+      points = points + 1;
+    }
+    
+  } else if ($(".genre").val() == "basedOnTheGame"){
+      if($(".target").val() == "youth"){
+      points = points + 2;
+    } else if($(".target").val() == "everyone"){
+      points = points + 1;
+    }
+    
+  } else if ($(".genre").val() == "biography"){
+      if($(".target").val() == "adults"){
+      points = points + 2;
+    } else if($(".target").val() == "everyone"){
+      points = points + 1;
+    }
+    
+  } else if ($(".genre").val() == "comedy"){
+      if($(".target").val() == "everyone"){
+      points = points + 2;
+    } else if($(".target").val() == "youth" || $(".target").val() == "adults" ){
+      points = points + 1;
+    }
+    
+  } else if ($(".genre").val() == "comicBook"){
+      if($(".target").val() == "youth"){
+      points = points + 2;
+    } else if($(".target").val() == "everyone"){
+      points = points + 1;
+    } 
+  } else if ($(".genre").val() == "comicBook"){
+      if($(".target").val() == "youth"){
+      points = points + 2;
+    } else if($(".target").val() == "everyone"){
+      points = points + 1;
+    } 
+    
+  } else if ($(".genre").val() == "criminal"){
+      if($(".target").val() == "everyone"){
+      points = points + 2;
+    } else if($(".target").val() == "youth" || $(".target").val() == "adults" ){
+      points = points + 1;
+    }
+    
+  } else if ($(".genre").val() == "fable"){
+      if($(".target").val() == "youth"){
+      points = points + 2;
+    } else if($(".target").val() == "everyone"){
+      points = points + 1;
+    }
+    
+  } else if ($(".genre").val() == "fantasy"){
+      if($(".target").val() == "everyone"){
+      points = points + 2;
+    } else if($(".target").val() == "youth" || $(".target").val() == "adults" ){
+      points = points + 1;
+    }
+    
+  } else if ($(".genre").val() == "historical"){
+      if($(".target").val() == "adults"){
+      points = points + 2;
+    } else if($(".target").val() == "everyone"){
+      points = points + 1;
+    }
+    
+  } else if ($(".genre").val() == "horror"){
+      if($(".target").val() == "adults"){
+      points = points + 2;
+    } else if($(".target").val() == "everyone"){
+      points = points + 1;
+    }
+    
+  } else if ($(".genre").val() == "romance"){
+      if($(".target").val() == "adults"){
+      points = points + 2;
+    } else if($(".target").val() == "everyone"){
+      points = points + 1;
+    }
+    
+  } else if ($(".genre").val() == "scienceFiction"){
+      if($(".target").val() == "everyone"){
+      points = points + 2;
+    } else if($(".target").val() == "youth" || $(".target").val() == "adults" ){
+      points = points + 1;
+    }
+    
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+});
   
   
   
