@@ -8,6 +8,7 @@ var paused = false;
   
   
 function changeDate(){
+ //if game isn't paused
  if (!$(".pause").hasClass("gamePaused")){  
   //Increment day
   day++;
@@ -348,20 +349,11 @@ $(".firstNextButton").on("click", function(){
   }
   
   
+    console.log(points);
+
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  $(".textEditorContent").css("display", "none");
+  $(".textEditorContent2").css("display", "flex");
   
   
   
@@ -369,6 +361,8 @@ $(".firstNextButton").on("click", function(){
 });
   
   
+
+ 
   
   
   
@@ -376,22 +370,7 @@ $(".firstNextButton").on("click", function(){
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+    
   
   
 });
