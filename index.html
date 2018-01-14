@@ -98,23 +98,27 @@
         
         <div class="textEditorContent2">
           <h2>Stage 1.</h2>
-          <h2>Select the features of your book:</h2>
+          <h2>What is more important in your book?</h2>
           
           <form class="features1">
-           <h2>Character design:</h2>
-            <input class="character" type="number" value="0" min="0" max="15">
-           <h2>World design:</h2>  
-            <input class="world" type="number" value="0" min="0" max="15">
-           <h2>Story:</h2>  
-            <input class="story" type="number" value="0" min="0" max="15">
-          </form>    
+           <section>
+            <p class="leftP">Character design</p>
+            <input class="characterWorld" type="range">
+            <p class="rightP">World design</p>
+           </section>
+           <section>
+            <p class="leftP">Dialogues</p>
+            <input class="dialoguesStory" type="range">
+            <p class="rightP">Story</p>
+           </section>
+           <section>
+            <p class="leftP">Humor</p> 
+            <input class="humorTension" type="range">
+            <p class="rightP">Tension</p>
+           </section>
+          </form>      
           
-          <div class="counter">
-            <span>15</span>
-          </div>    
-          
-          
-          
+          <button class="secondNextButton nextButton">Next</button>
         </div>
         
         <div class="mailContent">

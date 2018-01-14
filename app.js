@@ -251,8 +251,11 @@ $(".firstNextButton").on("click", function(){
   //Save book title in var
   var title = $(".bookTitle").val();
   
+  var genre;
+  
   //If choosed book genre is adventure
   if($(".genre").val() == "adventure"){
+    genre = "adventure";
     //and if the target is the best 
     if($(".target").val() == "youth"){
       //add two points
@@ -264,6 +267,7 @@ $(".firstNextButton").on("click", function(){
     }
     
   } else if ($(".genre").val() == "basedOnTheGame"){
+    genre = "basedOnTheGame";
       if($(".target").val() == "youth"){
       points = points + 2;
     } else if($(".target").val() == "everyone"){
@@ -271,6 +275,7 @@ $(".firstNextButton").on("click", function(){
     }
     
   } else if ($(".genre").val() == "biography"){
+    genre = "biography";
       if($(".target").val() == "adults"){
       points = points + 2;
     } else if($(".target").val() == "everyone"){
@@ -278,6 +283,7 @@ $(".firstNextButton").on("click", function(){
     }
     
   } else if ($(".genre").val() == "comedy"){
+    genre = "comedy";
       if($(".target").val() == "everyone"){
       points = points + 2;
     } else if($(".target").val() == "youth" || $(".target").val() == "adults" ){
@@ -285,12 +291,7 @@ $(".firstNextButton").on("click", function(){
     }
     
   } else if ($(".genre").val() == "comicBook"){
-      if($(".target").val() == "youth"){
-      points = points + 2;
-    } else if($(".target").val() == "everyone"){
-      points = points + 1;
-    } 
-  } else if ($(".genre").val() == "comicBook"){
+    genre = "comicBook";
       if($(".target").val() == "youth"){
       points = points + 2;
     } else if($(".target").val() == "everyone"){
@@ -298,6 +299,7 @@ $(".firstNextButton").on("click", function(){
     } 
     
   } else if ($(".genre").val() == "criminal"){
+    genre = "criminal";
       if($(".target").val() == "everyone"){
       points = points + 2;
     } else if($(".target").val() == "youth" || $(".target").val() == "adults" ){
@@ -305,6 +307,7 @@ $(".firstNextButton").on("click", function(){
     }
     
   } else if ($(".genre").val() == "fable"){
+    genre = "fable";
       if($(".target").val() == "youth"){
       points = points + 2;
     } else if($(".target").val() == "everyone"){
@@ -312,6 +315,7 @@ $(".firstNextButton").on("click", function(){
     }
     
   } else if ($(".genre").val() == "fantasy"){
+    genre = "fantasy";
       if($(".target").val() == "everyone"){
       points = points + 2;
     } else if($(".target").val() == "youth" || $(".target").val() == "adults" ){
@@ -319,6 +323,7 @@ $(".firstNextButton").on("click", function(){
     }
     
   } else if ($(".genre").val() == "historical"){
+    genre = "historical";
       if($(".target").val() == "adults"){
       points = points + 2;
     } else if($(".target").val() == "everyone"){
@@ -326,6 +331,7 @@ $(".firstNextButton").on("click", function(){
     }
     
   } else if ($(".genre").val() == "horror"){
+    genre = "horror";
       if($(".target").val() == "adults"){
       points = points + 2;
     } else if($(".target").val() == "everyone"){
@@ -333,6 +339,7 @@ $(".firstNextButton").on("click", function(){
     }
     
   } else if ($(".genre").val() == "romance"){
+    genre = "romance";
       if($(".target").val() == "adults"){
       points = points + 2;
     } else if($(".target").val() == "everyone"){
@@ -340,6 +347,7 @@ $(".firstNextButton").on("click", function(){
     }
     
   } else if ($(".genre").val() == "scienceFiction"){
+    genre = "scienceFiction";
       if($(".target").val() == "everyone"){
       points = points + 2;
     } else if($(".target").val() == "youth" || $(".target").val() == "adults" ){
@@ -348,23 +356,519 @@ $(".firstNextButton").on("click", function(){
     
   }
   
-  
     console.log(points);
+    console.log(genre);
 
-  
   $(".textEditorContent").css("display", "none");
   $(".textEditorContent2").css("display", "flex");
   
+  $(".secondNextButton").on("click", function(){
+    var characterWorldVal = $(".characterWorld").val();
+    var dialoguesStoryVal = $(".dialoguesStory").val();
+    var humorTensionVal = $(".humorTension").val();
+    
+    if(genre == "adventure") {
+      if(characterWorldVal >= 0 && characterWorldVal < 20){
+         points = points + 0;
+        } else if (characterWorldVal >= 20 && characterWorldVal < 40){
+           points = points + 1;
+        } else if (characterWorldVal >=40 && characterWorldVal < 60){
+           points = points + 3;      
+        } else if(characterWorldVal >= 60 && characterWorldVal < 80) {
+           points = points + 2;
+        } else if(characterWorldVal >= 80 && characterWorldVal <= 100) {
+           points = points + 0;       
+        }
+        
+        if(dialoguesStoryVal >= 0 && dialoguesStoryVal < 20){
+           points = points + 0;
+        } else if(dialoguesStoryVal >= 20 && dialoguesStoryVal < 40) {
+           points = points + 2;
+        } else if(dialoguesStoryVal >=40 && dialoguesStoryVal < 60) {
+           points = points + 1;       
+        } else if(dialoguesStoryVal >= 60 && dialoguesStoryVal < 80) {
+           points = points + 3;
+        } else if(dialoguesStoryVal >= 80 && dialoguesStoryVal <= 100) {
+           points = points + 2;       
+        }
+      
+        if(humorTensionVal >= 0 && humorTensionVal < 20) {
+           points = points + 0;
+        } else if(humorTensionVal >= 20 && humorTensionVal < 40) {
+           points = points + 1;
+        } else if(humorTensionVal >=40 && humorTensionVal < 60) {
+           points = points + 2;        
+        } else if(humorTensionVal >= 60 && humorTensionVal < 80) {
+           points = points + 3;
+        } else if(humorTensionVal >= 80 && humorTensionVal <= 100) {
+           points = points + 1;       
+        }
+      
+    } else if(genre == "basedOnTheGame") {
+        
+        if(characterWorldVal >= 0 && characterWorldVal < 20){
+         points = points + 0;
+        } else if (characterWorldVal >= 20 && characterWorldVal < 40){
+           points = points + 1;
+        } else if (characterWorldVal >=40 && characterWorldVal < 60){
+           points = points + 1;      
+        } else if(characterWorldVal >= 60 && characterWorldVal < 80) {
+           points = points + 3;
+        } else if(characterWorldVal >= 80 && characterWorldVal <= 100) {
+           points = points + 2;       
+        }
+        
+        if(dialoguesStoryVal >= 0 && dialoguesStoryVal < 20){
+           points = points + 0;
+        } else if(dialoguesStoryVal >= 20 && dialoguesStoryVal < 40) {
+           points = points + 0;
+        } else if(dialoguesStoryVal >=40 && dialoguesStoryVal < 60) {
+           points = points + 1;       
+        } else if(dialoguesStoryVal >= 60 && dialoguesStoryVal < 80) {
+           points = points + 2;
+        } else if(dialoguesStoryVal >= 80 && dialoguesStoryVal <= 100) {
+           points = points + 3;       
+        }
+      
+        if(humorTensionVal >= 0 && humorTensionVal < 20) {
+           points = points + 1;
+        } else if(humorTensionVal >= 20 && humorTensionVal < 40) {
+           points = points + 3;
+        } else if(humorTensionVal >=40 && humorTensionVal < 60) {
+           points = points + 2;        
+        } else if(humorTensionVal >= 60 && humorTensionVal < 80) {
+           points = points + 3;
+        } else if(humorTensionVal >= 80 && humorTensionVal <= 100) {
+           points = points + 2;       
+        }
+      
+      } else if (genre == "biography") {
+        
+          if(characterWorldVal >= 0 && characterWorldVal < 20){
+         points = points + 3;
+        } else if (characterWorldVal >= 20 && characterWorldVal < 40){
+           points = points + 2;
+        } else if (characterWorldVal >=40 && characterWorldVal < 60){
+           points = points + 0;      
+        } else if(characterWorldVal >= 60 && characterWorldVal < 80) {
+           points = points + 0;
+        } else if(characterWorldVal >= 80 && characterWorldVal <= 100) {
+           points = points + 0;       
+        }
+        
+        if(dialoguesStoryVal >= 0 && dialoguesStoryVal < 20){
+           points = points + 0;
+        } else if(dialoguesStoryVal >= 20 && dialoguesStoryVal < 40) {
+           points = points + 0;
+        } else if(dialoguesStoryVal >=40 && dialoguesStoryVal < 60) {
+           points = points + 1;       
+        } else if(dialoguesStoryVal >= 60 && dialoguesStoryVal < 80) {
+           points = points + 2;
+        } else if(dialoguesStoryVal >= 80 && dialoguesStoryVal <= 100) {
+           points = points + 3;       
+        }
+      
+        if(humorTensionVal >= 0 && humorTensionVal < 20) {
+           points = points + 0;
+        } else if(humorTensionVal >= 20 && humorTensionVal < 40) {
+           points = points + 3;
+        } else if(humorTensionVal >=40 && humorTensionVal < 60) {
+           points = points + 1;        
+        } else if(humorTensionVal >= 60 && humorTensionVal < 80) {
+           points = points + 2;
+        } else if(humorTensionVal >= 80 && humorTensionVal <= 100) {
+           points = points + 0;       
+        }
+               
+      } else if(genre == "comedy"){
+        
+          if(characterWorldVal >= 0 && characterWorldVal < 20){
+         points = points + 3;
+        } else if (characterWorldVal >= 20 && characterWorldVal < 40){
+           points = points + 2;
+        } else if (characterWorldVal >=40 && characterWorldVal < 60){
+           points = points + 1;      
+        } else if(characterWorldVal >= 60 && characterWorldVal < 80) {
+           points = points + 1;
+        } else if(characterWorldVal >= 80 && characterWorldVal <= 100) {
+           points = points + 0;       
+        }
+        
+        if(dialoguesStoryVal >= 0 && dialoguesStoryVal < 20){
+           points = points + 2;
+        } else if(dialoguesStoryVal >= 20 && dialoguesStoryVal < 40) {
+           points = points + 2;
+        } else if(dialoguesStoryVal >=40 && dialoguesStoryVal < 60) {
+           points = points + 3;       
+        } else if(dialoguesStoryVal >= 60 && dialoguesStoryVal < 80) {
+           points = points + 1;
+        } else if(dialoguesStoryVal >= 80 && dialoguesStoryVal <= 100) {
+           points = points + 1;       
+        }
+      
+        if(humorTensionVal >= 0 && humorTensionVal < 20) {
+           points = points + 3;
+        } else if(humorTensionVal >= 20 && humorTensionVal < 40) {
+           points = points + 2;
+        } else if(humorTensionVal >=40 && humorTensionVal < 60) {
+           points = points + 0;        
+        } else if(humorTensionVal >= 60 && humorTensionVal < 80) {
+           points = points + 1;
+        } else if(humorTensionVal >= 80 && humorTensionVal <= 100) {
+           points = points + 0;       
+        }
+        
+      } else if(genre == "comicBook") {
+           
+          if(characterWorldVal >= 0 && characterWorldVal < 20){
+         points = points + 2;
+        } else if (characterWorldVal >= 20 && characterWorldVal < 40){
+           points = points + 2;
+        } else if (characterWorldVal >=40 && characterWorldVal < 60){
+           points = points + 3;      
+        } else if(characterWorldVal >= 60 && characterWorldVal < 80) {
+           points = points + 2;
+        } else if(characterWorldVal >= 80 && characterWorldVal <= 100) {
+           points = points + 1;       
+        }
+        
+        if(dialoguesStoryVal >= 0 && dialoguesStoryVal < 20){
+           points = points + 0;
+        } else if(dialoguesStoryVal >= 20 && dialoguesStoryVal < 40) {
+           points = points + 1;
+        } else if(dialoguesStoryVal >=40 && dialoguesStoryVal < 60) {
+           points = points + 1;       
+        } else if(dialoguesStoryVal >= 60 && dialoguesStoryVal < 80) {
+           points = points + 2;
+        } else if(dialoguesStoryVal >= 80 && dialoguesStoryVal <= 100) {
+           points = points + 3;       
+        }
+      
+        if(humorTensionVal >= 0 && humorTensionVal < 20) {
+           points = points + 3;
+        } else if(humorTensionVal >= 20 && humorTensionVal < 40) {
+           points = points + 3;
+        } else if(humorTensionVal >=40 && humorTensionVal < 60) {
+           points = points + 0;        
+        } else if(humorTensionVal >= 60 && humorTensionVal < 80) {
+           points = points + 1;
+        } else if(humorTensionVal >= 80 && humorTensionVal <= 100) {
+           points = points + 2;       
+        }
+        
+     } else if(genre == "criminal") {
+        
+         if(characterWorldVal >= 0 && characterWorldVal < 20){
+         points = points + 3;
+        } else if (characterWorldVal >= 20 && characterWorldVal < 40){
+           points = points + 2;
+        } else if (characterWorldVal >=40 && characterWorldVal < 60){
+           points = points + 1;      
+        } else if(characterWorldVal >= 60 && characterWorldVal < 80) {
+           points = points + 0;
+        } else if(characterWorldVal >= 80 && characterWorldVal <= 100) {
+           points = points + 0;       
+        }
+        
+        if(dialoguesStoryVal >= 0 && dialoguesStoryVal < 20){
+           points = points + 1;
+        } else if(dialoguesStoryVal >= 20 && dialoguesStoryVal < 40) {
+           points = points + 2;
+        } else if(dialoguesStoryVal >=40 && dialoguesStoryVal < 60) {
+           points = points + 1;       
+        } else if(dialoguesStoryVal >= 60 && dialoguesStoryVal < 80) {
+           points = points + 3;
+        } else if(dialoguesStoryVal >= 80 && dialoguesStoryVal <= 100) {
+           points = points + 2;       
+        }
+      
+        if(humorTensionVal >= 0 && humorTensionVal < 20) {
+           points = points + 0;
+        } else if(humorTensionVal >= 20 && humorTensionVal < 40) {
+           points = points + 1;
+        } else if(humorTensionVal >=40 && humorTensionVal < 60) {
+           points = points + 1;        
+        } else if(humorTensionVal >= 60 && humorTensionVal < 80) {
+           points = points + 2;
+        } else if(humorTensionVal >= 80 && humorTensionVal <= 100) {
+           points = points + 3;       
+        }
+       
+      } else if (genre == "fable"){
+            
+          if(characterWorldVal >= 0 && characterWorldVal < 20){
+         points = points + 2;
+        } else if (characterWorldVal >= 20 && characterWorldVal < 40){
+           points = points + 3;
+        } else if (characterWorldVal >=40 && characterWorldVal < 60){
+           points = points + 1;      
+        } else if(characterWorldVal >= 60 && characterWorldVal < 80) {
+           points = points + 2;
+        } else if(characterWorldVal >= 80 && characterWorldVal <= 100) {
+           points = points + 0;       
+        }
+        
+        if(dialoguesStoryVal >= 0 && dialoguesStoryVal < 20){
+           points = points + 0;
+        } else if(dialoguesStoryVal >= 20 && dialoguesStoryVal < 40) {
+           points = points + 1;
+        } else if(dialoguesStoryVal >=40 && dialoguesStoryVal < 60) {
+           points = points + 1;       
+        } else if(dialoguesStoryVal >= 60 && dialoguesStoryVal < 80) {
+           points = points + 2;
+        } else if(dialoguesStoryVal >= 80 && dialoguesStoryVal <= 100) {
+           points = points + 3;       
+        }
+      
+        if(humorTensionVal >= 0 && humorTensionVal < 20) {
+           points = points + 3;
+        } else if(humorTensionVal >= 20 && humorTensionVal < 40) {
+           points = points + 2;
+        } else if(humorTensionVal >=40 && humorTensionVal < 60) {
+           points = points + 0;        
+        } else if(humorTensionVal >= 60 && humorTensionVal < 80) {
+           points = points + 2;
+        } else if(humorTensionVal >= 80 && humorTensionVal <= 100) {
+           points = points + 1;       
+        }
+        
+      } else if(genre == "fantasy") {
+        
+          if(characterWorldVal >= 0 && characterWorldVal < 20){
+         points = points + 1;
+        } else if (characterWorldVal >= 20 && characterWorldVal < 40){
+           points = points + 2;
+        } else if (characterWorldVal >=40 && characterWorldVal < 60){
+           points = points + 1;      
+        } else if(characterWorldVal >= 60 && characterWorldVal < 80) {
+           points = points + 3;
+        } else if(characterWorldVal >= 80 && characterWorldVal <= 100) {
+           points = points + 2;       
+        }
+        
+        if(dialoguesStoryVal >= 0 && dialoguesStoryVal < 20){
+           points = points + 0;
+        } else if(dialoguesStoryVal >= 20 && dialoguesStoryVal < 40) {
+           points = points + 1;
+        } else if(dialoguesStoryVal >=40 && dialoguesStoryVal < 60) {
+           points = points + 1;       
+        } else if(dialoguesStoryVal >= 60 && dialoguesStoryVal < 80) {
+           points = points + 2;
+        } else if(dialoguesStoryVal >= 80 && dialoguesStoryVal <= 100) {
+           points = points + 3;       
+        }
+      
+        if(humorTensionVal >= 0 && humorTensionVal < 20) {
+           points = points + 0;
+        } else if(humorTensionVal >= 20 && humorTensionVal < 40) {
+           points = points + 1;
+        } else if(humorTensionVal >=40 && humorTensionVal < 60) {
+           points = points + 1;        
+        } else if(humorTensionVal >= 60 && humorTensionVal < 80) {
+           points = points + 3;
+        } else if(humorTensionVal >= 80 && humorTensionVal <= 100) {
+           points = points + 2;       
+        }  
+        
+      } else if(genre == "historical") {
+        
+          if(characterWorldVal >= 0 && characterWorldVal < 20){
+         points = points + 1;
+        } else if (characterWorldVal >= 20 && characterWorldVal < 40){
+           points = points + 2;
+        } else if (characterWorldVal >=40 && characterWorldVal < 60){
+           points = points + 1;      
+        } else if(characterWorldVal >= 60 && characterWorldVal < 80) {
+           points = points + 3;
+        } else if(characterWorldVal >= 80 && characterWorldVal <= 100) {
+           points = points + 1;       
+        }
+        
+        if(dialoguesStoryVal >= 0 && dialoguesStoryVal < 20){
+           points = points + 1;
+        } else if(dialoguesStoryVal >= 20 && dialoguesStoryVal < 40) {
+           points = points + 2;
+        } else if(dialoguesStoryVal >=40 && dialoguesStoryVal < 60) {
+           points = points + 1;       
+        } else if(dialoguesStoryVal >= 60 && dialoguesStoryVal < 80) {
+           points = points + 3;
+        } else if(dialoguesStoryVal >= 80 && dialoguesStoryVal <= 100) {
+           points = points + 2;       
+        }
+      
+        if(humorTensionVal >= 0 && humorTensionVal < 20) {
+           points = points + 0;
+        } else if(humorTensionVal >= 20 && humorTensionVal < 40) {
+           points = points + 1;
+        } else if(humorTensionVal >=40 && humorTensionVal < 60) {
+           points = points + 1;        
+        } else if(humorTensionVal >= 60 && humorTensionVal < 80) {
+           points = points + 3;
+        } else if(humorTensionVal >= 80 && humorTensionVal <= 100) {
+           points = points + 2;       
+        }
+        
+      } else if(genre == "horror") {
+        
+          if(characterWorldVal >= 0 && characterWorldVal < 20){
+         points = points + 0;
+        } else if (characterWorldVal >= 20 && characterWorldVal < 40){
+           points = points + 1;
+        } else if (characterWorldVal >=40 && characterWorldVal < 60){
+           points = points + 1;      
+        } else if(characterWorldVal >= 60 && characterWorldVal < 80) {
+           points = points + 2;
+        } else if(characterWorldVal >= 80 && characterWorldVal <= 100) {
+           points = points + 3;       
+        }
+        
+        if(dialoguesStoryVal >= 0 && dialoguesStoryVal < 20){
+           points = points + 1;
+        } else if(dialoguesStoryVal >= 20 && dialoguesStoryVal < 40) {
+           points = points + 0;
+        } else if(dialoguesStoryVal >=40 && dialoguesStoryVal < 60) {
+           points = points + 1;       
+        } else if(dialoguesStoryVal >= 60 && dialoguesStoryVal < 80) {
+           points = points + 2;
+        } else if(dialoguesStoryVal >= 80 && dialoguesStoryVal <= 100) {
+           points = points + 3;       
+        }
+      
+        if(humorTensionVal >= 0 && humorTensionVal < 20) {
+           points = points + 0;
+        } else if(humorTensionVal >= 20 && humorTensionVal < 40) {
+           points = points + 0;
+        } else if(humorTensionVal >=40 && humorTensionVal < 60) {
+           points = points + 1;        
+        } else if(humorTensionVal >= 60 && humorTensionVal < 80) {
+           points = points + 2;
+        } else if(humorTensionVal >= 80 && humorTensionVal <= 100) {
+           points = points + 3;       
+        } 
+        
+      } else if(genre == "romance"){
+        
+          if(characterWorldVal >= 0 && characterWorldVal < 20){
+         points = points + 3;
+        } else if (characterWorldVal >= 20 && characterWorldVal < 40){
+           points = points + 2;
+        } else if (characterWorldVal >=40 && characterWorldVal < 60){
+           points = points + 1;      
+        } else if(characterWorldVal >= 60 && characterWorldVal < 80) {
+           points = points + 0;
+        } else if(characterWorldVal >= 80 && characterWorldVal <= 100) {
+           points = points + 0;       
+        }
+        
+        if(dialoguesStoryVal >= 0 && dialoguesStoryVal < 20){
+           points = points + 2;
+        } else if(dialoguesStoryVal >= 20 && dialoguesStoryVal < 40) {
+           points = points + 3;
+        } else if(dialoguesStoryVal >=40 && dialoguesStoryVal < 60) {
+           points = points + 1;       
+        } else if(dialoguesStoryVal >= 60 && dialoguesStoryVal < 80) {
+           points = points + 2;
+        } else if(dialoguesStoryVal >= 80 && dialoguesStoryVal <= 100) {
+           points = points + 1;       
+        }
+      
+        if(humorTensionVal >= 0 && humorTensionVal < 20) {
+           points = points + 2;
+        } else if(humorTensionVal >= 20 && humorTensionVal < 40) {
+           points = points + 3;
+        } else if(humorTensionVal >=40 && humorTensionVal < 60) {
+           points = points + 1;        
+        } else if(humorTensionVal >= 60 && humorTensionVal < 80) {
+           points = points + 2;
+        } else if(humorTensionVal >= 80 && humorTensionVal <= 100) {
+           points = points + 1;       
+        } 
+        
+      } else if(genre == "scienceFiction") {
+          
+          if(characterWorldVal >= 0 && characterWorldVal < 20){
+         points = points + 0;
+        } else if (characterWorldVal >= 20 && characterWorldVal < 40){
+           points = points + 1;
+        } else if (characterWorldVal >=40 && characterWorldVal < 60){
+           points = points + 2;      
+        } else if(characterWorldVal >= 60 && characterWorldVal < 80) {
+           points = points + 3;
+        } else if(characterWorldVal >= 80 && characterWorldVal <= 100) {
+           points = points + 2;       
+        }
+        
+        if(dialoguesStoryVal >= 0 && dialoguesStoryVal < 20){
+           points = points + 0;
+        } else if(dialoguesStoryVal >= 20 && dialoguesStoryVal < 40) {
+           points = points + 1;
+        } else if(dialoguesStoryVal >=40 && dialoguesStoryVal < 60) {
+           points = points + 1;       
+        } else if(dialoguesStoryVal >= 60 && dialoguesStoryVal < 80) {
+           points = points + 2;
+        } else if(dialoguesStoryVal >= 80 && dialoguesStoryVal <= 100) {
+           points = points + 3;       
+        }
+      
+        if(humorTensionVal >= 0 && humorTensionVal < 20) {
+           points = points + 0;
+        } else if(humorTensionVal >= 20 && humorTensionVal < 40) {
+           points = points + 1;
+        } else if(humorTensionVal >=40 && humorTensionVal < 60) {
+           points = points + 1;        
+        } else if(humorTensionVal >= 60 && humorTensionVal < 80) {
+           points = points + 3;
+        } else if(humorTensionVal >= 80 && humorTensionVal <= 100) {
+           points = points + 2;       
+        }
+      }       
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+       console.log(points);
+       
+       
+       
+       
+       
+  });
   
   
   
 });
   
+  //DZIAŁ KOPIOWANIA
   
-
- 
-  
-  
+//  characterWorldVal >= 0 && characterWorldVal < 20
+//  characterWorldVal >= 20 && characterWorldVal < 40
+//  characterWorldVal >=40 && characterWorldVal < 60
+//  characterWorldVal >= 60 && characterWorldVal < 80
+//  characterWorldVal >= 80 && characterWorldVal <= 100
+//
+//  dialoguesStoryVal >= 0 && dialoguesStoryVal < 20
+//  dialoguesStoryVal >= 20 && dialoguesStoryVal < 40
+//  dialoguesStoryVal >=40 && dialoguesStoryVal < 60
+//  dialoguesStoryVal >= 60 && dialoguesStoryVal < 80
+//  dialoguesStoryVal >= 80 && dialoguesStoryVal <= 100   
+//  
+//  humorTensionVal >= 0 && humorTensionVal < 20
+//  humorTensionVal >= 20 && humorTensionVal < 40
+//  humorTensionVal >=40 && humorTensionVal < 60
+//  humorTensionVal >= 60 && humorTensionVal < 80
+//  humorTensionVal >= 80 && humorTensionVal <= 100
   
   
   
