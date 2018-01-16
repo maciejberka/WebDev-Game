@@ -5,7 +5,7 @@ var month = 1;
 var year = 2018;
 var zero = "0";
 var paused = false;
-  
+   
   
 function changeDate(){
  //if game isn't paused
@@ -822,6 +822,481 @@ $(".firstNextButton").on("click", function(){
            points = points + 2;       
         }
       }       
+      
+    
+     //After counting points remove acctual window and show the next one
+     $(".textEditorContent2").css("display", "none");
+     $(".textEditorContent3").css("display", "flex");
+ 
+    
+  $(".thirdNextButton").on("click", function(){
+    
+    var singleMultiVal = $(".singleMulti").val();
+    var fastFloweryVal = $(".fastFlowery").val();
+    var affordableDemandingVal = $(".affordableDemanding").val();
+    
+    if(genre == "adventure") {
+      
+      if(singleMultiVal >= 0 && singleMultiVal < 20){
+         points = points + 3;
+        } else if (singleMultiVal >= 20 && singleMultiVal < 40){
+           points = points + 2;
+        } else if (singleMultiVal >=40 && singleMultiVal < 60){
+           points = points + 1;      
+        } else if(singleMultiVal >= 60 && singleMultiVal < 80) {
+           points = points + 1;
+        } else if(singleMultiVal >= 80 && singleMultiVal <= 100) {
+           points = points + 0;       
+        }
+        
+        if(fastFloweryVal >= 0 && fastFloweryVal < 20){
+           points = points + 3;
+        } else if(fastFloweryVal >= 20 && fastFloweryVal < 40) {
+           points = points + 2;
+        } else if(fastFloweryVal >=40 && fastFloweryVal < 60) {
+           points = points + 1;       
+        } else if(fastFloweryVal >= 60 && fastFloweryVal < 80) {
+           points = points + 1;
+        } else if(fastFloweryVal >= 80 && fastFloweryVal <= 100) {
+           points = points + 0;       
+        }
+      
+        if(affordableDemandingVal >= 0 && affordableDemandingVal < 20) {
+           points = points + 2;
+        } else if(affordableDemandingVal >= 20 && affordableDemandingVal < 40) {
+           points = points + 3;
+        } else if(affordableDemandingVal >=40 && affordableDemandingVal < 60) {
+           points = points + 1;        
+        } else if(affordableDemandingVal >= 60 && affordableDemandingVal < 80) {
+           points = points + 1;
+        } else if(affordableDemandingVal >= 80 && affordableDemandingVal <= 100) {
+           points = points + 0;       
+        }
+      
+    } else if(genre == "basedOnTheGame") {
+        
+        if(singleMultiVal >= 0 && singleMultiVal < 20){
+         points = points + 2;
+        } else if (singleMultiVal >= 20 && singleMultiVal < 40){
+           points = points + 3;
+        } else if (singleMultiVal >=40 && singleMultiVal < 60){
+           points = points + 1;      
+        } else if(singleMultiVal >= 60 && singleMultiVal < 80) {
+           points = points + 2;
+        } else if(singleMultiVal >= 80 && singleMultiVal <= 100) {
+           points = points + 0;       
+        }
+        
+        if(fastFloweryVal >= 0 && fastFloweryVal < 20){
+           points = points + 2;
+        } else if(fastFloweryVal >= 20 && fastFloweryVal < 40) {
+           points = points + 3;
+        } else if(fastFloweryVal >=40 && fastFloweryVal < 60) {
+           points = points + 1;       
+        } else if(fastFloweryVal >= 60 && fastFloweryVal < 80) {
+           points = points + 1;
+        } else if(fastFloweryVal >= 80 && fastFloweryVal <= 100) {
+           points = points + 0;       
+        }
+      
+        if(affordableDemandingVal >= 0 && affordableDemandingVal < 20) {
+           points = points + 1;
+        } else if(affordableDemandingVal >= 20 && affordableDemandingVal < 40) {
+           points = points + 3;
+        } else if(affordableDemandingVal >=40 && affordableDemandingVal < 60) {
+           points = points + 2;        
+        } else if(affordableDemandingVal >= 60 && affordableDemandingVal < 80) {
+           points = points + 2;
+        } else if(affordableDemandingVal >= 80 && affordableDemandingVal <= 100) {
+           points = points + 0;       
+        }
+      
+      } else if (genre == "biography") {
+        
+          if(singleMultiVal >= 0 && singleMultiVal < 20){
+         points = points + 2;
+        } else if (singleMultiVal >= 20 && singleMultiVal < 40){
+           points = points + 3;
+        } else if (singleMultiVal >=40 && singleMultiVal < 60){
+           points = points + 1;      
+        } else if(singleMultiVal >= 60 && singleMultiVal < 80) {
+           points = points + 1;
+        } else if(singleMultiVal >= 80 && singleMultiVal <= 100) {
+           points = points + 0;       
+        }
+        
+        if(fastFloweryVal >= 0 && fastFloweryVal < 20){
+           points = points + 0;
+        } else if(fastFloweryVal >= 20 && fastFloweryVal < 40) {
+           points = points + 1;
+        } else if(fastFloweryVal >=40 && fastFloweryVal < 60) {
+           points = points + 3;       
+        } else if(fastFloweryVal >= 60 && fastFloweryVal < 80) {
+           points = points + 2;
+        } else if(fastFloweryVal >= 80 && fastFloweryVal <= 100) {
+           points = points + 1;       
+        }
+      
+        if(affordableDemandingVal >= 0 && affordableDemandingVal < 20) {
+           points = points + 1;
+        } else if(affordableDemandingVal >= 20 && affordableDemandingVal < 40) {
+           points = points + 2;
+        } else if(affordableDemandingVal >=40 && affordableDemandingVal < 60) {
+           points = points + 2;        
+        } else if(affordableDemandingVal >= 60 && affordableDemandingVal < 80) {
+           points = points + 3;
+        } else if(affordableDemandingVal >= 80 && affordableDemandingVal <= 100) {
+           points = points + 1;       
+        }
+               
+      } else if(genre == "comedy"){
+        
+          if(singleMultiVal >= 0 && singleMultiVal < 20){
+         points = points + 3;
+        } else if (singleMultiVal >= 20 && singleMultiVal < 40){
+           points = points + 2;
+        } else if (singleMultiVal >=40 && singleMultiVal < 60){
+           points = points + 1;      
+        } else if(singleMultiVal >= 60 && singleMultiVal < 80) {
+           points = points + 2;
+        } else if(singleMultiVal >= 80 && singleMultiVal <= 100) {
+           points = points + 0;       
+        }
+        
+        if(fastFloweryVal >= 0 && fastFloweryVal < 20){
+           points = points + 3;
+        } else if(fastFloweryVal >= 20 && fastFloweryVal < 40) {
+           points = points + 2;
+        } else if(fastFloweryVal >=40 && fastFloweryVal < 60) {
+           points = points + 1;       
+        } else if(fastFloweryVal >= 60 && fastFloweryVal < 80) {
+           points = points + 1;
+        } else if(fastFloweryVal >= 80 && fastFloweryVal <= 100) {
+           points = points + 0;       
+        }
+      
+        if(affordableDemandingVal >= 0 && affordableDemandingVal < 20) {
+           points = points + 2;
+        } else if(affordableDemandingVal >= 20 && affordableDemandingVal < 40) {
+           points = points + 3;
+        } else if(affordableDemandingVal >=40 && affordableDemandingVal < 60) {
+           points = points + 1;        
+        } else if(affordableDemandingVal >= 60 && affordableDemandingVal < 80) {
+           points = points + 2;
+        } else if(affordableDemandingVal >= 80 && affordableDemandingVal <= 100) {
+           points = points + 2;       
+        }
+        
+      } else if(genre == "comicBook") {
+           
+          if(singleMultiVal >= 0 && singleMultiVal < 20){
+         points = points + 3;
+        } else if (singleMultiVal >= 20 && singleMultiVal < 40){
+           points = points + 2;
+        } else if (singleMultiVal >=40 && singleMultiVal < 60){
+           points = points + 1;      
+        } else if(singleMultiVal >= 60 && singleMultiVal < 80) {
+           points = points + 1;
+        } else if(singleMultiVal >= 80 && singleMultiVal <= 100) {
+           points = points + 0;       
+        }
+        
+        if(fastFloweryVal >= 0 && fastFloweryVal < 20){
+           points = points + 3;
+        } else if(fastFloweryVal >= 20 && fastFloweryVal < 40) {
+           points = points + 2;
+        } else if(fastFloweryVal >=40 && fastFloweryVal < 60) {
+           points = points + 1;       
+        } else if(fastFloweryVal >= 60 && fastFloweryVal < 80) {
+           points = points + 0;
+        } else if(fastFloweryVal >= 80 && fastFloweryVal <= 100) {
+           points = points + 0;       
+        }
+      
+        if(affordableDemandingVal >= 0 && affordableDemandingVal < 20) {
+           points = points + 2;
+        } else if(affordableDemandingVal >= 20 && affordableDemandingVal < 40) {
+           points = points + 3;
+        } else if(affordableDemandingVal >=40 && affordableDemandingVal < 60) {
+           points = points + 2;        
+        } else if(affordableDemandingVal >= 60 && affordableDemandingVal < 80) {
+           points = points + 0;
+        } else if(affordableDemandingVal >= 80 && affordableDemandingVal <= 100) {
+           points = points + 1;       
+        }
+        
+     } else if(genre == "criminal") {
+        
+         if(singleMultiVal >= 0 && singleMultiVal < 20){
+         points = points + 2;
+        } else if (singleMultiVal >= 20 && singleMultiVal < 40){
+           points = points + 3;
+        } else if (singleMultiVal >=40 && singleMultiVal < 60){
+           points = points + 1;      
+        } else if(singleMultiVal >= 60 && singleMultiVal < 80) {
+           points = points + 1;
+        } else if(singleMultiVal >= 80 && singleMultiVal <= 100) {
+           points = points + 0;       
+        }
+        
+        if(fastFloweryVal >= 0 && fastFloweryVal < 20){
+           points = points + 3;
+        } else if(fastFloweryVal >= 20 && fastFloweryVal < 40) {
+           points = points + 2;
+        } else if(fastFloweryVal >=40 && fastFloweryVal < 60) {
+           points = points + 1;       
+        } else if(fastFloweryVal >= 60 && fastFloweryVal < 80) {
+           points = points + 0;
+        } else if(fastFloweryVal >= 80 && fastFloweryVal <= 100) {
+           points = points + 0;       
+        }
+      
+        if(affordableDemandingVal >= 0 && affordableDemandingVal < 20) {
+           points = points + 0;
+        } else if(affordableDemandingVal >= 20 && affordableDemandingVal < 40) {
+           points = points + 2;
+        } else if(affordableDemandingVal >=40 && affordableDemandingVal < 60) {
+           points = points + 3;        
+        } else if(affordableDemandingVal >= 60 && affordableDemandingVal < 80) {
+           points = points + 2;
+        } else if(affordableDemandingVal >= 80 && affordableDemandingVal <= 100) {
+           points = points + 0;       
+        }
+       
+      } else if (genre == "fable"){
+            
+          if(singleMultiVal >= 0 && singleMultiVal < 20){
+         points = points + 3;
+        } else if (singleMultiVal >= 20 && singleMultiVal < 40){
+           points = points + 2;
+        } else if (singleMultiVal >=40 && singleMultiVal < 60){
+           points = points + 1;      
+        } else if(singleMultiVal >= 60 && singleMultiVal < 80) {
+           points = points + 0;
+        } else if(singleMultiVal >= 80 && singleMultiVal <= 100) {
+           points = points + 0;       
+        }
+        
+        if(fastFloweryVal >= 0 && fastFloweryVal < 20){
+           points = points + 2;
+        } else if(fastFloweryVal >= 20 && fastFloweryVal < 40) {
+           points = points + 3;
+        } else if(fastFloweryVal >=40 && fastFloweryVal < 60) {
+           points = points + 2;       
+        } else if(fastFloweryVal >= 60 && fastFloweryVal < 80) {
+           points = points + 1;
+        } else if(fastFloweryVal >= 80 && fastFloweryVal <= 100) {
+           points = points + 0;       
+        }
+      
+        if(affordableDemandingVal >= 0 && affordableDemandingVal < 20) {
+           points = points + 3;
+        } else if(affordableDemandingVal >= 20 && affordableDemandingVal < 40) {
+           points = points + 2;
+        } else if(affordableDemandingVal >=40 && affordableDemandingVal < 60) {
+           points = points + 1;        
+        } else if(affordableDemandingVal >= 60 && affordableDemandingVal < 80) {
+           points = points + 0;
+        } else if(affordableDemandingVal >= 80 && affordableDemandingVal <= 100) {
+           points = points + 0;       
+        }
+        
+      } else if(genre == "fantasy") {
+        
+          if(singleMultiVal >= 0 && singleMultiVal < 20){
+         points = points + 0;
+        } else if (singleMultiVal >= 20 && singleMultiVal < 40){
+           points = points + 1;
+        } else if (singleMultiVal >=40 && singleMultiVal < 60){
+           points = points + 2;      
+        } else if(singleMultiVal >= 60 && singleMultiVal < 80) {
+           points = points + 3;
+        } else if(singleMultiVal >= 80 && singleMultiVal <= 100) {
+           points = points + 1;       
+        }
+        
+        if(fastFloweryVal >= 0 && fastFloweryVal < 20){
+           points = points + 0;
+        } else if(fastFloweryVal >= 20 && fastFloweryVal < 40) {
+           points = points + 1;
+        } else if(fastFloweryVal >=40 && fastFloweryVal < 60) {
+           points = points + 2;       
+        } else if(fastFloweryVal >= 60 && fastFloweryVal < 80) {
+           points = points + 3;
+        } else if(fastFloweryVal >= 80 && fastFloweryVal <= 100) {
+           points = points + 1;       
+        }
+      
+        if(affordableDemandingVal >= 0 && affordableDemandingVal < 20) {
+           points = points + 0;
+        } else if(affordableDemandingVal >= 20 && affordableDemandingVal < 40) {
+           points = points + 2;
+        } else if(affordableDemandingVal >=40 && affordableDemandingVal < 60) {
+           points = points + 3;        
+        } else if(affordableDemandingVal >= 60 && affordableDemandingVal < 80) {
+           points = points + 2;
+        } else if(affordableDemandingVal >= 80 && affordableDemandingVal <= 100) {
+           points = points + 0;       
+        }  
+        
+      } else if(genre == "historical") {
+        
+          if(singleMultiVal >= 0 && singleMultiVal < 20){
+         points = points + 0;
+        } else if (singleMultiVal >= 20 && singleMultiVal < 40){
+           points = points + 1;
+        } else if (singleMultiVal >=40 && singleMultiVal < 60){
+           points = points + 2;      
+        } else if(singleMultiVal >= 60 && singleMultiVal < 80) {
+           points = points + 3;
+        } else if(singleMultiVal >= 80 && singleMultiVal <= 100) {
+           points = points + 2;       
+        }
+        
+        if(fastFloweryVal >= 0 && fastFloweryVal < 20){
+           points = points + 0;
+        } else if(fastFloweryVal >= 20 && fastFloweryVal < 40) {
+           points = points + 1;
+        } else if(fastFloweryVal >=40 && fastFloweryVal < 60) {
+           points = points + 2;       
+        } else if(fastFloweryVal >= 60 && fastFloweryVal < 80) {
+           points = points + 3;
+        } else if(fastFloweryVal >= 80 && fastFloweryVal <= 100) {
+           points = points + 1;       
+        }
+      
+        if(affordableDemandingVal >= 0 && affordableDemandingVal < 20) {
+           points = points + 0;
+        } else if(affordableDemandingVal >= 20 && affordableDemandingVal < 40) {
+           points = points + 1;
+        } else if(affordableDemandingVal >=40 && affordableDemandingVal < 60) {
+           points = points + 1;        
+        } else if(affordableDemandingVal >= 60 && affordableDemandingVal < 80) {
+           points = points + 3;
+        } else if(affordableDemandingVal >= 80 && affordableDemandingVal <= 100) {
+           points = points + 1;       
+        }
+        
+      } else if(genre == "horror") {
+        
+          if(singleMultiVal >= 0 && singleMultiVal < 20){
+         points = points + 3;
+        } else if (singleMultiVal >= 20 && singleMultiVal < 40){
+           points = points + 2;
+        } else if (singleMultiVal >=40 && singleMultiVal < 60){
+           points = points + 1;      
+        } else if(singleMultiVal >= 60 && singleMultiVal < 80) {
+           points = points + 0;
+        } else if(singleMultiVal >= 80 && singleMultiVal <= 100) {
+           points = points + 0;       
+        }
+        
+        if(fastFloweryVal >= 0 && fastFloweryVal < 20){
+           points = points + 2;
+        } else if(fastFloweryVal >= 20 && fastFloweryVal < 40) {
+           points = points + 3;
+        } else if(fastFloweryVal >=40 && fastFloweryVal < 60) {
+           points = points + 2;       
+        } else if(fastFloweryVal >= 60 && fastFloweryVal < 80) {
+           points = points + 1;
+        } else if(fastFloweryVal >= 80 && fastFloweryVal <= 100) {
+           points = points + 0;       
+        }
+      
+        if(affordableDemandingVal >= 0 && affordableDemandingVal < 20) {
+           points = points + 0;
+        } else if(affordableDemandingVal >= 20 && affordableDemandingVal < 40) {
+           points = points + 3;
+        } else if(affordableDemandingVal >=40 && affordableDemandingVal < 60) {
+           points = points + 2;        
+        } else if(affordableDemandingVal >= 60 && affordableDemandingVal < 80) {
+           points = points + 1;
+        } else if(affordableDemandingVal >= 80 && affordableDemandingVal <= 100) {
+           points = points + 0;       
+        } 
+        
+      } else if(genre == "romance"){
+        
+          if(singleMultiVal >= 0 && singleMultiVal < 20){
+         points = points + 3;
+        } else if (singleMultiVal >= 20 && singleMultiVal < 40){
+           points = points + 2;
+        } else if (singleMultiVal >=40 && singleMultiVal < 60){
+           points = points + 1;      
+        } else if(singleMultiVal >= 60 && singleMultiVal < 80) {
+           points = points + 1;
+        } else if(singleMultiVal >= 80 && singleMultiVal <= 100) {
+           points = points + 0;       
+        }
+        
+        if(fastFloweryVal >= 0 && fastFloweryVal < 20){
+           points = points + 0;
+        } else if(fastFloweryVal >= 20 && fastFloweryVal < 40) {
+           points = points + 1;
+        } else if(fastFloweryVal >=40 && fastFloweryVal < 60) {
+           points = points + 2;       
+        } else if(fastFloweryVal >= 60 && fastFloweryVal < 80) {
+           points = points + 2;
+        } else if(fastFloweryVal >= 80 && fastFloweryVal <= 100) {
+           points = points + 3;       
+        }
+      
+        if(affordableDemandingVal >= 0 && affordableDemandingVal < 20) {
+           points = points + 1;
+        } else if(affordableDemandingVal >= 20 && affordableDemandingVal < 40) {
+           points = points + 2;
+        } else if(affordableDemandingVal >=40 && affordableDemandingVal < 60) {
+           points = points + 1;        
+        } else if(affordableDemandingVal >= 60 && affordableDemandingVal < 80) {
+           points = points + 3;
+        } else if(affordableDemandingVal >= 80 && affordableDemandingVal <= 100) {
+           points = points + 1;       
+        }
+        
+      } else if(genre == "scienceFiction") {
+          
+          if(singleMultiVal >= 0 && singleMultiVal < 20){
+         points = points + 0;
+        } else if (singleMultiVal >= 20 && singleMultiVal < 40){
+           points = points + 1;
+        } else if (singleMultiVal >=40 && singleMultiVal < 60){
+           points = points + 2;      
+        } else if(singleMultiVal >= 60 && singleMultiVal < 80) {
+           points = points + 3;
+        } else if(singleMultiVal >= 80 && singleMultiVal <= 100) {
+           points = points + 2;       
+        }
+        
+        if(fastFloweryVal >= 0 && fastFloweryVal < 20){
+           points = points + 0;
+        } else if(fastFloweryVal >= 20 && fastFloweryVal < 40) {
+           points = points + 1;
+        } else if(fastFloweryVal >=40 && fastFloweryVal < 60) {
+           points = points + 2;       
+        } else if(fastFloweryVal >= 60 && fastFloweryVal < 80) {
+           points = points + 3;
+        } else if(fastFloweryVal >= 80 && fastFloweryVal <= 100) {
+           points = points + 1;       
+        }
+      
+        if(affordableDemandingVal >= 0 && affordableDemandingVal < 20) {
+           points = points + 0;
+        } else if(affordableDemandingVal >= 20 && affordableDemandingVal < 40) {
+           points = points + 2;
+        } else if(affordableDemandingVal >=40 && affordableDemandingVal < 60) {
+           points = points + 3;        
+        } else if(affordableDemandingVal >= 60 && affordableDemandingVal < 80) {
+           points = points + 2;
+        } else if(affordableDemandingVal >= 80 && affordableDemandingVal <= 100) {
+           points = points + 0;       
+        }
+      }
+    
+    console.log(points);
+    
+  });  
+                
+               
                 
                 
                 
@@ -834,11 +1309,7 @@ $(".firstNextButton").on("click", function(){
                 
                 
                 
-                
-                
-                
-                
-       console.log(points);
+ console.log(points);
        
        
        
@@ -850,25 +1321,6 @@ $(".firstNextButton").on("click", function(){
   
 });
   
-  //DZIAŁ KOPIOWANIA
-  
-//  characterWorldVal >= 0 && characterWorldVal < 20
-//  characterWorldVal >= 20 && characterWorldVal < 40
-//  characterWorldVal >=40 && characterWorldVal < 60
-//  characterWorldVal >= 60 && characterWorldVal < 80
-//  characterWorldVal >= 80 && characterWorldVal <= 100
-//
-//  dialoguesStoryVal >= 0 && dialoguesStoryVal < 20
-//  dialoguesStoryVal >= 20 && dialoguesStoryVal < 40
-//  dialoguesStoryVal >=40 && dialoguesStoryVal < 60
-//  dialoguesStoryVal >= 60 && dialoguesStoryVal < 80
-//  dialoguesStoryVal >= 80 && dialoguesStoryVal <= 100   
-//  
-//  humorTensionVal >= 0 && humorTensionVal < 20
-//  humorTensionVal >= 20 && humorTensionVal < 40
-//  humorTensionVal >=40 && humorTensionVal < 60
-//  humorTensionVal >= 60 && humorTensionVal < 80
-//  humorTensionVal >= 80 && humorTensionVal <= 100
   
   
   

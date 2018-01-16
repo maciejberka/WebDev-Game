@@ -313,6 +313,17 @@ button:focus {
   margin-bottom: 2%;
 }
 
+
+.textEditorContent3 {
+  display: none;
+  flex-direction: column;
+  height: 90%;
+  width: 98%;
+  margin: auto;
+}
+
+
+
 .mailContent {
   width: 20%;
   height: 20%;
@@ -374,7 +385,7 @@ button:focus {
 }
 
 
-/*coś nie tak ze statsami*/
+
 
 
 
