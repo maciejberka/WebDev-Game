@@ -251,11 +251,10 @@ button:focus {
   font-family: 'Ubuntu', arial, sans-serif;
   margin-left: auto;
   margin-right: 5%;
+  cursor: pointer;
 }
 
-.textEditorContentVisible {
-  display: flex;
-}
+
 
 .textEditorContent2 {
   display: none;
@@ -320,6 +319,22 @@ button:focus {
   height: 90%;
   width: 98%;
   margin: auto;
+}
+
+.textEditorContent3 h2 {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.thirdNextButton {
+  margin-top: auto;
+  margin-bottom: 2%;
+}
+
+
+.textEditorContentVisible {
+  display: flex;
 }
 
 
