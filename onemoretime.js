@@ -80,6 +80,18 @@ function changeDate() {
 $(".pause").on("click", function () {
   //Toggle class ".gamePaused" at ".pause" button
   $(".pause").toggleClass("gamePaused");
+  //Pause/unpause progress bar animation
+  if($(".pause").hasClass("gamePaused")){
+    $(".animationClass").css("animation-play-state", "paused");
+  } else {
+    $(".animationClass").css("animation-play-state", "running");
+  }
+  
+  if($(".pause").hasClass("gamePaused")){
+    $(".fourthNextButton").attr("disabled", true);
+  } else {
+    $(".fourthNextButton").attr("disabled", false);
+  }
 });
 //Day interval  
 setInterval(changeDate, 10000);
@@ -133,7 +145,8 @@ $(".close").on("click", function () {
   $(".textEditorContent").removeClass("textEditorContentVisible");
   $(".textEditorContent2").removeClass("textEditorContentVisible");
   $(".textEditorContent3").removeClass("textEditorContentVisible");
-
+  $(".textEditorContent4").removeClass("textEditorContentVisible");
+  $(".textEditorContent5").removeClass("textEditorContentVisible");
 
   $(".mailContent").removeClass("mailContentVisible");
   $(".bankContent").removeClass("bankContentVisible");
@@ -147,13 +160,15 @@ $(".close").on("click", function () {
 //After click at .textEditor menuOption make content of text editor visible  
 $(".textEditor").on("click", function () {
   $(".textEditorContent").addClass("textEditorContentVisible");
-
+  //reset variables corelated with books
+  points = 0;
   
 
 
   //and remove all the content except fisrt stage of text editor
   $(".textEditorContent2").removeClass("textEditorContentVisible");
   $(".textEditorContent3").removeClass("textEditorContentVisible");
+  $(".textEditorContent4").removeClass("textEditorContentVisible");
   $(".mailContent").removeClass("mailContentVisible");
   $(".bankContent").removeClass("bankContentVisible");
   $(".shopContent").removeClass("shopContentVisible");
@@ -268,7 +283,7 @@ $(".author").on("click", function () {
 
 
 
-
+//FUNCTION FOR FIRST STAGE OF BOOK WRITING
 $(".firstNextButton").on("click", function () {
 
   
@@ -387,6 +402,7 @@ $(".firstNextButton").on("click", function () {
 
 
 
+//FUNCTION FOR SECOND STAGE OF BOOK WRITING
 $(".secondNextButton").on("click", function () {
   var characterWorldVal = $(".characterWorld").val();
   var dialoguesStoryVal = $(".dialoguesStory").val();
@@ -856,9 +872,7 @@ $(".secondNextButton").on("click", function () {
 
 
 
-
-
-
+//FUNCTION FOR THIRD STAGE OF BOOK WRITING
 $(".thirdNextButton").on("click", function () {
 
   var singleMultiVal = $(".singleMulti").val();
@@ -1322,9 +1336,66 @@ $(".thirdNextButton").on("click", function () {
     }
   }
 
+  //After counting points remove acctual window and show the next one
+  $(".textEditorContent3").removeClass("textEditorContentVisible");
+  $(".textEditorContent4").addClass("textEditorContentVisible");
+  
+  //dodać kod, który zrobi następny button (fourth) nieaktywnym, jeśli pauza jest włączona
+  
 }); //The end of thirdNextButton function
 
 
-$(".socket").on("click", function () {
-  console.log(points);
+//FUNCTION FOR FOURTH STAGE OF BOOK WRITING (START WRITING)
+$(".fourthNextButton").on("click", function(){
+  
+  //kod zliczający dodatkowe profity za special features
+  
+  
+  //Hide previous window and show the next one
+  $(".textEditorContent4").removeClass("textEditorContentVisible");
+  $(".textEditorContent5").addClass("textEditorContentVisible");
+  
+  //kod imitujący pisanie się książki
+  $(".progress").addClass("animationClass"); 
+  
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//$(".socket").on("click", function () {
+//  console.log(points);
+//});
