@@ -93,6 +93,8 @@ $(".pause").on("click", function () {
     $(".fourthNextButton").attr("disabled", false);
   }
 });
+
+
 //Day interval  
 setInterval(changeDate, 10000);
 
@@ -147,6 +149,8 @@ $(".close").on("click", function () {
   $(".textEditorContent3").removeClass("textEditorContentVisible");
   $(".textEditorContent4").removeClass("textEditorContentVisible");
   $(".textEditorContent5").removeClass("textEditorContentVisible");
+  $(".bar").css("background-color", "gray");
+  $(".sendBook").attr("disabled", "true");
 
   $(".mailContent").removeClass("mailContentVisible");
   $(".bankContent").removeClass("bankContentVisible");
@@ -169,6 +173,10 @@ $(".textEditor").on("click", function () {
   $(".textEditorContent2").removeClass("textEditorContentVisible");
   $(".textEditorContent3").removeClass("textEditorContentVisible");
   $(".textEditorContent4").removeClass("textEditorContentVisible");
+  $(".textEditorContent5").removeClass("textEditorContentVisible");
+  $(".bar").css("background-color", "gray");
+  $(".sendBook").attr("disabled", "true");
+  
   $(".mailContent").removeClass("mailContentVisible");
   $(".bankContent").removeClass("bankContentVisible");
   $(".shopContent").removeClass("shopContentVisible");
@@ -1345,22 +1353,35 @@ $(".thirdNextButton").on("click", function () {
 }); //The end of thirdNextButton function
 
 
+
 //FUNCTION FOR FOURTH STAGE OF BOOK WRITING (START WRITING)
 $(".fourthNextButton").on("click", function(){
   
   //kod zliczający dodatkowe profity za special features
   
-  
   //Hide previous window and show the next one
   $(".textEditorContent4").removeClass("textEditorContentVisible");
   $(".textEditorContent5").addClass("textEditorContentVisible");
   
-  //kod imitujący pisanie się książki
+  //Add animation to progress bar
   $(".progress").addClass("animationClass"); 
-  
+  //When the animation is over 
+  $(".progress").one("animationend", function(){
+    //Change color of .bar 
+    $(".bar").css("background-color", "lightgreen");
+    //Unlock the .sendBook button
+    $(".sendBook").removeAttr("disabled");
+  });
+  //dodać usuwanie zielonego koloru po zamknięciu window, po kliknięciu w text editor i w przycisk wyślij do wydawcy
 });
 
 
+$(".sendBook").on("click", function(){
+  
+  $(".bar").css("background-color", "gray");
+  $(".sendBook").attr("disabled", "true");
+  
+});
 
 
 
