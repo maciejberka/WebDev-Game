@@ -139,7 +139,7 @@ $(".menuOption").on("click", function () {
 });
 
 //After click at .close button close .window  
-$(".close").on("click", function () {
+$(".close").on("click", function closing() {
   $(".window").removeClass("windowOpen");
   //and remove all content from window
   points = 0;
@@ -1372,17 +1372,36 @@ $(".fourthNextButton").on("click", function(){
     //Unlock the .sendBook button
     $(".sendBook").removeAttr("disabled");
   });
-  //dodać usuwanie zielonego koloru po zamknięciu window, po kliknięciu w text editor i w przycisk wyślij do wydawcy
-});
+}); //The end of fourthNextButton function
 
 
+
+//FUNCTION FOR ENDING OF WRITING AND SENDING MAIL FROM PUBLISHER
 $(".sendBook").on("click", function(){
-  
+  //Reset final window
   $(".bar").css("background-color", "gray");
   $(".sendBook").attr("disabled", "true");
   
+  //Close everything
+  $(".textEditorContent").removeClass("textEditorContentVisible");
+  $(".textEditorContent2").removeClass("textEditorContentVisible");
+  $(".textEditorContent3").removeClass("textEditorContentVisible");
+  $(".textEditorContent4").removeClass("textEditorContentVisible");
+  $(".textEditorContent5").removeClass("textEditorContentVisible");
+  $(".window").removeClass("windowOpen");
+  
+  //Add new messageBar in mail inbox
+  $(".mailContent").prepend("<div class='messageBar messageFromPublisher'></div>");
+  //Add content to added messageBar
+  $(".messageBar:first-of-type").html("<span class='sender'>Publishing House</span><span class='topic'>a manuscript was received</span><span class='dayOfReceived'>"+day+".</span><span class='monthOfReceived'>"+month+".</span><span class='yearOfReceived'>"+year+"</span>")
+  
+  //Show message from publisher and hide all of messageBar after click on messageBar from publisher 
+  $(".messageFromPublisher").on("click", function(){
+    $(".messageBar").addClass("invisible");
+    $(".letter").addClass("show");
+  });
+  
 });
-
 
 
 

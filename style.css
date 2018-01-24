@@ -417,12 +417,74 @@ button:focus {
 
 
 .mailContent {
-  width: 20%;
-  height: 20%;
+  width: 98%;
+  height: 90%;
   margin: auto;
-  background-color: red;
+  background-color: #4c4c4c;
+  flex-direction: column;
+  
+  display: none;
+  overflow-y: auto;
+  
+}
+
+.messageBar {
+  min-width: 100%;
+  min-height: 15%;
+  background-color: gray;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  margin-bottom: 0.5%;
+  
+}
+
+.messageBar span {
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin-bottom: auto;
+  margin-top: auto;
+  font-weight: bold;
+}
+
+.messageBar .sender {
+  margin-left: 2%;
+  margin-right: 15%;
+  
+}
+
+.messageBar .topic {
+  margin-right: auto;
+}
+
+.messageBar .yearOfReceived {
+  margin-right: 2%;
+}
+
+
+.letter {
+  width: 98%;
+  height: 90%;
+  margin: auto;
+  background-color: #4c4c4c;
+  flex-direction: column;
+  color: #ffffff;
+  overflow-y: auto;
   display: none;
 }
+
+.letter h2 {
+  text-align: center;
+  margin-bottom: 5%;
+  font-size: 1.8rem;
+}
+
+.letter p {
+  text-align: left;
+  font-size: 1.3rem;
+}
+
+
 
 .mailContentVisible {
   display: flex;
@@ -603,10 +665,18 @@ button:focus {
   color: red;
 }
 
+/*Don't delete this class*/
 .visible {
   visibility: visible;
 }
 
+.show {
+  display: flex;
+}
+
+.invisible {
+  display: none;
+}
 
 
 
