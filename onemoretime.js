@@ -1445,6 +1445,11 @@ $(".sendBook").on("click", function(){
     $(".receivedBook").addClass("show");
   });
   
+  //If player read some mail in mean-time don't show the new message bar
+  if( $(".letter").hasClass("show") ){
+  $(".messageBar").addClass("invisible");
+  }
+  
   //Function do send mail with decision of Publishing House
   function decision(){
     //get random number 0-100
