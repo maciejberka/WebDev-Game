@@ -6,6 +6,7 @@ var day = 0,
   
   points = 0,
   genre,
+  title,
     
   accountBalance = 25000;
 
@@ -296,7 +297,7 @@ $(".firstNextButton").on("click", function () {
 
   
   //Save book title in var
-  var title = $(".bookTitle").val();
+  title = $(".bookTitle").val();
 
 
 
@@ -1376,6 +1377,49 @@ $(".fourthNextButton").on("click", function(){
 
 
 
+function negativeDecision(){
+  console.log("Przykro nam, nie wydamy Twojej książki.");
+  //Add new messageBar in mail inbox
+  $(".mailContent").prepend("<div class='messageBar decisionMessage'></div>");
+  //Add content to added messageBar
+  $(".decisionMessage:first-of-type").html("<span class='sender'>Publishing House</span><span class='topic'>Our decision</span><span class='dayOfReceived'>"+day+".</span><span class='monthOfReceived'>"+month+".</span><span class='yearOfReceived'>"+year+"</span>")
+  
+  //Show message from publisher and hide all of messageBar after click on messageBar from publisher 
+  $(".decisionMessage").on("click", function(){
+    $(".messageBar").addClass("invisible");
+    $(".negativeDecision").addClass("show");
+  });
+  
+  //If player read some mail in mean-time don't show the new message bar
+  if( $(".letter").hasClass("show") ){
+  $(".messageBar").addClass("invisible");
+  }
+}
+
+
+
+function positiveDecision(){
+  console.log("Uprzejmie informujemy, że z przyjemnością wydamy Twoją książkę!");
+  
+  //Add new messageBar in mail inbox
+  $(".mailContent").prepend("<div class='messageBar decisionMessage'></div>");
+  //Add content to added messageBar
+  $(".decisionMessage:first-of-type").html("<span class='sender'>Publishing House</span><span class='topic'>Our decision</span><span class='dayOfReceived'>"+day+".</span><span class='monthOfReceived'>"+month+".</span><span class='yearOfReceived'>"+year+"</span>")
+  
+  //Show message from publisher and hide all of messageBar after click on messageBar from publisher 
+  $(".decisionMessage").on("click", function(){
+    $(".messageBar").addClass("invisible");
+    $(".positiveDecision").addClass("show");
+  });
+  
+  //If player read some mail in mean-time don't show the new message bar
+  if( $(".letter").hasClass("show") ){
+  $(".messageBar").addClass("invisible");
+  }
+}
+
+
+
 //FUNCTION FOR ENDING OF WRITING AND SENDING MAIL FROM PUBLISHER
 $(".sendBook").on("click", function(){
   //Reset final window
@@ -1391,18 +1435,88 @@ $(".sendBook").on("click", function(){
   $(".window").removeClass("windowOpen");
   
   //Add new messageBar in mail inbox
-  $(".mailContent").prepend("<div class='messageBar messageFromPublisher'></div>");
+  $(".mailContent").prepend("<div class='messageBar receivedMessage'></div>");
   //Add content to added messageBar
-  $(".messageBar:first-of-type").html("<span class='sender'>Publishing House</span><span class='topic'>a manuscript was received</span><span class='dayOfReceived'>"+day+".</span><span class='monthOfReceived'>"+month+".</span><span class='yearOfReceived'>"+year+"</span>")
+  $(".receivedMessage:first-of-type").html("<span class='sender'>Publishing House</span><span class='topic'>a manuscript was received</span><span class='dayOfReceived'>"+day+".</span><span class='monthOfReceived'>"+month+".</span><span class='yearOfReceived'>"+year+"</span>")
   
   //Show message from publisher and hide all of messageBar after click on messageBar from publisher 
-  $(".messageFromPublisher").on("click", function(){
+  $(".receivedMessage").on("click", function(){
     $(".messageBar").addClass("invisible");
-    $(".letter").addClass("show");
+    $(".receivedBook").addClass("show");
   });
   
-});
+  //Function do send mail with decision of Publishing House
+  function decision(){
+    //get random number 0-100
+    var randomNumber = Math.random() * 100;
+    randomNumber = Math.round(randomNumber);
+    
+    //if book is gniot
+    if(points <= 4){
+      if(randomNumber <= 15){
+        //wydaj
+        positiveDecision();
+      } else {
+          //nie wydawaj
+          negativeDecision();
+      }
+    } else if(points > 4 && points <= 8) {
+        if(randomNumber <= 35) {
+          //wydaj
+          positiveDecision();
+        } else {
+            //nie wydawaj
+            negativeDecision();
+        }
+    } else if(points > 8 && points <= 12) {
+        if(randomNumber <= 50) {
+          //wydaj
+          positiveDecision();
+      } else {
+          //nie wydawaj
+          negativeDecision();
+      }
+    } else if(points > 12 && points <= 16) {
+        if(randomNumber <= 75) {
+          //wydaj
+          positiveDecision();
+        } else {
+            //nie wydawaj
+            negativeDecision();
+        }
+    } else if(points > 16 && points <= 18) {
+        if(randomNumber <= 85){
+          //wydaj
+          positiveDecision();
+        } else {
+            //nie wydawaj
+            negativeDecision();
+        }
+    } else if(points > 18 && points <= 20) {
+        if(randomNumber <= 90){
+          //wydaj
+          positiveDecision();
+        } else {
+            //nie wydawaj
+            negativeDecision();
+        }
+    }
+  } //the end of decision function
+  
+setTimeout(decision, 10000);
+  
+});  
+  
 
+//Back button
+$(".backToInbox").on("click", function(){
+  
+  $(".letter").removeClass("show");
+  $(".messageBar").removeClass("invisible");
+  //Show all of the message bars.
+  $(".messageBar").removeClass("invisible");
+   
+});
 
 
 

@@ -485,6 +485,20 @@ button:focus {
 }
 
 
+.backToInbox {
+  width: 15%;
+  border: none;
+  height: 10%;
+  background-color: lightgreen;
+  font-family: 'Ubuntu', arial, sans-serif;
+  cursor: pointer;
+}
+
+.backToInbox .fa {
+  margin-right: 2%;
+}
+
+
 
 .mailContentVisible {
   display: flex;
