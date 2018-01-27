@@ -484,6 +484,10 @@ button:focus {
   font-size: 1.3rem;
 }
 
+.sign {
+  margin-top: auto;
+  margin-bottom: 2%;
+}
 
 .backToInbox {
   width: 15%;

@@ -1,4 +1,4 @@
-var day = 0,
+var day = 0, 
   month = 1,
   year = 2018,
   zero = "0",
@@ -1508,19 +1508,16 @@ $(".sendBook").on("click", function(){
     }
   } //the end of decision function
   
-setTimeout(decision, 10000);
-  
+  setTimeout(decision, 10000);
 });  
   
 
 //Back button
 $(".backToInbox").on("click", function(){
-  
   $(".letter").removeClass("show");
   $(".messageBar").removeClass("invisible");
   //Show all of the message bars.
   $(".messageBar").removeClass("invisible");
-   
 });
 
 
@@ -1554,7 +1551,43 @@ $(".backToInbox").on("click", function(){
 
 
 
+//PONIŻSZY SYSTEM ZAPISU DZIAŁA. PAMIĘTAĆ O KONWERSJI ZE STRINGA NA NUMBER, BO LOCAL STORAGE WSZYSTKO CO PRZECHOWUJE ZAMIENIA NA STRING
 
+//save
 //$(".socket").on("click", function () {
-//  console.log(points);
+  
+  //localStorage.setItem("savedTitle", $(".bookTitle").val());
+  
 //});
+
+
+//wczytaj
+//$(".handle").on("click", function(){
+  
+  //var test = localStorage.getItem("savedTitle"); 
+  //$(".bookTitle").val(test);
+
+//});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
