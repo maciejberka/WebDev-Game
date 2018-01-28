@@ -7,10 +7,30 @@ var day = 0,
   points = 0,
   genre,
   title,
+   
+  accountBalance = 25000,
+  monthlyCosts = 2000,  
+
+  fans = 0,
+
+  popular,
+  previousGenre,  
     
-  accountBalance = 25000;
-
-
+  levelOfFame = 1,
+    
+  levelOfAdventure = 1,  
+  levelOfBasedOnTheGame = 1,
+  levelOfBiography = 1,  
+  levelOfComedy = 1,  
+  levelOfComicBook = 1,  
+  levelOfCriminal = 1,  
+  levelOfFable = 1,  
+  levelOfFantasy = 1,
+  levelOfHistorical = 1,
+  levelOfHorror = 1, 
+  levelOfRomance = 1,  
+  levelOfScienceFiction = 1;  
+    
 function changeDate() {
   //if game isn't paused
   if (!$(".pause").hasClass("gamePaused")) {
@@ -38,6 +58,8 @@ function changeDate() {
       //Increment month but don't display yet
       month++;
       console.log("pay bills");
+      
+      payBills()
     }
 
 
@@ -97,7 +119,7 @@ $(".pause").on("click", function () {
 
 
 //Day interval  
-setInterval(changeDate, 10000);
+setInterval(changeDate, 1000);
 
 
 
@@ -1523,6 +1545,119 @@ $(".backToInbox").on("click", function(){
 
 
 
+
+//FUNCTION TO MAKE RANDOM GENRE POPULAR
+function popularGenre(){
+  var genresList = ["adventure", "basedOnTheGame", "biography", "comedy", "comicBook", "criminal", "fable", "fantasy", "historical", "horror", "romance", "scienceFiction"]
+  
+  var randomIndexOfGenresList = Math.random() * 11;
+  randomIndexOfGenresList = Math.round(randomIndexOfGenresList);
+  
+  popular = genresList[randomIndexOfGenresList];
+  
+  $(".whatIsPopular").empty();
+  $(".whatIsPopular").append(popular);
+}
+
+//TUTAJ ustawić po przecinku dayInterval x 30
+//setInterval(popularGenre, )
+
+
+
+
+//FUNCTION TO PAY MONTHLY COSTS
+function payBills() {
+  //I think it's not necessary
+  $(".plusOrMinus").empty();
+  $(".operations").empty();
+  
+  //Add minus and monthly cost (in number)
+  $(".plusOrMinus").append("-$");
+  $(".operations").append(monthlyCosts);
+  
+  //This is cost, so display it red
+  $(".plusOrMinus, .operations").css("color", "red");
+  
+  //Wait three seconds
+  setTimeout(function(){
+    //And remove red number
+    $(".plusOrMinus").empty();
+    $(".operations").empty();
+    
+    //Substract monthly costs from account
+    accountBalance = accountBalance - monthlyCosts;
+    //And display new account balance
+    $(".accountBalance").empty();
+    $(".accountBalance").append(accountBalance);
+  }, 3000) 
+}
+
+
+//FUNCTION TO RATE BOOK-SELLING-INDEX (PUBLISHING WITH PUBLISHER) 
+function bookSellingIndex(){
+  
+  var bsIndex = 0;
+  
+  //jak dobra jest książka?
+  //czy gatunek jest aktualnie popularny?
+  //liczba fanów
+  //poziom umiejętności w danym gatunku literackim
+  //czy użyto special skills?
+  
+  //odejmij 25% jeśli to ten sam gatunek drugi raz z rzędu
+  
+  //adventure
+  if(genre == "adventure"){
+    bsIndex = bsIndex + (points * 1000 * levelOfFame);
+    //If adventure is popular now
+    if(popular == "adventure"){
+      bsIndex = bsIndex + bsIndex * 0.1;
+    }
+    //Add fans
+    bsIndex = bsIndex + fans;
+    
+    //Tutaj kod, który dodaje pkt za special skills
+    
+    //Add profits for level of specialization in genre
+    if(levelOfAdventure == 2){
+      bsIndex = bsIndex + bsIndex * 0.05;
+    } else if (levelOfAdventure == 3){
+        bsIndex = bsIndex + bsIndex * 0.1;
+    } else if (levelOfAdventure == 4){
+        bsIndex = bsIndex + bsIndex * 0.15;
+    } else if (levelOfAdventure == 5){
+        bsIndex = bsIndex + bsIndex * 0.2;
+    } else if (levelOfAdventure == 6){
+        bsIndex = bsIndex + bsIndex * 0.25
+    } else if (levelOfAdventure == 7){
+        bsIndex = bsIndex + bsIndex * 0.3
+    } else if (levelOfAdventure == 8){
+        bsIndex = bsIndex + bsIndex * 0.35
+    } else if (levelOfAdventure == 9) {
+        bsIndex = bsIndex + bsIndex * 0.4
+    } else if (levelOfAdventure == 10) {
+        bsIndex = bsIndex + bsIndex * 0.5
+    }
+    
+    if(genre == previousGenre){
+      bsIndex = bsIndex - bsIndex * 0.5;
+    }
+    
+    previousGenre == "adventure";
+    console.log(bsIndex);
+  } //end of adventure
+  
+  
+  
+}//the end of bookSellingIndex function
+
+
+//FUNCTION TO START SELLING BOOK WITH PUBLISHER
+$(".sign").on("click", function(){
+  
+  bookSellingIndex();
+  
+});
 
 
 

@@ -585,15 +585,51 @@ button:focus {
   margin: 2% 2%;
   background-image: url(img/whiteboard.jpg);
   background-size: cover;
-  border: 6px solid #caccce;
+  border: 6px solid #000000;
+  font-family: 'Permanent Marker', cursive;
+  display: flex;
+  flex-direction: column;
+  
+ -webkit-box-shadow: 4px -2px 24px 0px rgba(15,14,15,1);
+-moz-box-shadow: 4px -2px 24px 0px rgba(15,14,15,1);
+box-shadow: 4px -2px 24px 0px rgba(15,14,15,1);
 }
 
 .board p {
-  font-family: 'Permanent Marker', cursive;
   padding: 5px;
   font-size: 2rem;
   text-align: center;
 }
+
+.board span {
+  font-size: 1.6rem;
+}
+
+.board .spanContainer {
+  text-align: center;
+}
+
+.board .justName {
+  margin-left: 2%;
+}
+
+.board .plusOrMinus {
+  margin-left: 2%;
+}
+
+.board .accountBalance {
+  color: green;
+}
+
+
+
+
+.board .whatIsPopular {
+  margin-left: 2%;
+}
+
+
+
 
 .menu {
   background-color: #99938f;
