@@ -1561,7 +1561,7 @@ function popularGenre(){
 
 //TUTAJ ustawić po przecinku dayInterval x 30
 //setInterval(popularGenre, )
-
+$(".socket").on("click", popularGenre);
 
 
 
@@ -1604,7 +1604,7 @@ function bookSellingIndex(){
   //poziom umiejętności w danym gatunku literackim
   //czy użyto special skills?
   
-  //odejmij 25% jeśli to ten sam gatunek drugi raz z rzędu
+  //odejmij 50% jeśli to ten sam gatunek drugi raz z rzędu
   
   //adventure
   if(genre == "adventure"){
@@ -1645,9 +1645,461 @@ function bookSellingIndex(){
     
     previousGenre == "adventure";
     console.log(bsIndex);
-  } //end of adventure
+    //end of adventure
+    
+    //basedOnTheGame
+  } else if (genre == "basedOnTheGame"){
+
+      bsIndex = bsIndex + (points * 1000 * levelOfFame);
+      //If adventure is popular now
+      if(popular == "basedOnTheGame"){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      }
+      //Add fans
+      bsIndex = bsIndex + fans;
+    
+      //Tutaj kod, który dodaje pkt za special skills
+    
+      //Add profits for level of specialization in genre
+      if(levelOfBasedOnTheGamelevelOfBiography == 2){
+        bsIndex = bsIndex + bsIndex * 0.05;
+      } else if (levelOfBasedOnTheGame == 3){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      } else if (levelOfBasedOnTheGame == 4){
+        bsIndex = bsIndex + bsIndex * 0.15;
+      } else if (levelOfBasedOnTheGame == 5){
+        bsIndex = bsIndex + bsIndex * 0.2;
+      } else if (levelOfBasedOnTheGame == 6){
+        bsIndex = bsIndex + bsIndex * 0.25
+      } else if (levelOfBasedOnTheGame == 7){
+        bsIndex = bsIndex + bsIndex * 0.3
+      } else if (levelOfBasedOnTheGame == 8){
+        bsIndex = bsIndex + bsIndex * 0.35
+      } else if (levelOfBasedOnTheGame == 9) {
+        bsIndex = bsIndex + bsIndex * 0.4
+      } else if (levelOfBasedOnTheGame == 10) {
+        bsIndex = bsIndex + bsIndex * 0.5
+      }
+    
+      if(genre == previousGenre){
+        bsIndex = bsIndex - bsIndex * 0.5;
+      }
+    
+      previousGenre == "basedOnTheGame";
+      console.log(bsIndex);           
+  } //end of basedOnTheGame
   
   
+  else if (genre == "biography"){
+
+      bsIndex = bsIndex + (points * 1000 * levelOfFame);
+      //If adventure is popular now
+      if(popular == "biography"){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      }
+      //Add fans
+      bsIndex = bsIndex + fans;
+    
+      //Tutaj kod, który dodaje pkt za special skills
+    
+      //Add profits for level of specialization in genre
+      if(levelOfBiography == 2){
+        bsIndex = bsIndex + bsIndex * 0.05;
+      } else if (levelOfBiography == 3){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      } else if (levelOfBiography == 4){
+        bsIndex = bsIndex + bsIndex * 0.15;
+      } else if (levelOfBiography == 5){
+        bsIndex = bsIndex + bsIndex * 0.2;
+      } else if (levelOfBiography == 6){
+        bsIndex = bsIndex + bsIndex * 0.25
+      } else if (levelOfBiography == 7){
+        bsIndex = bsIndex + bsIndex * 0.3
+      } else if (levelOfBiography == 8){
+        bsIndex = bsIndex + bsIndex * 0.35
+      } else if (levelOfBiography == 9) {
+        bsIndex = bsIndex + bsIndex * 0.4
+      } else if (levelOfBiography == 10) {
+        bsIndex = bsIndex + bsIndex * 0.5
+      }
+    
+      if(genre == previousGenre){
+        bsIndex = bsIndex - bsIndex * 0.5;
+      }
+    
+      previousGenre == "biography";
+      console.log(bsIndex);           
+  } //end of biography
+  
+  
+  else if (genre == "comedy"){
+
+      bsIndex = bsIndex + (points * 1000 * levelOfFame);
+      //If comedy is popular now
+      if(popular == "comedy"){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      }
+      //Add fans
+      bsIndex = bsIndex + fans;
+    
+      //Tutaj kod, który dodaje pkt za special skills
+    
+      //Add profits for level of specialization in genre
+      if(levelOfComedy == 2){
+        bsIndex = bsIndex + bsIndex * 0.05;
+      } else if (levelOfComedy == 3){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      } else if (levelOfComedy == 4){
+        bsIndex = bsIndex + bsIndex * 0.15;
+      } else if (levelOfComedy == 5){
+        bsIndex = bsIndex + bsIndex * 0.2;
+      } else if (levelOfComedy == 6){
+        bsIndex = bsIndex + bsIndex * 0.25
+      } else if (levelOfComedy == 7){
+        bsIndex = bsIndex + bsIndex * 0.3
+      } else if (levelOfComedy == 8){
+        bsIndex = bsIndex + bsIndex * 0.35
+      } else if (levelOfComedy == 9) {
+        bsIndex = bsIndex + bsIndex * 0.4
+      } else if (levelOfComedy == 10) {
+        bsIndex = bsIndex + bsIndex * 0.5
+      }
+    
+      if(genre == previousGenre){
+        bsIndex = bsIndex - bsIndex * 0.5;
+      }
+    
+      previousGenre == "comedy";
+      console.log(bsIndex);           
+  } //end of comedy
+  
+  else if (genre == "comicBook"){
+
+      bsIndex = bsIndex + (points * 1000 * levelOfFame);
+      //If comedy is popular now
+      if(popular == "comicBook"){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      }
+      //Add fans
+      bsIndex = bsIndex + fans;
+    
+      //Tutaj kod, który dodaje pkt za special skills
+    
+      //Add profits for level of specialization in genre
+      if(levelOfComicBook == 2){
+        bsIndex = bsIndex + bsIndex * 0.05;
+      } else if (levelOfComicBook == 3){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      } else if (levelOfComicBook == 4){
+        bsIndex = bsIndex + bsIndex * 0.15;
+      } else if (levelOfComicBook == 5){
+        bsIndex = bsIndex + bsIndex * 0.2;
+      } else if (levelOfComicBook == 6){
+        bsIndex = bsIndex + bsIndex * 0.25
+      } else if (levelOfComicBook == 7){
+        bsIndex = bsIndex + bsIndex * 0.3
+      } else if (levelOfComicBook == 8){
+        bsIndex = bsIndex + bsIndex * 0.35
+      } else if (levelOfComicBook == 9) {
+        bsIndex = bsIndex + bsIndex * 0.4
+      } else if (levelOfComicBook == 10) {
+        bsIndex = bsIndex + bsIndex * 0.5
+      }
+    
+      if(genre == previousGenre){
+        bsIndex = bsIndex - bsIndex * 0.5;
+      }
+    
+      previousGenre == "comicBook";
+      console.log(bsIndex);           
+  } //end of comicBook
+  
+  else if (genre == "criminal"){
+
+      bsIndex = bsIndex + (points * 1000 * levelOfFame);
+      //If criminal is popular now
+      if(popular == "criminal"){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      }
+      //Add fans
+      bsIndex = bsIndex + fans;
+    
+      //Tutaj kod, który dodaje pkt za special skills
+    
+      //Add profits for level of specialization in genre
+      if(levelOfCriminal == 2){
+        bsIndex = bsIndex + bsIndex * 0.05;
+      } else if (levelOfCriminal == 3){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      } else if (levelOfCriminal == 4){
+        bsIndex = bsIndex + bsIndex * 0.15;
+      } else if (levelOfCriminal == 5){
+        bsIndex = bsIndex + bsIndex * 0.2;
+      } else if (levelOfCriminal == 6){
+        bsIndex = bsIndex + bsIndex * 0.25
+      } else if (levelOfCriminal == 7){
+        bsIndex = bsIndex + bsIndex * 0.3
+      } else if (levelOfCriminal == 8){
+        bsIndex = bsIndex + bsIndex * 0.35
+      } else if (levelOfCriminal == 9) {
+        bsIndex = bsIndex + bsIndex * 0.4
+      } else if (levelOfCriminal == 10) {
+        bsIndex = bsIndex + bsIndex * 0.5
+      }
+    
+      if(genre == previousGenre){
+        bsIndex = bsIndex - bsIndex * 0.5;
+      }
+    
+      previousGenre == "criminal";
+      console.log(bsIndex);           
+  } //end of criminal
+  
+  else if (genre == "fable"){
+
+      bsIndex = bsIndex + (points * 1000 * levelOfFame);
+      //If fable is popular now
+      if(popular == "fable"){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      }
+      //Add fans
+      bsIndex = bsIndex + fans;
+    
+      //Tutaj kod, który dodaje pkt za special skills
+    
+      //Add profits for level of specialization in genre
+      if(levelOfFable == 2){
+        bsIndex = bsIndex + bsIndex * 0.05;
+      } else if (levelOfFable == 3){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      } else if (levelOfFable == 4){
+        bsIndex = bsIndex + bsIndex * 0.15;
+      } else if (levelOfFable == 5){
+        bsIndex = bsIndex + bsIndex * 0.2;
+      } else if (levelOfFable == 6){
+        bsIndex = bsIndex + bsIndex * 0.25
+      } else if (levelOfFable == 7){
+        bsIndex = bsIndex + bsIndex * 0.3
+      } else if (levelOfFable == 8){
+        bsIndex = bsIndex + bsIndex * 0.35
+      } else if (levelOfFable == 9) {
+        bsIndex = bsIndex + bsIndex * 0.4
+      } else if (levelOfFable == 10) {
+        bsIndex = bsIndex + bsIndex * 0.5
+      }
+    
+      if(genre == previousGenre){
+        bsIndex = bsIndex - bsIndex * 0.5;
+      }
+    
+      previousGenre == "fable";
+      console.log(bsIndex);           
+  } //end of fable
+  
+  else if (genre == "fantasy"){
+
+      bsIndex = bsIndex + (points * 1000 * levelOfFame);
+      //If fantasy is popular now
+      if(popular == "fantasy"){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      }
+      //Add fans
+      bsIndex = bsIndex + fans;
+    
+      //Tutaj kod, który dodaje pkt za special skills
+    
+      //Add profits for level of specialization in genre
+      if(levelOfFantasy == 2){
+        bsIndex = bsIndex + bsIndex * 0.05;
+      } else if (levelOfFantasy == 3){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      } else if (levelOfFantasy == 4){
+        bsIndex = bsIndex + bsIndex * 0.15;
+      } else if (levelOfFantasy == 5){
+        bsIndex = bsIndex + bsIndex * 0.2;
+      } else if (levelOfFantasy == 6){
+        bsIndex = bsIndex + bsIndex * 0.25
+      } else if (levelOfFantasy == 7){
+        bsIndex = bsIndex + bsIndex * 0.3
+      } else if (levelOfFantasy == 8){
+        bsIndex = bsIndex + bsIndex * 0.35
+      } else if (levelOfFantasy == 9) {
+        bsIndex = bsIndex + bsIndex * 0.4
+      } else if (levelOfFantasy == 10) {
+        bsIndex = bsIndex + bsIndex * 0.5
+      }
+    
+      if(genre == previousGenre){
+        bsIndex = bsIndex - bsIndex * 0.5;
+      }
+    
+      previousGenre == "fantasy";
+      console.log(bsIndex);           
+  } //end of fantasy
+  
+  else if (genre == "historical"){
+
+      bsIndex = bsIndex + (points * 1000 * levelOfFame);
+      //If historical is popular now
+      if(popular == "historical"){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      }
+      //Add fans
+      bsIndex = bsIndex + fans;
+    
+      //Tutaj kod, który dodaje pkt za special skills
+    
+      //Add profits for level of specialization in genre
+      if(levelOfHistorical == 2){
+        bsIndex = bsIndex + bsIndex * 0.05;
+      } else if (levelOfHistorical == 3){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      } else if (levelOfHistorical == 4){
+        bsIndex = bsIndex + bsIndex * 0.15;
+      } else if (levelOfHistorical == 5){
+        bsIndex = bsIndex + bsIndex * 0.2;
+      } else if (levelOfHistorical == 6){
+        bsIndex = bsIndex + bsIndex * 0.25
+      } else if (levelOfHistorical == 7){
+        bsIndex = bsIndex + bsIndex * 0.3
+      } else if (levelOfHistorical == 8){
+        bsIndex = bsIndex + bsIndex * 0.35
+      } else if (levelOfHistorical == 9) {
+        bsIndex = bsIndex + bsIndex * 0.4
+      } else if (levelOfHistorical == 10) {
+        bsIndex = bsIndex + bsIndex * 0.5
+      }
+    
+      if(genre == previousGenre){
+        bsIndex = bsIndex - bsIndex * 0.5;
+      }
+    
+      previousGenre == "historical";
+      console.log(bsIndex);           
+  } //end of historical
+  
+  else if (genre == "horror"){
+
+      bsIndex = bsIndex + (points * 1000 * levelOfFame);
+      //If horror is popular now
+      if(popular == "horror"){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      }
+      //Add fans
+      bsIndex = bsIndex + fans;
+    
+      //Tutaj kod, który dodaje pkt za special skills
+    
+      //Add profits for level of specialization in genre
+      if(levelOfHorror == 2){
+        bsIndex = bsIndex + bsIndex * 0.05;
+      } else if (levelOfHorror == 3){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      } else if (levelOfHorror == 4){
+        bsIndex = bsIndex + bsIndex * 0.15;
+      } else if (levelOfHorror == 5){
+        bsIndex = bsIndex + bsIndex * 0.2;
+      } else if (levelOfHorror == 6){
+        bsIndex = bsIndex + bsIndex * 0.25
+      } else if (levelOfHorror == 7){
+        bsIndex = bsIndex + bsIndex * 0.3
+      } else if (levelOfHorror == 8){
+        bsIndex = bsIndex + bsIndex * 0.35
+      } else if (levelOfHorror == 9) {
+        bsIndex = bsIndex + bsIndex * 0.4
+      } else if (levelOfHorror == 10) {
+        bsIndex = bsIndex + bsIndex * 0.5
+      }
+    
+      if(genre == previousGenre){
+        bsIndex = bsIndex - bsIndex * 0.5;
+      }
+    
+      previousGenre == "horror";
+      console.log(bsIndex);           
+  } //end of horror
+  
+   else if (genre == "romance"){
+
+      bsIndex = bsIndex + (points * 1000 * levelOfFame);
+      //If romance is popular now
+      if(popular == "romance"){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      }
+      //Add fans
+      bsIndex = bsIndex + fans;
+    
+      //Tutaj kod, który dodaje pkt za special skills
+    
+      //Add profits for level of specialization in genre
+      if(levelOfRomance == 2){
+        bsIndex = bsIndex + bsIndex * 0.05;
+      } else if (levelOfRomance == 3){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      } else if (levelOfRomance == 4){
+        bsIndex = bsIndex + bsIndex * 0.15;
+      } else if (levelOfRomance == 5){
+        bsIndex = bsIndex + bsIndex * 0.2;
+      } else if (levelOfRomance == 6){
+        bsIndex = bsIndex + bsIndex * 0.25
+      } else if (levelOfRomance == 7){
+        bsIndex = bsIndex + bsIndex * 0.3
+      } else if (levelOfRomance == 8){
+        bsIndex = bsIndex + bsIndex * 0.35
+      } else if (levelOfRomance == 9) {
+        bsIndex = bsIndex + bsIndex * 0.4
+      } else if (levelOfRomance == 10) {
+        bsIndex = bsIndex + bsIndex * 0.5
+      }
+    
+      if(genre == previousGenre){
+        bsIndex = bsIndex - bsIndex * 0.5;
+      }
+    
+      previousGenre == "romance";
+      console.log(bsIndex);           
+  } //end of romance
+  
+   else if (genre == "scienceFiction"){
+
+      bsIndex = bsIndex + (points * 1000 * levelOfFame);
+      //If scienceFiction is popular now
+      if(popular == "scienceFiction"){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      }
+      //Add fans
+      bsIndex = bsIndex + fans;
+    
+      //Tutaj kod, który dodaje pkt za special skills
+    
+      //Add profits for level of specialization in genre
+      if(levelOfScienceFiction == 2){
+        bsIndex = bsIndex + bsIndex * 0.05;
+      } else if (levelOfScienceFiction == 3){
+          bsIndex = bsIndex + bsIndex * 0.1;
+      } else if (levelOfScienceFiction == 4){
+        bsIndex = bsIndex + bsIndex * 0.15;
+      } else if (levelOfScienceFiction == 5){
+        bsIndex = bsIndex + bsIndex * 0.2;
+      } else if (levelOfScienceFiction == 6){
+        bsIndex = bsIndex + bsIndex * 0.25
+      } else if (levelOfScienceFiction == 7){
+        bsIndex = bsIndex + bsIndex * 0.3
+      } else if (levelOfScienceFiction == 8){
+        bsIndex = bsIndex + bsIndex * 0.35
+      } else if (levelOfScienceFiction == 9) {
+        bsIndex = bsIndex + bsIndex * 0.4
+      } else if (levelOfScienceFiction == 10) {
+        bsIndex = bsIndex + bsIndex * 0.5
+      }
+    
+      if(genre == previousGenre){
+        bsIndex = bsIndex - bsIndex * 0.5;
+      }
+    
+      previousGenre == "scienceFiction";
+      console.log(bsIndex);           
+  } //end of scienceFiction
   
 }//the end of bookSellingIndex function
 
