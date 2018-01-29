@@ -11,7 +11,7 @@ var day = 0,
   accountBalance = 25000,
   monthlyCosts = 2000,  
 
-  fans = 0,
+  fans = 1000,
 
   popular,
   previousGenre,  
@@ -29,8 +29,12 @@ var day = 0,
   levelOfHistorical = 1,
   levelOfHorror = 1, 
   levelOfRomance = 1,  
-  levelOfScienceFiction = 1;  
+  levelOfScienceFiction = 1,
     
+  playerName;  
+  
+
+
 function changeDate() {
   //if game isn't paused
   if (!$(".pause").hasClass("gamePaused")) {
@@ -172,13 +176,18 @@ $(".close").on("click", function closing() {
   $(".textEditorContent3").removeClass("textEditorContentVisible");
   $(".textEditorContent4").removeClass("textEditorContentVisible");
   $(".textEditorContent5").removeClass("textEditorContentVisible");
+  $(".textEditorContent6").removeClass("textEditorContentVisible");
   $(".bar").css("background-color", "gray");
   $(".sendBook").attr("disabled", "true");
-
+  $(".publishByYourself").attr("disabled", "true");
+  
   $(".mailContent").removeClass("mailContentVisible");
   $(".bankContent").removeClass("bankContentVisible");
   $(".shopContent").removeClass("shopContentVisible");
   $(".statsContent").removeClass("statsContentVisible");
+  $(".statsContent2").removeClass("statsContentVisible");
+  $(".statsContent3").removeClass("statsContentVisible");
+  
   $(".settingsContent").removeClass("settingsContentVisible");
   $(".helpContent").removeClass("helpContentVisible");
   $(".authorContent").removeClass("authorContentVisible");
@@ -197,13 +206,17 @@ $(".textEditor").on("click", function () {
   $(".textEditorContent3").removeClass("textEditorContentVisible");
   $(".textEditorContent4").removeClass("textEditorContentVisible");
   $(".textEditorContent5").removeClass("textEditorContentVisible");
+  $(".textEditorContent6").removeClass("textEditorContentVisible");
   $(".bar").css("background-color", "gray");
   $(".sendBook").attr("disabled", "true");
+  $(".publishByYourself").attr("disabled", "true");
   
   $(".mailContent").removeClass("mailContentVisible");
   $(".bankContent").removeClass("bankContentVisible");
   $(".shopContent").removeClass("shopContentVisible");
   $(".statsContent").removeClass("statsContentVisible");
+  $(".statsContent2").removeClass("statsContentVisible");
+  $(".statsContent3").removeClass("statsContentVisible");
   $(".settingsContent").removeClass("settingsContentVisible");
   $(".helpContent").removeClass("helpContentVisible");
   $(".authorContent").removeClass("authorContentVisible");
@@ -219,6 +232,8 @@ $(".mail").on("click", function () {
   $(".bankContent").removeClass("bankContentVisible");
   $(".shopContent").removeClass("shopContentVisible");
   $(".statsContent").removeClass("statsContentVisible");
+  $(".statsContent2").removeClass("statsContentVisible");
+  $(".statsContent3").removeClass("statsContentVisible");
   $(".settingsContent").removeClass("settingsContentVisible");
   $(".helpContent").removeClass("helpContentVisible");
   $(".authorContent").removeClass("authorContentVisible");
@@ -233,6 +248,8 @@ $(".bank").on("click", function () {
   $(".mailContent").removeClass("mailContentVisible");
   $(".shopContent").removeClass("shopContentVisible");
   $(".statsContent").removeClass("statsContentVisible");
+  $(".statsContent2").removeClass("statsContentVisible");
+  $(".statsContent3").removeClass("statsContentVisible");
   $(".settingsContent").removeClass("settingsContentVisible");
   $(".helpContent").removeClass("helpContentVisible");
   $(".authorContent").removeClass("authorContentVisible");
@@ -247,6 +264,8 @@ $(".shop").on("click", function () {
   $(".mailContent").removeClass("mailContentVisible");
   $(".bankContent").removeClass("bankContentVisible");
   $(".statsContent").removeClass("statsContentVisible");
+  $(".statsContent2").removeClass("statsContentVisible");
+  $(".statsContent3").removeClass("statsContentVisible");
   $(".settingsContent").removeClass("settingsContentVisible");
   $(".helpContent").removeClass("helpContentVisible");
   $(".authorContent").removeClass("authorContentVisible");
@@ -261,9 +280,23 @@ $(".stats").on("click", function () {
   $(".mailContent").removeClass("mailContentVisible");
   $(".bankContent").removeClass("bankContentVisible");
   $(".shopContent").removeClass("shopContentVisible");
+  $(".statsContent2").removeClass("statsContentVisible");
+  $(".statsContent3").removeClass("statsContentVisible");
   $(".settingsContent").removeClass("settingsContentVisible");
   $(".helpContent").removeClass("helpContentVisible");
   $(".authorContent").removeClass("authorContentVisible");
+});
+
+$(".writerStats").on("click", function(){
+  $(".statsContent2").addClass("statsContentVisible");
+  
+  $(".statsContent").removeClass("statsContentVisible");
+});
+
+$(".publishingHouseStats").on("click", function(){
+  $(".statsContent3").addClass("statsContentVisible");
+  
+  $(".statsContent").removeClass("statsContentVisible");
 });
 
 //After click at .settings menuOption make content of settings visible  
@@ -290,6 +323,8 @@ $(".help").on("click", function () {
   $(".bankContent").removeClass("bankContentVisible");
   $(".shopContent").removeClass("shopContentVisible");
   $(".statsContent").removeClass("statsContentVisible");
+  $(".statsContent2").removeClass("statsContentVisible");
+  $(".statsContent3").removeClass("statsContentVisible");
   $(".settingsContent").removeClass("settingsContentVisible");
   $(".authorContent").removeClass("authorContentVisible");
 });
@@ -304,6 +339,8 @@ $(".author").on("click", function () {
   $(".bankContent").removeClass("bankContentVisible");
   $(".shopContent").removeClass("shopContentVisible");
   $(".statsContent").removeClass("statsContentVisible");
+  $(".statsContent2").removeClass("statsContentVisible");
+  $(".statsContent3").removeClass("statsContentVisible");
   $(".settingsContent").removeClass("settingsContentVisible");
   $(".helpContent").removeClass("helpContentVisible");
 });
@@ -1398,7 +1435,30 @@ $(".fourthNextButton").on("click", function(){
 }); //The end of fourthNextButton function
 
 
+//Function to unlock the publishByYourself button
+$(".progress").one("animationend", function(){
+  if(fans >= 1000){
+    //Unlock the .publishByYourself button
+    $(".publishByYourself").removeAttr("disabled"); 
+  }
+});
 
+
+
+//FUNCTION FOR FIVE STAGE OF BOOK WRITING (PUBLISHED YOURSELF) 
+$(".publishByYourself").on("click", function(){
+  
+  //Hide previous window and show the next one
+  $(".textEditorContent5").removeClass("textEditorContentVisible");
+  $(".textEditorContent6").addClass("textEditorContentVisible");
+  
+  
+  
+});
+
+
+
+//FUNCTION TO NEGATIVE DECISION OF PUBLISHING HOUSE
 function negativeDecision(){
   console.log("Przykro nam, nie wydamy Twojej książki.");
   //Add new messageBar in mail inbox
@@ -1419,7 +1479,7 @@ function negativeDecision(){
 }
 
 
-
+//FUNCTION TO POSITIVE DECISION OF PUBLISHING HOUSE
 function positiveDecision(){
   console.log("Uprzejmie informujemy, że z przyjemnością wydamy Twoją książkę!");
   
@@ -2110,8 +2170,6 @@ $(".sign").on("click", function(){
   bookSellingIndex();
   
 });
-
-
 
 
 

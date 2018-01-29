@@ -290,16 +290,22 @@ button:focus {
   margin-top: 3%;
 }
 
-.features1 .leftP {
+.leftP {
   margin-left: auto;
   margin-right: 10%;
   width: 100px;
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-top: 3%;
 }
 
-.features1 .rightP {
+.rightP {
   margin-left: 10%;
   margin-right: auto;
   width: 100px;
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-top: 3%;
 }
 
 .features1 input {
@@ -401,9 +407,55 @@ button:focus {
 .sendBook {
   height: 15%;
   margin-top: auto;
-  margin-bottom: 2%;
 }
 
+.publishByYourself {
+  height: 15%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+
+
+.textEditorContent6 {
+  color: #ffffff;
+  
+  display: none;
+  flex-direction: column;
+  height: 90%;
+  width: 98%;
+  margin: auto;
+  overflow: auto;
+}
+
+.textEditorContent6 section {
+  display: flex;
+  flex-direction: row;
+  
+  margin-bottom: 2%;
+  font-family: 'Ubuntu', arial, sans-serif;
+  border-bottom: 0.5px solid #000000;
+}
+
+.textEditorContent6 h2 {
+  text-align: center;
+  font-size: 1.8rem;
+} 
+
+.textEditorContent6 h3 {
+  text-align: center;
+  margin-top: 4%;
+  
+  font-size: 1.5rem;
+}
+
+.textEditorContent6 input {
+  width: 40%;
+}
+
+.textEditorContent6 p {
+  margin-bottom: 2%;
+}
 
 
 .textEditorContentVisible {
@@ -526,11 +578,89 @@ button:focus {
 
 .statsContent {
   display: none;
+  
+  width: 98%;
+  height: 90%;
+  margin: auto;
+  background-color: #4c4c4c;
+  flex-direction: column;
+  text-align: center;
 }
+
+
+
+.statsContent h2 {
+  margin-top: 2%;
+  color: #ffffff;
+}
+
+.statsContent button {
+  width: 50%;
+  height: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Ubuntu', arial, sans-serif;
+  border: none;
+  cursor: pointer;
+}
+
+.writerStats{
+  margin-top: auto;
+  margin-bottom: 5%;
+  background-color: aqua;
+}
+
+.publishingHouseStats {
+  margin-bottom: auto;
+  background-color: forestgreen;
+}
+
+.statsContent2 {
+  display: none;
+  
+  width: 98%;
+  height: 90%;
+  margin: auto;
+  background-color: #4c4c4c;
+  flex-direction: column;
+  text-align: left; 
+  font-size: 1.4rem;
+  color: #ffffff;
+  overflow: auto;
+}
+
+.lvlOfFame {
+  margin-bottom: 3%;
+}
+
+.lastBook {
+  margin-bottom: 3%;
+}
+
+.child {
+  margin-left: 4%;
+}
+
+.statsContent3 {
+  display: none;
+  
+  width: 98%;
+  height: 90%;
+  margin: auto;
+  background-color: #4c4c4c;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+
+
+
 
 .statsContentVisible {
   display: flex;
 }
+
 
 .settingsContent {
   display: none;
@@ -606,7 +736,7 @@ box-shadow: 4px -2px 24px 0px rgba(15,14,15,1);
 }
 
 .board .spanContainer {
-  text-align: center;
+  
 }
 
 .board .justName {
@@ -621,14 +751,13 @@ box-shadow: 4px -2px 24px 0px rgba(15,14,15,1);
   color: green;
 }
 
-
-
-
 .board .whatIsPopular {
   margin-left: 2%;
 }
 
-
+.board .fansContainer {
+  margin-left: 2%;
+}
 
 
 .menu {

@@ -42,10 +42,12 @@
             <p>shop</p>
             <i class="fa fa-shopping-basket" aria-hidden="true"></i>
           </div>
+          
           <div class="menuOption stats">
             <p>stats</p>
             <i class="fa fa-user" aria-hidden="true"></i>
           </div>
+          
           <div class="menuOption settings">
             <p>settings</p>
             <i class="fa fa-cog" aria-hidden="true"></i>
@@ -156,10 +158,43 @@
           <h2>Writing...</h2>
           <div class="bar">
             <div class="progress">
-              
             </div>
           </div>
-          <button class="sendBook nextButton" disabled>Send to the publishing house</button>
+          
+            <button class="sendBook nextButton" disabled>Send to the publishing house</button>
+            <button class="publishByYourself nextButton" disabled>Publish by yourself</button>
+          
+ 
+        </div>
+        
+        <div class="textEditorContent6">
+         <form>
+          <h2>Set up the costs:</h2>
+          <h3>Quality of materials:</h3>
+          <section>
+            <p class="leftP">Pathetic</p>
+            <input class="materialsQuality" type="range">
+            <p class="rightP">Excellent</p>
+           </section>
+          <h3>Cover design:</h3> 
+           <section>
+            <p class="leftP">Cheapest</p> 
+            <input class="coverDesign" type="range">
+            <p class="rightP">The most expensive</p>
+           </section>
+          <h3>How many language versions?</h3> 
+           <section>
+            <p class="leftP">0</p>
+            <input class="languageVersions" type="range">
+            <p class="rightP">100</p>
+           </section>
+          <h3>Marketing:</h3> 
+           <section>
+            <p class="leftP">Little</p> 
+            <input class="marketing" type="range">
+            <p class="rightP">Huge</p>
+           </section>
+          </form> 
         </div>
         
         <div class="mailContent">
@@ -194,8 +229,38 @@
         </div>
          
          <div class="statsContent">
-          <p>stats</p>
-        </div>
+            <h2>What stats do you want to check?</h2>
+            <button class="writerStats">My stats as a writer</button>
+            <button class="publishingHouseStats">Stats of my publishing house</button>
+         </div>
+         
+         <div class="statsContent2">
+           <h2 class="playerName"></h2>
+           <span class="lvlOfFame"><span class="statsName">Level of fame: </span><span class="levelOfFameVal">1</span></span>
+           
+           <span><span class="statsName">Level of Adventure: </span><span class="levelOfAdventureVal">1</span></span>
+           <span><span class="statsName">Level of Based on the game: </span><span class="levelOfBasedOnTheGameVal">1</span></span>
+           <span><span class="statsName">Level of Biography: </span><span class="levelOfBiographyVal">1</span></span>
+           <span><span class="statsName">Level of Comedy: </span><span class="levelOfComedyVal">1</span></span>
+           <span><span class="statsName">Level of Comic book: </span><span class="levelOfComicBookVal">1</span></span>
+           <span><span class="statsName">Level of Criminal: </span><span class="levelOfCriminalVal">1</span></span>
+           <span><span class="statsName">Level of Fable: </span><span class="levelOfFableVal">1</span></span>
+           <span><span class="statsName">Level of Fantasy: </span><span class="levelOfFantasyVal">1</span></span>
+           <span><span class="statsName">Level of Historical: </span><span class="levelOfHistoricalVal">1</span></span>
+           <span><span class="statsName">Level of Horror: </span><span class="levelOfHorrorVal">1</span></span>
+           <span><span class="statsName">Level of Romance: </span><span class="levelOfRomanceVal">1</span></span>
+           <span class="lastBook"><span class="statsName">Level of Science fiction: </span><span class="levelOfScienceFictionVal">1</span></span>
+           
+           <span><span class="statsName">Written books: </span><span class="levelOfRomanceVal">0</span></span>
+           <span><span class="statsName">Published books: </span><span class="levelOfRomanceVal">0</span></span>
+             <span class="child"><span class="statsName">Published by publishing house: </span><span class="levelOfRomanceVal">0</span></span>
+             <span class="child"><span class="statsName">Published by myself: </span><span class="levelOfRomanceVal">0</span></span>
+          <span><span class="statsName">Sold copies (total): </span><span class="levelOfRomanceVal">1</span></span>   
+         </div>
+         
+         <div class="statsContent3">
+           
+         </div>
          
          <div class="settingsContent">
           <p>sett</p>
@@ -225,6 +290,7 @@
       
       <span class="spanContainer"><span class="justName">Now popular genre:</span><span class="whatIsPopular"></span></span>
       
+      <span class="fansContainer"><span>Fans: </span><span>0</span></span>
     </div>
     
     <div class="menu">
