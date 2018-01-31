@@ -428,6 +428,23 @@ button:focus {
   overflow: auto;
 }
 
+.changeMyMind {
+  width: 10%;
+  height: 2rem;
+  display: flex;
+  margin-top: 1%;
+  border: none;
+  background-color: lightgreen;
+  text-align: center;
+  border: 0.5px solid black;
+  cursor: pointer;
+}
+
+.changeMyMind .fa {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .textEditorContent6 section {
   display: flex;
   flex-direction: row;
@@ -456,6 +473,53 @@ button:focus {
 .textEditorContent6 p {
   margin-bottom: 2%;
 }
+
+.costsInfo {
+  font-size: 1.8rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.costsInfo span {
+  margin-bottom: auto;
+  line-height: 3rem;
+}
+
+
+
+.refresh {
+  border: none;
+  background-color: lightgreen;
+  margin-left: 1%;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  margin-bottom: 1%;
+  font-size: 2rem;
+  border: 0.5px solid black;
+}
+
+.fa-refresh {
+  margin: auto;
+}
+
+.payPublish {
+  height: 3rem;
+  width: auto;
+  margin-left: auto;
+  margin-right: 2%;
+  border: none;
+  background-color: lightgreen;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  padding-left: 2%;
+  padding-right: 2%;
+  border: 0.5px solid black;
+  cursor: pointer;
+}
+
+
 
 
 .textEditorContentVisible {
@@ -860,7 +924,6 @@ box-shadow: 4px -2px 24px 0px rgba(15,14,15,1);
 .invisible {
   display: none;
 }
-
 
 
 

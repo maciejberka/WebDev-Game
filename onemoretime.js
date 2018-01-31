@@ -11,7 +11,8 @@ var day = 0,
   accountBalance = 25000,
   monthlyCosts = 2000,  
 
-  fans = 1000,
+  fans = 100,
+  isMore = false,  
 
   popular,
   previousGenre,  
@@ -1431,17 +1432,17 @@ $(".fourthNextButton").on("click", function(){
     $(".bar").css("background-color", "lightgreen");
     //Unlock the .sendBook button
     $(".sendBook").removeAttr("disabled");
+    if(fans >= 1000) {
+      $(".publishByYourself").removeAttr("disabled");
+    }
   });
 }); //The end of fourthNextButton function
 
 
 //Function to unlock the publishByYourself button
-$(".progress").one("animationend", function(){
-  if(fans >= 1000){
-    //Unlock the .publishByYourself button
-    $(".publishByYourself").removeAttr("disabled"); 
-  }
-});
+//$(".progress").one("animationend", function(){
+//  
+//});
 
 
 
@@ -2184,7 +2185,9 @@ $(".sign").on("click", function(){
 
 
 
-
+$(".handle").on("click", function(){
+  fans = fans + 1000;
+});
 
 
 
