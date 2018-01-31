@@ -8,7 +8,7 @@ var day = 0,
   genre,
   title,
    
-  accountBalance = 25000,
+  accountBalance = 1000000,
   monthlyCosts = 2000,  
 
   fans = 100,
@@ -1448,15 +1448,39 @@ $(".fourthNextButton").on("click", function(){
 
 //FUNCTION FOR FIVE STAGE OF BOOK WRITING (PUBLISHED YOURSELF) 
 $(".publishByYourself").on("click", function(){
-  
   //Hide previous window and show the next one
   $(".textEditorContent5").removeClass("textEditorContentVisible");
   $(".textEditorContent6").addClass("textEditorContentVisible");
-  
-  
-  
 });
 
+//#backButton #changeMyMind
+$(".changeMyMind").on("click", function(){
+  //Show the previous window
+  $(".textEditorContent6").removeClass("textEditorContentVisible");
+  $(".textEditorContent5").addClass("textEditorContentVisible");
+});
+
+//#refreshButton
+$(".refresh").on("click", function(){
+  var materialsQuality = $(".materialsQuality").val();
+  materialsQuality = materialsQuality * 1000;
+  var coverDesign = $(".coverDesign").val();
+  coverDesign = coverDesign * 150;
+  var languageVersions = $(".languageVersions").val();
+  languageVersions = languageVersions * 9000;
+  var marketing = $(".marketing").val();
+  marketing = marketing * 10000;
+  
+  var totalCost = materialsQuality + coverDesign + languageVersions + marketing;
+  $(".totalCostVal").empty();
+  $(".totalCostVal").append(totalCost);
+  
+  if(accountBalance > totalCost){
+    $(".totalCostVal").css("color", "green");
+  } else {
+    $(".totalCostVal").css("color", "red");
+  }
+});
 
 
 //FUNCTION TO NEGATIVE DECISION OF PUBLISHING HOUSE
