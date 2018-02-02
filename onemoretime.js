@@ -32,9 +32,10 @@ var day = 0,
   levelOfRomance = 1,  
   levelOfScienceFiction = 1,
     
-  playerName;  
-  
-
+  playerName,
+    
+  fastWriting = false;
+ 
 
 function changeDate() {
   //if game isn't paused
@@ -62,7 +63,6 @@ function changeDate() {
       day = 0;
       //Increment month but don't display yet
       month++;
-      console.log("pay bills");
       
       payBills()
     }
@@ -1424,7 +1424,8 @@ $(".fourthNextButton").on("click", function(){
   $(".textEditorContent4").removeClass("textEditorContentVisible");
   $(".textEditorContent5").addClass("textEditorContentVisible");
   
-  //Add animation to progress bar
+  if(!fastWriting){
+    //Add animation to progress bar
   $(".progress").addClass("animationClass"); 
   //When the animation is over 
   $(".progress").one("animationend", function(){
@@ -1436,6 +1437,22 @@ $(".fourthNextButton").on("click", function(){
       $(".publishByYourself").removeAttr("disabled");
     }
   });
+  } else {
+      //Add animation to progress bar
+  $(".progress").addClass("animationFastWriting"); 
+  //When the animation is over 
+  $(".progress").one("animationend", function(){
+    //Change color of .bar 
+    $(".bar").css("background-color", "lightgreen");
+    //Unlock the .sendBook button
+    $(".sendBook").removeAttr("disabled");
+    if(fans >= 1000) {
+      $(".publishByYourself").removeAttr("disabled");
+    }
+  });
+  }
+  
+  
 }); //The end of fourthNextButton function
 
 
@@ -2188,11 +2205,16 @@ function bookSellingIndex(){
   
 }//the end of bookSellingIndex function
 
-
 //FUNCTION TO START SELLING BOOK WITH PUBLISHER
 $(".sign").on("click", function(){
   
   bookSellingIndex();
+  
+});
+
+
+//FUNCTION TO PUBLISH BOOK #SELF-PUBLISHING
+$(".payPublish").on("click", function(){
   
 });
 
@@ -2202,6 +2224,23 @@ $(".sign").on("click", function(){
 
 
 
+//FUNCTIONS TO SHOWING/CLOSING SHOP CONTENT
+$(".courses").on("click", function(){
+  $(".shopContent").removeClass("shopContentVisible");
+  $(".coursesContent").addClass("shopContentVisible");
+});
+
+$(".wallpapers").on("click", function(){
+  $(".shopContent").removeClass("shopContentVisible");
+  $(".wallpapersContent").addClass("shopContentVisible");
+});
+
+$(".backToCategories").on("click", function(){
+  $(".wallpapersContent").removeClass("shopContentVisible");
+  $(".coursesContent").removeClass("shopContentVisible");
+  
+  $(".shopContent").addClass("shopContentVisible");
+});
 
 
 

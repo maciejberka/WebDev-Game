@@ -404,6 +404,13 @@ button:focus {
   animation-timing-function: linear;
 }
 
+.animationFastWriting {
+  animation-name: progressAnimation;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+}
+
 .sendBook {
   height: 15%;
   margin-top: auto;
@@ -634,7 +641,148 @@ button:focus {
 
 .shopContent {
   display: none;
+  
+  width: 98%;
+  height: 90%;
+  margin: auto;
+  background-color: #4c4c4c;
+  flex-direction: column;
 }
+
+.shopCategory {
+  border: none;
+  background-color: lightgreen;
+  width: 40%;
+  height: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Ubuntu', arial, sans-serif;
+  cursor: pointer;
+}
+
+.courses {
+  margin-top: auto;
+  margin-bottom: 5%;
+}
+
+.wallpapers {
+  margin-bottom: auto;
+}
+
+
+.backToCategories {
+  width: 10%;
+  min-height: 2rem;
+  display: flex;
+  margin-top: 1%;
+  margin-left: 2%;
+  border: none;
+  background-color: lightgreen;
+  text-align: center;
+  border: 0.5px solid black;
+  cursor: pointer;
+}
+
+.backToCategories .fa {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.coursesContent {
+  display: none;
+  
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-color: #4c4c4c;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.coursesContent h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 4%;
+}
+
+.courseOffert {
+  display: flex;
+  flex-direction: column;
+  
+  min-height: 60%; 
+  width: 35%;
+  background-color: #000000;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2%;
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: 'Ubuntu', arial, sans-serif;
+  
+}
+
+.courseOffert:first-of-type {
+  margin-top: 1%;
+}
+
+.courseOffert h2 {
+  margin-top: 5%;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.courseOffert p {
+  font-size: 1.7rem;
+  margin: auto;
+  text-align: center;
+}
+
+.courseOffert .learnMore {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+  width: 50%;
+  height: 40px;
+  border: none;
+  background-color: lightgreen;
+  border: 0.5px solid black;
+  font-family: 'Ubuntu', arial, sans-serif;
+  border-radius: 2px;
+}
+
+.secondHeader {
+  margin-top: 8%;
+}
+
+.wallpapersContent {
+  display: none;
+  
+  width: 98%;
+  height: 90%;
+  margin: auto;
+  background-color: #4c4c4c;
+  flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .shopContentVisible {
   display: flex;
