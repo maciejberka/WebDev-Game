@@ -9,11 +9,17 @@
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  
 </head>
 
 <body>
   <main>
     <div class="upperCover">
+  
       <div class="screen">
         <div class="taskbar">
           <button class="start">
@@ -28,37 +34,37 @@
         <div class="menuStart">
           <div class="menuOption textEditor">
             <p>text editor</p>
-            <i class="fa fa-file-text" aria-hidden="true"></i>
+            <i class="material-icons">insert_drive_file</i>
           </div>
           <div class="menuOption mail">
             <p>e-mail</p>
-            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <i class="material-icons">email</i>
           </div>
           <div class="menuOption bank">
             <p>bank</p>
-            <i class="fa fa-usd" aria-hidden="true"></i>
+            <i class="material-icons">monetization_on</i>
           </div>
           <div class="menuOption shop">
             <p>shop</p>
-            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+            <i class="material-icons">shopping_cart</i>
           </div>
           
           <div class="menuOption stats">
             <p>stats</p>
-            <i class="fa fa-user" aria-hidden="true"></i>
+            <i class="material-icons">fingerprint</i>
           </div>
           
           <div class="menuOption settings">
             <p>settings</p>
-            <i class="fa fa-cog" aria-hidden="true"></i>
+            <i class="material-icons">settings</i>
           </div>
           <div class="menuOption help">
             <p>help</p>
-            <i class="fa fa-question" aria-hidden="true"></i>
+            <i class="material-icons">help</i>
           </div>
           <div class="menuOption author">
             <p>author</p>
-            <i class="fa fa-info" aria-hidden="true"></i>
+            <i class="material-icons">account_box</i>
           </div>
           
         </div>
@@ -66,7 +72,7 @@
         <div class="window">
           <div class="windowTopBar">
             <button class="close">
-              <i class="fa fa-times" aria-hidden="true"></i>
+              <i class="material-icons">close</i>
             </button>
           </div>
           
@@ -169,7 +175,7 @@
         
         <div class="textEditorContent6">
          <div>
-           <button class="changeMyMind"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+           <button class="changeMyMind"><i class="material-icons">arrow_back</i></button>
          </div>
          
          
@@ -203,7 +209,7 @@
           
           <div class="costsInfo">
             <span>Total cost: $</span><span class="totalCostVal">?</span>
-            <button class="refresh"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+            <button class="refresh"><i class="material-icons">refresh</i></button>
             <button class="payPublish">Pay and publish</button>
           </div>
             
@@ -212,19 +218,19 @@
         <div class="mailContent">
          
           <div class="receivedBook letter">
-             <button class="backToInbox"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back to inbox</button>
+             <button class="backToInbox"><i class="material-icons">arrow_back</i></button>
             <h2>We received your book</h2>
             <p>Good morning, thank you for sending the novel. We need about a week to decide whether we should publish it. We will inform you about our decision by e-mail.<br><br>Best regards,<br>Awesome Stories - Publishing House</p>
           </div>
             
           <div class="negativeDecision letter">
-            <button class="backToInbox"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back to inbox</button>
+            <button class="backToInbox"><i class="material-icons">arrow_back</i>Back to inbox</button>
             <h2>Our decision</h2>
             <p>We are very sorry, we will not publish your book. Do not give up and send your next work to us. Maybe next time we decide to publish.<br><br>Best regards,<br>Awesome Stories - Publishing House</p>
           </div>
             
           <div class="positiveDecision letter">
-            <button class="backToInbox"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back to inbox</button>
+            <button class="backToInbox"><i class="material-icons">arrow_back</i></button>
             <h2>Our decision</h2>
             <p>We are pleased to announce that we will be happy to publish your book. Because of your fame as a writer, we can offer <span class="shares">10</span>% of the price for each book sold. Let's sign a contract!<br><br>Best regards,<br>Awesome Stories - Publishing House</p>
             <button class="sign nextButton">Sign a contract</button>
@@ -242,7 +248,7 @@
         </div>
          
          <div class="coursesContent">
-           <button class="backToCategories"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+           <button class="backToCategories"><i class="material-icons">arrow_back</i></button>
            
            <h1>Writing skills</h1>
            
@@ -313,7 +319,7 @@
          
          
          <div class="wallpapersContent">
-           <button class="backToCategories"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+           <button class="backToCategories"><i class="material-icons">arrow_back</i></button>
          </div>
          
          <div class="statsContent">
@@ -368,10 +374,11 @@
     </div>
     
     <div class="keyboard">
-
+      <div class="touchBar"></div>
     </div>
     
-    <div class="board">
+    <div class="status">
+<!--
       <p>Welcome in Writer Tycoon Game!</p>
       
       <span class="spanContainer"><span class="justName">Account balance: $</span><span class="accountBalance">25000</span><span class="plusOrMinus"></span><span class="operations"></span></span>
@@ -379,14 +386,20 @@
       <span class="spanContainer"><span class="justName">Now popular genre:</span><span class="whatIsPopular"></span></span>
       
       <span class="fansContainer"><span>Fans: </span><span>0</span></span>
+-->
     </div>
+    
+    
     
     <div class="menu">
       <button class="pause">
         <i class="fa fa-pause" aria-hidden="true"></i>
       </button>
-      <button class="fullscreen">
-        <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+      <button class="mute">
+        <i class="fas fa-volume-up"></i>
+      </button>
+      <button class="save">
+        <i class="fas fa-save"></i>
       </button>
     </div>
     

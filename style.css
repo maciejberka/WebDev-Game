@@ -15,51 +15,78 @@ body {
 main {
   height: 100vh;
   width: 100vw;
-  background-color: burlywood;
+background-color: tan;
+
   overflow: hidden;
   font-family: 'Ubuntu', arial, sans-serif;
 }
 
 .upperCover {
-  width: 60%;
-  height: 60%;
-  background-color: #99938f;
+  width: 70%;
+  height: 65%;
+  
   display: flex;
-  margin: 2% 2% 0 2%;
-  border: 1px solid black;
+  margin: 3% 2% 0 7%;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  background-color: #3d3d3d;
+
+
+
+/*
+background: #000000;  
+background: -webkit-linear-gradient(to bottom, #434343, #000000);
+background: linear-gradient(to bottom, #434343, #000000); 
+  */
+  
 }
+ 
 
 .screen {
-  width: 94%;
-  height: 90%;
+  width: 97%;
+  height: 94%;
   margin: auto;
   background-image: url(img/desktop_background.jpg);
   background-position: center center;
   background-size: cover;
-  border-radius: 5px;
+  
+  -webkit-box-shadow: inset 1px 0px 32px 0px rgba(0,0,0,1);
+-moz-box-shadow: inset 1px 0px 32px 0px rgba(0,0,0,1);
+box-shadow: inset 1px 0px 32px 0px rgba(0,0,0,1);
+  
 /*  display: flex;*/
   
 }
 
 .taskbar {
   width: 100%;
-  height: 10%;
-  background-color: #000000;
+  height: 8%;
+  background-color: rgba(0, 0, 0, 0.6);
   position: relative;
-  top: 90%;
+  top: 92%;
   display: flex;
   flex-direction: row;
   z-index: 999;
+  
 }
 
 .start {
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.0);
   color: #ffffff;
   height: 100%;
   width: 15%;
   cursor: pointer;
   font-family: 'Ubuntu', arial, sans-sefir;
-/*  border: none;*/
+  border: none;
+  border-right: 1px solid gray;
+}
+
+.start:hover {
+  background-color: rgba(0, 0, 0, 1);
+  transition: 0.5s;
 }
 
 button:focus {
@@ -72,6 +99,7 @@ button:focus {
   margin-left: auto;
   margin-right: 2%;
   font-size: 1.3rem;
+  
 }
 
 .date span {
@@ -82,7 +110,7 @@ button:focus {
 .menuStart {
   height: 70%;
   width: 35%;
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.6);
   -webkit-box-shadow: 6px -5px 14px 6px rgba(0,0,0,0.4);
   -moz-box-shadow: 6px -5px 14px 6px rgba(0,0,0,0.4);
   box-shadow: 6px -5px 14px 6px rgba(0,0,0,0.4);
@@ -92,7 +120,7 @@ button:focus {
   flex-direction: column;
   z-index: 999;
   position: relative;
-  bottom: -10%;
+  bottom: -14%;
   
 }
 
@@ -106,6 +134,8 @@ button:focus {
   display: flex;
   cursor: pointer;
 }
+
+
 
 .menuOption p {
   margin-left: 4%;
@@ -121,9 +151,17 @@ button:focus {
   margin-bottom: 2%;
 }
 
-.menuOption .fa {
+.material-icons {
+  margin-left: auto;
+  margin-right: 2%;
+}
+
+.menuOption .fa, .menuOption .fas {
+  display: flex;
   margin-left: auto;
   margin-right: 4%;
+  
+  
 }
 
 .menuOption .fa-usd {
@@ -164,11 +202,18 @@ button:focus {
 
 .window {
   width: 100%;
-  height: 90%;
-  background-color: #4c4c4c;
+  height: 92%;
+  background-color: #686868;
+  
+  
+  
   position: relative;
-  top: -80%;
+  top: -78%;
   display: none;
+  
+  
+  
+  
 }
 
 .windowOpen {
@@ -183,33 +228,45 @@ button:focus {
 .windowTopBar {
   width: 100%;
   height: 8%;
-  background-color: #000000;
+  background-color: #262626;
+  
   display: flex;
   flex-direction: row-reverse;
+  
+  border: 1px solid black;
+  border-bottom: none;
 }
 
 .windowTopBar button {
-  background-color: #000000;
+  background-color: #262626;
+  
   width: 5%;
   border: none;
-  margin: 0 0 0 1%;
+  margin: 0 1% 0 1%;
   overflow: hidden;
   cursor: pointer;
+  display: flex;
 }
 
-.windowTopBar button .fa {
+.windowTopBar button .material-icons  {
   color: #ffffff;
-  font-size: 2rem;
+ 
+  font-size: 2.5rem;
+  
 }
 
 .textEditorContent {
-  width: 98%;
-  height: 90%;
+  width: 100%;
+  height: 92%;
   margin: auto;
-  background-color: #4c4c4c;
+  /*previous color #4c4c4c*/
+  background-color: #686868;
   flex-direction: column;
   
   display: none;
+  
+  border: 1px solid black;
+  border-top: none;
 }
 
 .textEditorContent h2 {
@@ -254,14 +311,19 @@ button:focus {
   cursor: pointer;
 }
 
-
+.firstNextButton {
+  margin-top: auto;
+  margin-bottom: 2%;
+}
 
 .textEditorContent2 {
   display: none;
   flex-direction: column;
-  height: 90%;
-  width: 98%;
   margin: auto;
+  height: 92%;
+  width: 100%;
+  border: 1px solid black;
+  border-top: none;
 }
 
 .features1 {
@@ -322,8 +384,10 @@ button:focus {
 .textEditorContent3 {
   display: none;
   flex-direction: column;
-  height: 90%;
-  width: 98%;
+  height: 92%;
+  width: 100%;
+  border: 1px solid black;
+  border-top: none;
   margin: auto;
 }
 
@@ -345,8 +409,10 @@ button:focus {
   
   display: none;
   flex-direction: column;
-  height: 90%;
-  width: 98%;
+  height: 92%;
+  width: 100%;
+  border: 1px solid black;
+  border-top: none;
   margin: auto;
 }
 
@@ -361,8 +427,10 @@ button:focus {
   
   display: none;
   flex-direction: column;
-  height: 90%;
-  width: 98%;
+  height: 92%;
+  width: 100%;
+  border: 1px solid black;
+  border-top: none;
   margin: auto;
 }
 
@@ -429,8 +497,10 @@ button:focus {
   
   display: none;
   flex-direction: column;
-  height: 90%;
-  width: 98%;
+  height: 92%;
+  width: 100%;
+  border: 1px solid black;
+  border-top: none;
   margin: auto;
   overflow: auto;
 }
@@ -447,9 +517,9 @@ button:focus {
   cursor: pointer;
 }
 
-.changeMyMind .fa {
-  margin-left: auto;
-  margin-right: auto;
+.changeMyMind .material-icons {
+  margin: auto;
+  font-size: 2rem;
 }
 
 .textEditorContent6 section {
@@ -505,9 +575,10 @@ button:focus {
   margin-bottom: 1%;
   font-size: 2rem;
   border: 0.5px solid black;
+  display: flex;
 }
 
-.fa-refresh {
+.refresh .material-icons {
   margin: auto;
 }
 
@@ -540,8 +611,10 @@ button:focus {
 
 
 .mailContent {
-  width: 98%;
-  height: 90%;
+  height: 92%;
+  width: 100%;
+  border: 1px solid black;
+  border-top: none;
   margin: auto;
   background-color: #4c4c4c;
   flex-direction: column;
@@ -610,19 +683,25 @@ button:focus {
 .sign {
   margin-top: auto;
   margin-bottom: 2%;
+  border: 0.5px solid black;
 }
 
 .backToInbox {
-  width: 15%;
+  width: 10%;
+  height: 2rem;
   border: none;
-  height: 10%;
+  
   background-color: lightgreen;
   font-family: 'Ubuntu', arial, sans-serif;
   cursor: pointer;
+  display: flex;
+  border: 0.5px solid black;
 }
 
-.backToInbox .fa {
-  margin-right: 2%;
+.backToInbox .material-icons {
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 2rem;
 }
 
 
@@ -633,6 +712,10 @@ button:focus {
 
 .bankContent {
   display: none;
+  height: 92%;
+  width: 100%;
+  border: 1px solid black;
+  border-top: none;
 }
 
 .bankContentVisible {
@@ -642,8 +725,10 @@ button:focus {
 .shopContent {
   display: none;
   
-  width: 98%;
-  height: 90%;
+  height: 92%;
+  width: 100%;
+  border: 1px solid black;
+  border-top: none;
   margin: auto;
   background-color: #4c4c4c;
   flex-direction: column;
@@ -683,9 +768,10 @@ button:focus {
   cursor: pointer;
 }
 
-.backToCategories .fa {
+.backToCategories .material-icons {
   margin-left: auto;
   margin-right: auto;
+  font-size: 2rem;
 }
 
 
@@ -694,6 +780,9 @@ button:focus {
   
   width: 100%;
   height: 100%;
+  
+  border: 1px solid black;
+  border-top: none;
   margin: auto;
   background-color: #4c4c4c;
   flex-direction: column;
@@ -758,8 +847,10 @@ button:focus {
 .wallpapersContent {
   display: none;
   
-  width: 98%;
-  height: 90%;
+  height: 92%;
+  width: 100%;
+  border: 1px solid black;
+  border-top: none;
   margin: auto;
   background-color: #4c4c4c;
   flex-direction: column;
@@ -791,8 +882,10 @@ button:focus {
 .statsContent {
   display: none;
   
-  width: 98%;
-  height: 90%;
+  height: 92%;
+  width: 100%;
+  border: 1px solid black;
+  border-top: none;
   margin: auto;
   background-color: #4c4c4c;
   flex-direction: column;
@@ -876,6 +969,10 @@ button:focus {
 
 .settingsContent {
   display: none;
+  height: 92%;
+  width: 100%;
+  border: 1px solid black;
+  border-top: none;
 }
 
 .settingsContentVisible {
@@ -884,6 +981,10 @@ button:focus {
 
 .helpContent {
   display: none;
+  height: 92%;
+  width: 100%;
+  border: 1px solid black;
+  border-top: none;
 }
 
 .helpContentVisible {
@@ -892,6 +993,11 @@ button:focus {
 
 .authorContent {
   display: none;
+  
+  height: 92%;
+  width: 100%;
+  border: 1px solid black;
+  border-top: none;
 }
 
 .authorContentVisible {
@@ -908,33 +1014,87 @@ button:focus {
 
 
 .keyboard {
-  width: 15%;
+  width: 76%;
   height: 5%;
   background-color: #99938f;
-  margin: 0 24.5%;
+  margin-left: 4%;
   border-left: 1px solid black;
   border-right: 1px solid black;
+  border-top: 1px solid black;
   display: flex;
   flex-direction: row;
+  
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 20px;
+  
+/*
+  background: #232526;  
+background: -webkit-linear-gradient(to left, #414345, #232526); 
+background: linear-gradient(to left, #414345, #232526); 
+*/
+  
+  background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+
 }
 
-.board {
+.touchBar{
+  width: 30%;
+  height: 40%;
+  background-color: dimgray;
+  margin-left: auto;
+  margin-right: auto;
+  
+   border-top-right-radius: 2px;
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 25px;
+  
+  border: 0.5px solid black;
+}
+
+.status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 4% 1%;
+  
   height: 50%;
-  width: 35%;
+  width: 21%;
+  border: 0.5px solid black;
+  border-radius: 4px;
+  background-color: rgba(61, 61, 61, 1.0)
+}
+
+
+
+
+
+
+
+.board {
+  height: 20%;
+  width: 10%;
   position: absolute;
   top: 0;
   right: 0;
   margin: 2% 2%;
-  background-image: url(img/whiteboard.jpg);
+  background-image: url(img/note-42883_1280.png);
   background-size: cover;
-  border: 6px solid #000000;
+  
   font-family: 'Permanent Marker', cursive;
   display: flex;
   flex-direction: column;
   
- -webkit-box-shadow: 4px -2px 24px 0px rgba(15,14,15,1);
--moz-box-shadow: 4px -2px 24px 0px rgba(15,14,15,1);
-box-shadow: 4px -2px 24px 0px rgba(15,14,15,1);
+
+  
+  
 }
 
 .board p {
@@ -973,34 +1133,52 @@ box-shadow: 4px -2px 24px 0px rgba(15,14,15,1);
 
 
 .menu {
-  background-color: #99938f;
-  width: 35%;
+  background-color: rgba(61, 61, 61, 1);
+  width: 21%;
   height: 6%;
   position: absolute;
-  right: 0;
-  top: 52%;
-  margin: 2%;
-  border: 1px solid black;
+  right: 1%;
+  top: 60%;
+  display: flex;
+  border: 0.5px solid black;
+  border-radius: 4px;
+  
 }
 
-.pause, .fullscreen {
-  width: 15%;
+
+
+.pause, .mute, .save {
+  width: 33%;
   background-color: #99938f; 
   height: 100%;
   font-size: 2rem;
   cursor: pointer;
   color: forestgreen;
+  background-color: rgba(61, 61, 61, 1);
+  border: none;
 }
 
-.fullscreen {
+.pause {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  margin-left: 0.5px;
+}
+
+.mute, .save {
   color: #000000;
+  
 }
 
 .desk {
   width: 100%;
-  height: 10%;
+  height: 7%;
   background-color: #7a5132;
   border: 1px solid black;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background: linear-gradient(82deg, #432606, #5b3409);
+background-size: 400% 400%;
+  margin-left: 2%;
 }
 
 .underDesk {
@@ -1008,17 +1186,26 @@ box-shadow: 4px -2px 24px 0px rgba(15,14,15,1);
   flex-direction: row;
   width: 100%;
   height: 100%;
-  background-color: #9b805e;
+  background-color: tan;
+
+
+
+
+
+
+
 }
 
 
 .leftLeg, .rightLeg {
-  height: 23%;
-  width: 5%;
+  height: 20%;
+  width: 3%;
   background-color: #7a5132;
   border-left: 1px solid black;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
+  background: linear-gradient(82deg, #432606, #5b3409);
+background-size: 400% 400%;
 }
 
 .socket {
@@ -1030,20 +1217,35 @@ box-shadow: 4px -2px 24px 0px rgba(15,14,15,1);
   margin-top: 5vh;
   background-image: url(img/socket.jpg);
   background-size: cover;
+  
+  display: none;
 }
 
 .rightLeg {
- margin-right: 0;
+ margin-right: 0;  
+ margin-left: auo;  
+  background: linear-gradient(82deg, #432606, #5b3409);
+background-size: 400% 400%;
+  display: none;
+}
+
+.leftLeg{
+  margin-left: 4%;
+  width: 4%;
 }
 
 .drawer {
-  width: 23%;
+  width: 20%;
   height: 14%;
   background-color: #7a5132;
   margin-left: auto;
   border-left: 1px solid black;
   border-bottom: 1px solid black;
   display: flex;
+  background: linear-gradient(82deg, #432606, #5b3409);
+background-size: 400% 400%;
+  border-bottom-left-radius: 5px;
+  
 }
 
 .handle {
@@ -1052,7 +1254,7 @@ box-shadow: 4px -2px 24px 0px rgba(15,14,15,1);
   background-color: gold;
   border: 1px solid black;
   border-radius: 50%;
-  margin: auto;
+  margin: auto 28% auto auto
   
 }
 
@@ -1072,6 +1274,62 @@ box-shadow: 4px -2px 24px 0px rgba(15,14,15,1);
 .invisible {
   display: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.keyboard {
+	margin: 0 auto;
+	width: 120px;
+	height: 100px;
+	background: linear-gradient(to bottom, #c1c1c1, #EFEFEF);
+	border-bottom-left-radius: 18px;
+	border-bottom-right-radius: 18px;
+	perspective-origin: 150% 150%;
+	transform-style: preserve-3d;
+	transform: rotatex(100deg);
+	margin-top: -26px;
+	box-shadow: 0 4px 0 0 #D5D5D5;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
