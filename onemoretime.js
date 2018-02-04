@@ -8,7 +8,7 @@ var day = 0,
   genre,
   title,
    
-  accountBalance = 1000000,
+  accountBalance = 5000000,
   monthlyCosts = 2000,  
 
   fans = 100,
@@ -34,8 +34,29 @@ var day = 0,
     
   playerName,
     
-  fastWriting = false;
- 
+  beautifulDescriptions = false,
+  plotTwist = false,
+  addictiveStoryline = false,
+  excellentDialogs = false,
+  reliableCharacters = false,
+    
+  fastWriting = false,
+  favoriteOfThePublishers = false,
+  selfPublishingSpecialist = false,
+  personalBrandCourse = false,
+  moneySavingCourse = false;
+   
+
+
+
+
+
+
+
+
+
+
+
 
 function changeDate() {
   //if game isn't paused
@@ -49,16 +70,16 @@ function changeDate() {
     //If day is digit
     if (day < 10) {
       //Concat day with "0" before
-      var dayWith0 = zero.concat(day);
+      $(".firstZero").css("display", "flex");
       //Display acctual day
-      $(".day").append(dayWith0 += ".");
+      $(".day").append(day);
       //If day isn't digit
     } else {
-      //Display acctual day (without "0")
-      $(".day").append(day += ".");
+      $(".firstZero").css("display", "none");
+      $(".day").append(day);
     }
 
-    if (day == 30) {
+    if (day === 30) {
       //Reset days counter
       day = 0;
       //Increment month but don't display yet
@@ -68,24 +89,23 @@ function changeDate() {
     }
 
 
-    if (day == 1) {
+    if (day === 1) {
       //Remove previous month
       $(".month").empty();
 
       //If month is digit  
       if (month < 10) {
-        //Concat month with "0" before
-        var monthWith0 = zero.concat(month);
+        $(".secondZero").css("display", "flex");
         //Display acctual month
-        $(".month").append(monthWith0 += ".");
+        $(".month").append(month);
         //If month isn't digit
       } else {
-        //Display acctual month (without "0")
-        $(".month").append(month += ".");
+        $(".secondZero").css("display", "none");
+        $(".month").append(month);
       }
     }
 
-    if (month == 12 && day == 3) {
+    if (month === 12 && day === 3) {
       //Reset month
       month = 0;
       //Increment year but don't display yet
@@ -93,7 +113,7 @@ function changeDate() {
     }
 
     //If today is 01.01
-    if (day == 1) {
+    if (day === 1) {
       //Remove previous year
       $(".year").empty();
       //Display acctual year
@@ -102,7 +122,7 @@ function changeDate() {
 
 
   }
-} //end of function  
+} //end of function
 
 //When player click at pause button
 $(".pause").on("click", function () {
@@ -1691,7 +1711,7 @@ function payBills() {
     //And display new account balance
     $(".accountBalance").empty();
     $(".accountBalance").append(accountBalance);
-  }, 3000) 
+  }, 2000) 
 }
 
 
@@ -2244,6 +2264,409 @@ $(".backToCategories").on("click", function(){
 
 
 
+$(".buyCourse1").on("click", function(){
+  if(accountBalance > 50000){
+     //I think it's not necessary
+  $(".plusOrMinus").empty();
+  $(".operations").empty();
+  
+  //Add minus and cost of course
+  $(".plusOrMinus").append("-$");
+  $(".operations").append("50'000");
+  
+  //This is cost, so display it red
+  $(".plusOrMinus, .operations").css("color", "red");
+  
+  //Wait three seconds
+  setTimeout(function(){
+    //And remove red number
+    $(".plusOrMinus").empty();
+    $(".operations").empty();
+    
+    //Substract course price from account
+    accountBalance = accountBalance - 50000;
+    //And display new account balance
+    $(".accountBalance").empty();
+    $(".accountBalance").append(accountBalance);
+  }, 2000) 
+  
+  $(".buyCourse1").css("border", "0.5px solid lightgreen");
+  $(".buyCourse1").css("background-color", "#000");
+  $(".buyCourse1").empty();
+  $(".buyCourse1").append("<p>SOLD<p>")
+  $(".buyCourse1 p").css("color", "lightgreen");
+  $(".buyCourse1").attr("disabled", "true");
+  $(".buyCourse1").css("cursor", "default");
+  
+  beautifulDescriptions = true;
+    
+  }
+ 
+});
+
+$(".buyCourse2").on("click", function(){
+  if(accountBalance > 75000){
+    //I think it's not necessary
+  $(".plusOrMinus").empty();
+  $(".operations").empty();
+  
+  //Add minus and cost of course
+  $(".plusOrMinus").append("-$");
+  $(".operations").append("75'000");
+  
+  //This is cost, so display it red
+  $(".plusOrMinus, .operations").css("color", "red");
+  
+  //Wait three seconds
+  setTimeout(function(){
+    //And remove red number
+    $(".plusOrMinus").empty();
+    $(".operations").empty();
+    
+    //Substract course price from account
+    accountBalance = accountBalance - 75000;
+    //And display new account balance
+    $(".accountBalance").empty();
+    $(".accountBalance").append(accountBalance);
+  }, 2000) 
+  
+  $(".buyCourse2").css("border", "0.5px solid lightgreen");
+  $(".buyCourse2").css("background-color", "#000");
+  $(".buyCourse2").empty();
+  $(".buyCourse2").append("<p>SOLD<p>")
+  $(".buyCourse2 p").css("color", "lightgreen");
+  $(".buyCourse2").attr("disabled", "true");
+  $(".buyCourse2").css("cursor", "default");
+  
+  plotTwist = true;
+  }
+  
+});
+
+$(".buyCourse3").on("click", function(){
+  if(accountBalance > 100000){
+    //I think it's not necessary
+  $(".plusOrMinus").empty();
+  $(".operations").empty();
+  
+  //Add minus and cost of course
+  $(".plusOrMinus").append("-$");
+  $(".operations").append("100'000");
+  
+  //This is cost, so display it red
+  $(".plusOrMinus, .operations").css("color", "red");
+  
+  //Wait three seconds
+  setTimeout(function(){
+    //And remove red number
+    $(".plusOrMinus").empty();
+    $(".operations").empty();
+    
+    //Substract course price from account
+    accountBalance = accountBalance - 100000;
+    //And display new account balance
+    $(".accountBalance").empty();
+    $(".accountBalance").append(accountBalance);
+  }, 2000) 
+  
+  $(".buyCourse3").css("border", "0.5px solid lightgreen");
+  $(".buyCourse3").css("background-color", "#000");
+  $(".buyCourse3").empty();
+  $(".buyCourse3").append("<p>SOLD<p>")
+  $(".buyCourse3 p").css("color", "lightgreen");
+  $(".buyCourse3").attr("disabled", "true");
+  $(".buyCourse3").css("cursor", "default");
+  
+  addictiveStoryline = true;
+  }
+  
+});
+
+$(".buyCourse4").on("click", function(){
+  if(accountBalance > 125000){
+    //I think it's not necessary
+  $(".plusOrMinus").empty();
+  $(".operations").empty();
+  
+  //Add minus and cost of course
+  $(".plusOrMinus").append("-$");
+  $(".operations").append("125'000");
+  
+  //This is cost, so display it red
+  $(".plusOrMinus, .operations").css("color", "red");
+  
+  //Wait three seconds
+  setTimeout(function(){
+    //And remove red number
+    $(".plusOrMinus").empty();
+    $(".operations").empty();
+    
+    //Substract course price from account
+    accountBalance = accountBalance - 125000;
+    //And display new account balance
+    $(".accountBalance").empty();
+    $(".accountBalance").append(accountBalance);
+  }, 2000) 
+  
+  $(".buyCourse4").css("border", "0.5px solid lightgreen");
+  $(".buyCourse4").css("background-color", "#000");
+  $(".buyCourse4").empty();
+  $(".buyCourse4").append("<p>SOLD<p>")
+  $(".buyCourse4 p").css("color", "lightgreen");
+  $(".buyCourse4").attr("disabled", "true");
+  $(".buyCourse4").css("cursor", "default");
+  
+  excellentDialogs = true;
+  }
+  
+});
+
+$(".buyCourse5").on("click", function(){
+  if(accountBalance > 150000){
+    //I think it's not necessary
+  $(".plusOrMinus").empty();
+  $(".operations").empty();
+  
+  //Add minus and cost of course
+  $(".plusOrMinus").append("-$");
+  $(".operations").append("150'000");
+  
+  //This is cost, so display it red
+  $(".plusOrMinus, .operations").css("color", "red");
+  
+  //Wait three seconds
+  setTimeout(function(){
+    //And remove red number
+    $(".plusOrMinus").empty();
+    $(".operations").empty();
+    
+    //Substract course price from account
+    accountBalance = accountBalance - 150000;
+    //And display new account balance
+    $(".accountBalance").empty();
+    $(".accountBalance").append(accountBalance);
+  }, 2000) 
+  
+  $(".buyCourse5").css("border", "0.5px solid lightgreen");
+  $(".buyCourse5").css("background-color", "#000");
+  $(".buyCourse5").empty();
+  $(".buyCourse5").append("<p>SOLD<p>")
+  $(".buyCourse5 p").css("color", "lightgreen");
+  $(".buyCourse5").attr("disabled", "true");
+  $(".buyCourse5").css("cursor", "default");
+  
+  reliableCharacters = true;
+  }
+  
+});
+
+
+$(".buyCourse6").on("click", function(){
+  if(accountBalance > 50000){
+    //I think it's not necessary
+  $(".plusOrMinus").empty();
+  $(".operations").empty();
+  
+  //Add minus and cost of course
+  $(".plusOrMinus").append("-$");
+  $(".operations").append("50'000");
+  
+  //This is cost, so display it red
+  $(".plusOrMinus, .operations").css("color", "red");
+  
+  //Wait three seconds
+  setTimeout(function(){
+    //And remove red number
+    $(".plusOrMinus").empty();
+    $(".operations").empty();
+    
+    //Substract course price from account
+    accountBalance = accountBalance - 50000;
+    //And display new account balance
+    $(".accountBalance").empty();
+    $(".accountBalance").append(accountBalance);
+  }, 2000) 
+  
+  $(".buyCourse6").css("border", "0.5px solid lightgreen");
+  $(".buyCourse6").css("background-color", "#000");
+  $(".buyCourse6").empty();
+  $(".buyCourse6").append("<p>SOLD<p>")
+  $(".buyCourse6 p").css("color", "lightgreen");
+  $(".buyCourse6").attr("disabled", "true");
+  $(".buyCourse6").css("cursor", "default");
+  
+  fastWriting = true;
+  }
+  
+});
+
+$(".buyCourse7").on("click", function(){
+  if(accountBalance > 75000){
+    //I think it's not necessary
+  $(".plusOrMinus").empty();
+  $(".operations").empty();
+  
+  //Add minus and cost of course
+  $(".plusOrMinus").append("-$");
+  $(".operations").append("75'000");
+  
+  //This is cost, so display it red
+  $(".plusOrMinus, .operations").css("color", "red");
+  
+  //Wait three seconds
+  setTimeout(function(){
+    //And remove red number
+    $(".plusOrMinus").empty();
+    $(".operations").empty();
+    
+    //Substract course price from account
+    accountBalance = accountBalance - 75000;
+    //And display new account balance
+    $(".accountBalance").empty();
+    $(".accountBalance").append(accountBalance);
+  }, 2000) 
+  
+  $(".buyCourse7").css("border", "0.5px solid lightgreen");
+  $(".buyCourse7").css("background-color", "#000");
+  $(".buyCourse7").empty();
+  $(".buyCourse7").append("<p>SOLD<p>")
+  $(".buyCourse7 p").css("color", "lightgreen");
+  $(".buyCourse7").attr("disabled", "true");
+  $(".buyCourse7").css("cursor", "default");
+  
+  moneySavingCourse = true;
+  }
+  
+});
+
+$(".buyCourse8").on("click", function(){
+  if(accountBalance > 150000){
+    //I think it's not necessary
+  $(".plusOrMinus").empty();
+  $(".operations").empty();
+  
+  //Add minus and cost of course
+  $(".plusOrMinus").append("-$");
+  $(".operations").append("150'000");
+  
+  //This is cost, so display it red
+  $(".plusOrMinus, .operations").css("color", "red");
+  
+  //Wait three seconds
+  setTimeout(function(){
+    //And remove red number
+    $(".plusOrMinus").empty();
+    $(".operations").empty();
+    
+    //Substract course price from account
+    accountBalance = accountBalance - 150000;
+    //And display new account balance
+    $(".accountBalance").empty();
+    $(".accountBalance").append(accountBalance);
+  }, 2000) 
+  
+  $(".buyCourse8").css("border", "0.5px solid lightgreen");
+  $(".buyCourse8").css("background-color", "#000");
+  $(".buyCourse8").empty();
+  $(".buyCourse8").append("<p>SOLD<p>")
+  $(".buyCourse8 p").css("color", "lightgreen");
+  $(".buyCourse8").attr("disabled", "true");
+  $(".buyCourse8").css("cursor", "default");
+  
+  personalBrandCourse = true;
+  }
+  
+});
+
+$(".buyCourse9").on("click", function(){
+  if(accountBalance > 500000){
+    //I think it's not necessary
+  $(".plusOrMinus").empty();
+  $(".operations").empty();
+  
+  //Add minus and cost of course
+  $(".plusOrMinus").append("-$");
+  $(".operations").append("500'000");
+  
+  //This is cost, so display it red
+  $(".plusOrMinus, .operations").css("color", "red");
+  
+  //Wait three seconds
+  setTimeout(function(){
+    //And remove red number
+    $(".plusOrMinus").empty();
+    $(".operations").empty();
+    
+    //Substract course price from account
+    accountBalance = accountBalance - 500000;
+    //And display new account balance
+    $(".accountBalance").empty();
+    $(".accountBalance").append(accountBalance);
+  }, 2000) 
+  
+  $(".buyCourse9").css("border", "0.5px solid lightgreen");
+  $(".buyCourse9").css("background-color", "#000");
+  $(".buyCourse9").empty();
+  $(".buyCourse9").append("<p>SOLD<p>")
+  $(".buyCourse9 p").css("color", "lightgreen");
+  $(".buyCourse9").attr("disabled", "true");
+  $(".buyCourse9").css("cursor", "default");
+  
+  favoriteOfThePublishers = true;
+  }
+  
+});
+
+$(".buyCourse10").on("click", function(){
+  if(accountBalance > 1000000){
+    //I think it's not necessary
+  $(".plusOrMinus").empty();
+  $(".operations").empty();
+  
+  //Add minus and cost of course
+  $(".plusOrMinus").append("-$");
+  $(".operations").append("1'000'000");
+  
+  //This is cost, so display it red
+  $(".plusOrMinus, .operations").css("color", "red");
+  
+  //Wait three seconds
+  setTimeout(function(){
+    //And remove red number
+    $(".plusOrMinus").empty();
+    $(".operations").empty();
+    
+    //Substract course price from account
+    accountBalance = accountBalance - 1000000;
+    //And display new account balance
+    $(".accountBalance").empty();
+    $(".accountBalance").append(accountBalance);
+  }, 2000) 
+  
+  $(".buyCourse10").css("border", "0.5px solid lightgreen");
+  $(".buyCourse10").css("background-color", "#000");
+  $(".buyCourse10").empty();
+  $(".buyCourse10").append("<p>SOLD<p>")
+  $(".buyCourse10 p").css("color", "lightgreen");
+  $(".buyCourse10").attr("disabled", "true");
+  $(".buyCourse10").css("cursor", "default");
+  
+  selfPublishingSpecialist = true;
+  }
+  
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2254,7 +2677,9 @@ $(".handle").on("click", function(){
 
 
 
-
+$(".save").on("click", function(){
+  $(".save .fa-save").addClass("saveAnimation");
+});
 
 
 

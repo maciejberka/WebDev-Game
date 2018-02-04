@@ -107,6 +107,14 @@ button:focus {
   margin-bottom: auto;
 }
 
+.firstZero {
+  display: none;
+}
+
+.secondZero {
+  display: none;
+}
+
 .menuStart {
   height: 70%;
   width: 35%;
@@ -139,7 +147,8 @@ button:focus {
 
 .menuOption p {
   margin-left: 4%;
-  
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .textEditor {
@@ -151,9 +160,11 @@ button:focus {
   margin-bottom: 2%;
 }
 
-.material-icons {
+.menuOption .material-icons {
   margin-left: auto;
   margin-right: 2%;
+  margin-bottom: auto;
+  margin-top: auto;
 }
 
 .menuOption .fa, .menuOption .fas {
@@ -240,9 +251,9 @@ button:focus {
 .windowTopBar button {
   background-color: #262626;
   
-  width: 5%;
+  width: auto;
   border: none;
-  margin: 0 1% 0 1%;
+  margin: 0 0.5% 0 1%;
   overflow: hidden;
   cursor: pointer;
   display: flex;
@@ -415,6 +426,30 @@ button:focus {
   border-top: none;
   margin: auto;
 }
+
+.textEditorContent4 p {
+  margin: auto;
+  display: none;
+}
+
+.skillUnlocked {
+  font-size: 1.5rem;
+  margin-left: 5%;
+  margin-right: auto;
+  
+  
+}
+
+.skillUnlocked:first-of-type {
+  margin-top: auto;
+}
+
+.skillUnlocked .material-icons {
+  color: mediumspringgreen;
+}
+
+
+
 
 .fourthNextButton {
   margin-top: auto;
@@ -616,7 +651,7 @@ button:focus {
   border: 1px solid black;
   border-top: none;
   margin: auto;
-  background-color: #4c4c4c;
+  background-color: #686868;
   flex-direction: column;
   
   display: none;
@@ -662,7 +697,7 @@ button:focus {
   width: 98%;
   height: 90%;
   margin: auto;
-  background-color: #4c4c4c;
+  background-color: #686868;
   flex-direction: column;
   color: #ffffff;
   overflow-y: auto;
@@ -716,6 +751,7 @@ button:focus {
   width: 100%;
   border: 1px solid black;
   border-top: none;
+  background-color: #686868;
 }
 
 .bankContentVisible {
@@ -730,7 +766,7 @@ button:focus {
   border: 1px solid black;
   border-top: none;
   margin: auto;
-  background-color: #4c4c4c;
+  background-color: #686868;
   flex-direction: column;
 }
 
@@ -784,7 +820,7 @@ button:focus {
   border: 1px solid black;
   border-top: none;
   margin: auto;
-  background-color: #4c4c4c;
+  background-color: #686868;
   flex-direction: column;
   overflow: auto;
 }
@@ -827,7 +863,7 @@ button:focus {
   text-align: center;
 }
 
-.courseOffert .learnMore {
+.courseOffert .buyCourse {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5%;
@@ -838,6 +874,7 @@ button:focus {
   border: 0.5px solid black;
   font-family: 'Ubuntu', arial, sans-serif;
   border-radius: 2px;
+  cursor: pointer;
 }
 
 .secondHeader {
@@ -852,7 +889,7 @@ button:focus {
   border: 1px solid black;
   border-top: none;
   margin: auto;
-  background-color: #4c4c4c;
+  background-color: #686868;
   flex-direction: column;
 }
 
@@ -887,7 +924,7 @@ button:focus {
   border: 1px solid black;
   border-top: none;
   margin: auto;
-  background-color: #4c4c4c;
+  background-color: #686868;
   flex-direction: column;
   text-align: center;
 }
@@ -926,7 +963,7 @@ button:focus {
   width: 98%;
   height: 90%;
   margin: auto;
-  background-color: #4c4c4c;
+  background-color: #686868;
   flex-direction: column;
   text-align: left; 
   font-size: 1.4rem;
@@ -952,7 +989,7 @@ button:focus {
   width: 98%;
   height: 90%;
   margin: auto;
-  background-color: #4c4c4c;
+  background-color: #686868;
   flex-direction: column;
   text-align: center;
 }
@@ -973,6 +1010,7 @@ button:focus {
   width: 100%;
   border: 1px solid black;
   border-top: none;
+  background-color: #686868;
 }
 
 .settingsContentVisible {
@@ -985,6 +1023,7 @@ button:focus {
   width: 100%;
   border: 1px solid black;
   border-top: none;
+  background-color: #686868;
 }
 
 .helpContentVisible {
@@ -998,6 +1037,7 @@ button:focus {
   width: 100%;
   border: 1px solid black;
   border-top: none;
+  background-color: #686868;
 }
 
 .authorContentVisible {
@@ -1069,7 +1109,12 @@ background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, 
   width: 21%;
   border: 0.5px solid black;
   border-radius: 4px;
-  background-color: rgba(61, 61, 61, 1.0)
+  background-color: rgba(61, 61, 61, 1);
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  padding: 1%;
+  color: #ffffff;
 }
 
 
@@ -1168,6 +1213,12 @@ background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, 
   color: #000000;
   
 }
+
+.saveAnimation {
+  transform: rotate(360deg);
+  transition: 1s;
+}
+
 
 .desk {
   width: 100%;
