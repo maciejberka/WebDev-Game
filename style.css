@@ -960,8 +960,10 @@ button:focus {
 .statsContent2 {
   display: none;
   
-  width: 98%;
-  height: 90%;
+  height: 92%;
+  width: 100%;
+  border: 1px solid black;
+  border-top: none;
   margin: auto;
   background-color: #686868;
   flex-direction: column;
@@ -986,8 +988,10 @@ button:focus {
 .statsContent3 {
   display: none;
   
-  width: 98%;
-  height: 90%;
+   height: 92%;
+  width: 100%;
+  border: 1px solid black;
+  border-top: none;
   margin: auto;
   background-color: #686868;
   flex-direction: column;

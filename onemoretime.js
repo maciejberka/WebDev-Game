@@ -18,19 +18,32 @@ var day = 0,
   previousGenre,  
     
   levelOfFame = 1,
+  levelOfFameProgress = 0,  
     
-  levelOfAdventure = 1,  
+  levelOfAdventure = 1,
+  levelOfAdventureProgress = 0,  
   levelOfBasedOnTheGame = 1,
-  levelOfBiography = 1,  
-  levelOfComedy = 1,  
-  levelOfComicBook = 1,  
-  levelOfCriminal = 1,  
-  levelOfFable = 1,  
+  levelOfBasedOnTheGameProgress = 0,  
+  levelOfBiography = 1,
+  levelOfBiographyProgress = 0,
+  levelOfComedy = 1,
+  levelOfComedyProgress = 0,
+  levelOfComicBook = 1,
+  levelOfComicBookProgress = 0,  
+  levelOfCriminal = 1,
+  levelOfCriminalProgress = 0,
+  levelOfFable = 1,
+  levelOfFableProgress = 0,
   levelOfFantasy = 1,
+  levelOfFantasyProgress = 0,
   levelOfHistorical = 1,
-  levelOfHorror = 1, 
-  levelOfRomance = 1,  
+  levelOfHistoricalProgress = 0,  
+  levelOfHorror = 1,
+  levelOfHorrorProgress = 0,
+  levelOfRomance = 1,
+  levelOfRomanceProgress = 0,
   levelOfScienceFiction = 1,
+  levelOfScienceFictionProgress = 0,  
     
   playerName,
     
@@ -44,13 +57,19 @@ var day = 0,
   favoriteOfThePublishers = false,
   selfPublishingSpecialist = false,
   personalBrandCourse = false,
-  moneySavingCourse = false;
+  moneySavingCourse = false,
    
-
-
-
-
-
+  bsIndex = 0,
+  //dodać kod do zwiększania royaltiesPercent przez lvlOfFame i specialSkill  
+  royaltiesPercent = 0.03, 
+    
+    
+  monthlyRoyalties = [],
+  dates = [],
+  wholeAmount,
+  dateOfPublish,
+  allMonthlyRoyalties = 0;
+    
 
 
 
@@ -79,6 +98,50 @@ function changeDate() {
       $(".day").append(day);
     }
 
+    if(day === 15){
+      //check the date
+      var isItDateOfPublish = "" + month + (year - 1);
+      
+      for(var d = 0; d < dates.length; d++){
+        if(dates[d] === isItDateOfPublish){
+          var indexToDelete = d;
+          
+          dates.splice(indexToDelete, 1);
+          monthlyRoyalties.splice(indexToDelete, 1);
+        }
+      }
+      
+      for(var x = 0; x < monthlyRoyalties.length; x++){
+        allMonthlyRoyalties = allMonthlyRoyalties + monthlyRoyalties[x];
+      }
+      
+      //I think it's not necessary
+      $(".plusOrMinus").empty();
+      $(".operations").empty();
+  
+      //Add plus and monthlyRoyalties (in number)
+      $(".plusOrMinus").append("+$");
+      $(".operations").append(allMonthlyRoyalties);
+  
+      //This is income, so display it green
+      $(".plusOrMinus, .operations").css("color", "green");
+  
+      //Wait two seconds
+      setTimeout(function(){
+        //And remove green number
+        $(".plusOrMinus").empty();
+        $(".operations").empty();
+    
+      //Add monthlyRoyalties to accountBalance
+      accountBalance = accountBalance + allMonthlyRoyalties;
+      //And display new account balance
+      $(".accountBalance").empty();
+      $(".accountBalance").append(accountBalance);
+      }, 2000) 
+      
+      
+    }
+    
     if (day === 30) {
       //Reset days counter
       day = 0;
@@ -1718,7 +1781,7 @@ function payBills() {
 //FUNCTION TO RATE BOOK-SELLING-INDEX (PUBLISHING WITH PUBLISHER) 
 function bookSellingIndex(){
   
-  var bsIndex = 0;
+  
   
   //jak dobra jest książka?
   //czy gatunek jest aktualnie popularny?
@@ -1739,7 +1802,25 @@ function bookSellingIndex(){
     bsIndex = bsIndex + fans;
     
     //Tutaj kod, który dodaje pkt za special skills
+    if(beautifulDescriptions){
+      bsIndex = bsIndex + bsIndex * 0.1;
+    }
     
+    if(plotTwist){
+      bsIndex = bsIndex + bsIndex * 0.1;
+    }
+    
+    if(addictiveStoryline){
+      bsIndex = bsIndex + bsIndex * 0.1;
+    }
+    
+    if(excellentDialogs){
+      bsIndex = bsIndex + bsIndex * 0.1;
+    }
+    
+    if(reliableCharacters){
+      bsIndex = bsIndex + bsIndex * 0.1;
+    }
     //Add profits for level of specialization in genre
     if(levelOfAdventure == 2){
       bsIndex = bsIndex + bsIndex * 0.05;
@@ -1762,7 +1843,7 @@ function bookSellingIndex(){
     }
     
     if(genre == previousGenre){
-      bsIndex = bsIndex - bsIndex * 0.5;
+      bsIndex = bsIndex * 0.5;
     }
     
     previousGenre == "adventure";
@@ -1781,7 +1862,25 @@ function bookSellingIndex(){
       bsIndex = bsIndex + fans;
     
       //Tutaj kod, który dodaje pkt za special skills
+      if(beautifulDescriptions){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
     
+      if(plotTwist){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(addictiveStoryline){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(excellentDialogs){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(reliableCharacters){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
       //Add profits for level of specialization in genre
       if(levelOfBasedOnTheGamelevelOfBiography == 2){
         bsIndex = bsIndex + bsIndex * 0.05;
@@ -1823,7 +1922,25 @@ function bookSellingIndex(){
       bsIndex = bsIndex + fans;
     
       //Tutaj kod, który dodaje pkt za special skills
+      if(beautifulDescriptions){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
     
+      if(plotTwist){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(addictiveStoryline){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(excellentDialogs){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(reliableCharacters){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
       //Add profits for level of specialization in genre
       if(levelOfBiography == 2){
         bsIndex = bsIndex + bsIndex * 0.05;
@@ -1865,7 +1982,25 @@ function bookSellingIndex(){
       bsIndex = bsIndex + fans;
     
       //Tutaj kod, który dodaje pkt za special skills
+      if(beautifulDescriptions){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
     
+      if(plotTwist){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(addictiveStoryline){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(excellentDialogs){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(reliableCharacters){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
       //Add profits for level of specialization in genre
       if(levelOfComedy == 2){
         bsIndex = bsIndex + bsIndex * 0.05;
@@ -1906,7 +2041,25 @@ function bookSellingIndex(){
       bsIndex = bsIndex + fans;
     
       //Tutaj kod, który dodaje pkt za special skills
+      if(beautifulDescriptions){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
     
+      if(plotTwist){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(addictiveStoryline){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(excellentDialogs){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(reliableCharacters){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
       //Add profits for level of specialization in genre
       if(levelOfComicBook == 2){
         bsIndex = bsIndex + bsIndex * 0.05;
@@ -1947,7 +2100,25 @@ function bookSellingIndex(){
       bsIndex = bsIndex + fans;
     
       //Tutaj kod, który dodaje pkt za special skills
+      if(beautifulDescriptions){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
     
+      if(plotTwist){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(addictiveStoryline){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(excellentDialogs){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(reliableCharacters){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
       //Add profits for level of specialization in genre
       if(levelOfCriminal == 2){
         bsIndex = bsIndex + bsIndex * 0.05;
@@ -1988,7 +2159,25 @@ function bookSellingIndex(){
       bsIndex = bsIndex + fans;
     
       //Tutaj kod, który dodaje pkt za special skills
+      if(beautifulDescriptions){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
     
+      if(plotTwist){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(addictiveStoryline){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(excellentDialogs){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(reliableCharacters){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
       //Add profits for level of specialization in genre
       if(levelOfFable == 2){
         bsIndex = bsIndex + bsIndex * 0.05;
@@ -2029,7 +2218,25 @@ function bookSellingIndex(){
       bsIndex = bsIndex + fans;
     
       //Tutaj kod, który dodaje pkt za special skills
+      if(beautifulDescriptions){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
     
+      if(plotTwist){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(addictiveStoryline){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(excellentDialogs){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(reliableCharacters){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
       //Add profits for level of specialization in genre
       if(levelOfFantasy == 2){
         bsIndex = bsIndex + bsIndex * 0.05;
@@ -2070,7 +2277,25 @@ function bookSellingIndex(){
       bsIndex = bsIndex + fans;
     
       //Tutaj kod, który dodaje pkt za special skills
+      if(beautifulDescriptions){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
     
+      if(plotTwist){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(addictiveStoryline){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(excellentDialogs){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(reliableCharacters){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
       //Add profits for level of specialization in genre
       if(levelOfHistorical == 2){
         bsIndex = bsIndex + bsIndex * 0.05;
@@ -2111,7 +2336,25 @@ function bookSellingIndex(){
       bsIndex = bsIndex + fans;
     
       //Tutaj kod, który dodaje pkt za special skills
+      if(beautifulDescriptions){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
     
+      if(plotTwist){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(addictiveStoryline){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(excellentDialogs){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(reliableCharacters){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
       //Add profits for level of specialization in genre
       if(levelOfHorror == 2){
         bsIndex = bsIndex + bsIndex * 0.05;
@@ -2152,7 +2395,25 @@ function bookSellingIndex(){
       bsIndex = bsIndex + fans;
     
       //Tutaj kod, który dodaje pkt za special skills
+      if(beautifulDescriptions){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
     
+      if(plotTwist){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(addictiveStoryline){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(excellentDialogs){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(reliableCharacters){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
       //Add profits for level of specialization in genre
       if(levelOfRomance == 2){
         bsIndex = bsIndex + bsIndex * 0.05;
@@ -2193,7 +2454,25 @@ function bookSellingIndex(){
       bsIndex = bsIndex + fans;
     
       //Tutaj kod, który dodaje pkt za special skills
+      if(beautifulDescriptions){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
     
+      if(plotTwist){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(addictiveStoryline){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(excellentDialogs){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
+    
+      if(reliableCharacters){
+        bsIndex = bsIndex + bsIndex * 0.1;
+      }
       //Add profits for level of specialization in genre
       if(levelOfScienceFiction == 2){
         bsIndex = bsIndex + bsIndex * 0.05;
@@ -2222,13 +2501,26 @@ function bookSellingIndex(){
       previousGenre == "scienceFiction";
       console.log(bsIndex);           
   } //end of scienceFiction
-  
+  bsIndex = Math.round(bsIndex);
 }//the end of bookSellingIndex function
 
 //FUNCTION TO START SELLING BOOK WITH PUBLISHER
 $(".sign").on("click", function(){
-  
   bookSellingIndex();
+
+  wholeAmount = 0;
+  wholeAmount = bsIndex * 20;
+  wholeAmount = wholeAmount * royaltiesPercent;
+  wholeAmount = wholeAmount / 12;
+  wholeAmount = Math.round(wholeAmount);
+  console.log(wholeAmount);
+  
+  monthlyRoyalties.push(wholeAmount);
+  
+  dateOfPublish = "" + month + year;
+  
+  dates.push(dateOfPublish);
+  console.log(dateOfPublish);
   
 });
 
@@ -2677,11 +2969,22 @@ $(".handle").on("click", function(){
 
 
 
-$(".save").on("click", function(){
-  $(".save .fa-save").addClass("saveAnimation");
-});
-
-
+//$(".handle").on("click", function(){
+//  var dateOfPremiere = "" + month + year;
+//  console.log(dateOfPremiere);
+//});
+//
+//var monthlyTantiems = [2000, 2000, 2000, 2000, 1000];
+//var wholeTantiem = 0;
+//
+//$(".handle").on("click", function(){
+//  
+//  for(var x = 0; x < monthlyTantiems.length; x++){
+//    wholeTantiem+=monthlyTantiems[x];
+//  }
+//  console.log(wholeTantiem);
+//  
+//});
 
 
 
@@ -2704,9 +3007,6 @@ $(".save").on("click", function(){
   //$(".bookTitle").val(test);
 
 //});
-
-
-
 
 
 
