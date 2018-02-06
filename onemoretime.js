@@ -138,9 +138,79 @@ function changeDate() {
       $(".accountBalance").empty();
       $(".accountBalance").append(accountBalance);
       }, 2000) 
-      
-      
     }
+    
+    if(day === 5){
+      
+      if(levelOfFameProgress >= 100){
+        levelOfFame = levelOfFame + 1;
+        levelOfFameProgress = 0;
+      }
+      
+      if(levelOfAdventureProgress >= 100){
+        levelOfAdventure = levelOfAdventure + 1;
+        levelOfAdventureProgress = 0;
+      }
+      
+      if(levelOfBasedOnTheGameProgress >= 100){
+        levelOfBasedOnTheGame = levelOfBasedOnTheGame + 1;
+        levelOfBasedOnTheGameProgress = 0;
+      }
+      
+      if(levelOfBiographyProgress >= 100){
+        levelOfBiography = levelOfBiography + 1;
+        levelOfBiographyProgress = 0;
+      }
+      
+      if(levelOfComedyProgress >= 100){
+        levelOfComedy = levelOfComedy + 1;
+        levelOfComedyProgress = 0;
+      }
+      
+      if(levelOfComicBookProgress >= 100){
+        levelOfComicBook = levelOfComicBook + 1;
+        levelOfComicBookProgress = 0;
+      }
+      
+      if(levelOfCriminalProgress >= 100){
+        levelOfCriminal = levelOfCriminal + 1;
+        levelOfCriminalProgress = 0;
+      }
+      
+      if(levelOfFableProgress >= 100){
+        levelOfFable = levelOfFable + 1;
+        levelOfFableProgress = 0;
+      }
+      
+      if(levelOfFantasyProgress >= 100){
+        levelOfFantasy = levelOfFantasy + 1;
+        levelOfFantasyProgress = 0;
+      }
+      
+      if(levelOfHistoricalProgress >= 100){
+        levelOfHistorical = levelOfHistorical + 1;
+        levelOfHistoricalProgress = 0;
+      }
+      
+      if(levelOfHorrorProgress >= 100){
+        levelOfHorror = levelOfHorror + 1;
+        levelOfHorrorProgress = 0;
+      }
+      
+      if(levelOfRomanceProgress >= 100){
+        levelOfRomance = levelOfRomance + 1;
+        levelOfRomanceProgress = 0;
+      }
+      
+      if(levelOfScienceFictionProgress >= 100){
+        levelOfScienceFiction = levelOfScienceFiction + 1;
+        levelOfScienceFictionProgress = 0;
+      }
+    }
+    
+    
+    
+    
     
     if (day === 30) {
       //Reset days counter
@@ -2521,6 +2591,54 @@ $(".sign").on("click", function(){
   
   dates.push(dateOfPublish);
   console.log(dateOfPublish);
+  
+  if(genre === "adventure"){
+    levelOfAdventureProgress = levelOfAdventureProgress + points;
+  }
+  
+  if(genre === "basedOnTheGame"){
+    levelOfBasedOnTheGame = levelOfBasedOnTheGame + points;
+  }
+  
+  if(genre === "biography"){
+    levelOfBiographyProgress = levelOfBiographyProgress + points;
+  }
+  
+  if(genre === "comedy"){
+    levelOfComedyProgress = levelOfComedyProgress + points;
+  }
+  
+  if(genre === "comicBook"){
+    levelOfComicBookProgress = levelOfComicBookProgress + points;
+  }
+  
+  if(genre === "criminal"){
+    levelOfCriminalProgress = levelOfCriminalProgress + points;
+  }
+  
+  if(genre === "fable"){
+    levelOfFableProgress = levelOfFableProgress + points;
+  }
+  
+  if(genre === "fantasy"){
+    levelOfFantasyProgress = levelOfFantasyProgress + points;
+  }
+  
+  if(genre === "historical"){
+    levelOfHistoricalProgress = levelOfHistoricalProgress + points;
+  }
+  
+  if(genre === "horror"){
+    levelOfHorrorProgress = levelOfHorrorProgress + points;
+  }
+  
+  if(genre === "romance"){
+    levelOfRomanceProgress = levelOfRomanceProgress + points;
+  }
+  
+  if(genre === "scienceFiction"){
+    levelOfScienceFictionProgress = levelOfScienceFictionProgress + points;
+  }
   
 });
 
