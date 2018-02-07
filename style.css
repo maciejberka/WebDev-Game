@@ -117,11 +117,11 @@ button:focus {
 
 .menuStart {
   height: 70%;
-  width: 35%;
+  width: 30%;
   background-color: rgba(0, 0, 0, 0.6);
-  -webkit-box-shadow: 6px -5px 14px 6px rgba(0,0,0,0.4);
-  -moz-box-shadow: 6px -5px 14px 6px rgba(0,0,0,0.4);
-  box-shadow: 6px -5px 14px 6px rgba(0,0,0,0.4);
+  -webkit-box-shadow: 4px -4px 24px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 4px -4px 24px 0px rgba(0,0,0,0.75);
+box-shadow: 4px -4px 24px 0px rgba(0,0,0,0.75);
   display: flex;
 /*  display: none;*/
   visibility: hidden;
@@ -141,6 +141,8 @@ button:focus {
   font-size: 1.5rem;
   display: flex;
   cursor: pointer;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
 
@@ -656,6 +658,17 @@ button:focus {
   
   display: none;
   overflow-y: auto;
+}
+
+.emptyInbox {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1%;
+  color: #ffffff;
+  font-size: 1.6rem;
+  position: absolute;
+  right: 41%
   
 }
 
@@ -667,7 +680,7 @@ button:focus {
   flex-direction: row;
   cursor: pointer;
   margin-bottom: 0.5%;
-  
+  z-index: 5
 }
 
 .messageBar span {
@@ -695,13 +708,14 @@ button:focus {
 
 .letter {
   width: 98%;
-  height: 90%;
+  height: 100%;
   margin: auto;
   background-color: #686868;
   flex-direction: column;
   color: #ffffff;
   overflow-y: auto;
   display: none;
+  z-index: 10;
 }
 
 .letter h2 {

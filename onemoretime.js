@@ -8,7 +8,7 @@ var day = 0,
   genre,
   title,
    
-  accountBalance = 5000000,
+  accountBalance = 25000,
   monthlyCosts = 2000,  
 
   fans = 100,
@@ -68,8 +68,10 @@ var day = 0,
   dates = [],
   wholeAmount,
   dateOfPublish,
-  allMonthlyRoyalties = 0;
+  allMonthlyRoyalties = 0,
     
+  totalCostToPay,
+  totalIncome;
 
 
 
@@ -99,6 +101,8 @@ function changeDate() {
     }
 
     if(day === 15){
+      allMonthlyRoyalties = 0;
+      
       //check the date
       var isItDateOfPublish = "" + month + (year - 1);
       
@@ -115,7 +119,8 @@ function changeDate() {
         allMonthlyRoyalties = allMonthlyRoyalties + monthlyRoyalties[x];
       }
       
-      //I think it's not necessary
+      if(allMonthlyRoyalties > 0) {
+        //I think it's not necessary
       $(".plusOrMinus").empty();
       $(".operations").empty();
   
@@ -138,6 +143,8 @@ function changeDate() {
       $(".accountBalance").empty();
       $(".accountBalance").append(accountBalance);
       }, 2000) 
+      }
+      
     }
     
     if(day === 5){
@@ -353,7 +360,8 @@ $(".textEditor").on("click", function () {
   //reset variables corelated with books
   points = 0;
   
-
+  //remove old messages from inbox
+  $(".receivedMessage, .decisionMessage").remove();
 
   //and remove all the content except fisrt stage of text editor
   $(".textEditorContent2").removeClass("textEditorContentVisible");
@@ -380,7 +388,9 @@ $(".textEditor").on("click", function () {
 //After click at .mail menuOption make content of mail visible  
 $(".mail").on("click", function () {
   $(".mailContent").addClass("mailContentVisible");
-
+  
+  
+  
   //and remove all the content except mail
   $(".textEditorContent").removeClass("textEditorContentVisible");
   $(".bankContent").removeClass("bankContentVisible");
@@ -1655,11 +1665,22 @@ $(".refresh").on("click", function(){
 
 //FUNCTION TO NEGATIVE DECISION OF PUBLISHING HOUSE
 function negativeDecision(){
+  
+  $(".textEditor").removeAttr("disabled");
+  
   console.log("Przykro nam, nie wydamy Twojej książki.");
   //Add new messageBar in mail inbox
   $(".mailContent").prepend("<div class='messageBar decisionMessage'></div>");
   //Add content to added messageBar
-  $(".decisionMessage:first-of-type").html("<span class='sender'>Publishing House</span><span class='topic'>Our decision</span><span class='dayOfReceived'>"+day+".</span><span class='monthOfReceived'>"+month+".</span><span class='yearOfReceived'>"+year+"</span>")
+  $(".decisionMessage:first-of-type").html("<span class='sender'>Publishing House</span><span class='topic'>Our decision</span><span class='dayOfReceived'><span class='zeroBeforeDayNDecision'>0</span>"+day+".</span><span class='monthOfReceived'><span class='zeroBeforeMonthNDecision'>0</span>"+month+".</span><span class='yearOfReceived'>"+year+"</span>")
+  
+  if(day > 10){
+    $(".zeroBeforeDayNDecision").css("display", "none");
+  }
+  
+  if(month > 10){
+    $(".zeroBeforeMonthNDecision").css("display", "none");
+  }
   
   //Show message from publisher and hide all of messageBar after click on messageBar from publisher 
   $(".decisionMessage").on("click", function(){
@@ -1676,12 +1697,23 @@ function negativeDecision(){
 
 //FUNCTION TO POSITIVE DECISION OF PUBLISHING HOUSE
 function positiveDecision(){
+  
+  
+  
   console.log("Uprzejmie informujemy, że z przyjemnością wydamy Twoją książkę!");
   
   //Add new messageBar in mail inbox
   $(".mailContent").prepend("<div class='messageBar decisionMessage'></div>");
   //Add content to added messageBar
-  $(".decisionMessage:first-of-type").html("<span class='sender'>Publishing House</span><span class='topic'>Our decision</span><span class='dayOfReceived'>"+day+".</span><span class='monthOfReceived'>"+month+".</span><span class='yearOfReceived'>"+year+"</span>")
+  $(".decisionMessage:first-of-type").html("<span class='sender'>Publishing House</span><span class='topic'>Our decision</span><span class='dayOfReceived'><span class='zeroBeforeDayPDecision'>0</span>"+day+".</span><span class='monthOfReceived'><span class='zeroBeforeMonthPDecision'>0</span>"+month+".</span><span class='yearOfReceived'>"+year+"</span>")
+  
+  if(day > 10){
+    $(".zeroBeforeDayPDecision").css("display", "none");
+  }
+  
+  if(month > 10){
+    $(".zeroBeforeMonthPDecision").css("display", "none");
+  }
   
   //Show message from publisher and hide all of messageBar after click on messageBar from publisher 
   $(".decisionMessage").on("click", function(){
@@ -1699,7 +1731,11 @@ function positiveDecision(){
 
 //FUNCTION FOR ENDING OF WRITING AND SENDING MAIL FROM PUBLISHER
 $(".sendBook").on("click", function(){
-  //Reset final window
+  
+  //Disabled textEditor menuOption
+  $(".textEditor").attr("disabled", "true");
+  
+  //Reset final window  
   $(".bar").css("background-color", "gray");
   $(".sendBook").attr("disabled", "true");
   
@@ -1714,7 +1750,15 @@ $(".sendBook").on("click", function(){
   //Add new messageBar in mail inbox
   $(".mailContent").prepend("<div class='messageBar receivedMessage'></div>");
   //Add content to added messageBar
-  $(".receivedMessage:first-of-type").html("<span class='sender'>Publishing House</span><span class='topic'>a manuscript was received</span><span class='dayOfReceived'>"+day+".</span><span class='monthOfReceived'>"+month+".</span><span class='yearOfReceived'>"+year+"</span>")
+  $(".receivedMessage:first-of-type").html("<span class='sender'>Publishing House</span><span class='topic'>a manuscript was received</span><span class='dayOfReceived'><span class='zeroBeforeDayReceived'>0</span>"+day+".</span><span class='monthOfReceived'><span class='zeroBeforeMonthReceived'>0</span>"+month+".</span><span class='yearOfReceived'>"+year+"</span>")
+    
+  if(day > 10){
+    $(".zeroBeforeDayReceived").css("display", "none");
+  }
+  
+  if(month > 10){
+    $(".zeroBeforeMonthReceived").css("display", "none");
+  }
   
   //Show message from publisher and hide all of messageBar after click on messageBar from publisher 
   $(".receivedMessage").on("click", function(){
@@ -1863,6 +1907,7 @@ function bookSellingIndex(){
   
   //adventure
   if(genre == "adventure"){
+    bsIndex = 0;
     bsIndex = bsIndex + (points * 1000 * levelOfFame);
     //If adventure is popular now
     if(popular == "adventure"){
@@ -1916,13 +1961,13 @@ function bookSellingIndex(){
       bsIndex = bsIndex * 0.5;
     }
     
-    previousGenre == "adventure";
+    previousGenre = "adventure";
     console.log(bsIndex);
     //end of adventure
     
     //basedOnTheGame
   } else if (genre == "basedOnTheGame"){
-
+      bsIndex = 0;
       bsIndex = bsIndex + (points * 1000 * levelOfFame);
       //If adventure is popular now
       if(popular == "basedOnTheGame"){
@@ -1952,7 +1997,7 @@ function bookSellingIndex(){
         bsIndex = bsIndex + bsIndex * 0.1;
       }
       //Add profits for level of specialization in genre
-      if(levelOfBasedOnTheGamelevelOfBiography == 2){
+      if(levelOfBasedOnTheGame == 2){
         bsIndex = bsIndex + bsIndex * 0.05;
       } else if (levelOfBasedOnTheGame == 3){
           bsIndex = bsIndex + bsIndex * 0.1;
@@ -1976,13 +2021,13 @@ function bookSellingIndex(){
         bsIndex = bsIndex - bsIndex * 0.5;
       }
     
-      previousGenre == "basedOnTheGame";
+      previousGenre = "basedOnTheGame";
       console.log(bsIndex);           
   } //end of basedOnTheGame
   
   
   else if (genre == "biography"){
-
+      bsIndex = 0;
       bsIndex = bsIndex + (points * 1000 * levelOfFame);
       //If adventure is popular now
       if(popular == "biography"){
@@ -2036,13 +2081,13 @@ function bookSellingIndex(){
         bsIndex = bsIndex - bsIndex * 0.5;
       }
     
-      previousGenre == "biography";
+      previousGenre = "biography";
       console.log(bsIndex);           
   } //end of biography
   
   
   else if (genre == "comedy"){
-
+      bsIndex = 0;
       bsIndex = bsIndex + (points * 1000 * levelOfFame);
       //If comedy is popular now
       if(popular == "comedy"){
@@ -2096,12 +2141,12 @@ function bookSellingIndex(){
         bsIndex = bsIndex - bsIndex * 0.5;
       }
     
-      previousGenre == "comedy";
+      previousGenre = "comedy";
       console.log(bsIndex);           
   } //end of comedy
   
   else if (genre == "comicBook"){
-
+      bsIndex = 0;
       bsIndex = bsIndex + (points * 1000 * levelOfFame);
       //If comedy is popular now
       if(popular == "comicBook"){
@@ -2155,12 +2200,12 @@ function bookSellingIndex(){
         bsIndex = bsIndex - bsIndex * 0.5;
       }
     
-      previousGenre == "comicBook";
+      previousGenre = "comicBook";
       console.log(bsIndex);           
   } //end of comicBook
   
   else if (genre == "criminal"){
-
+      bsIndex = 0;
       bsIndex = bsIndex + (points * 1000 * levelOfFame);
       //If criminal is popular now
       if(popular == "criminal"){
@@ -2214,12 +2259,12 @@ function bookSellingIndex(){
         bsIndex = bsIndex - bsIndex * 0.5;
       }
     
-      previousGenre == "criminal";
+      previousGenre = "criminal";
       console.log(bsIndex);           
   } //end of criminal
   
   else if (genre == "fable"){
-
+      bsIndex = 0;
       bsIndex = bsIndex + (points * 1000 * levelOfFame);
       //If fable is popular now
       if(popular == "fable"){
@@ -2273,12 +2318,12 @@ function bookSellingIndex(){
         bsIndex = bsIndex - bsIndex * 0.5;
       }
     
-      previousGenre == "fable";
+      previousGenre = "fable";
       console.log(bsIndex);           
   } //end of fable
   
   else if (genre == "fantasy"){
-
+      bsIndex = 0;
       bsIndex = bsIndex + (points * 1000 * levelOfFame);
       //If fantasy is popular now
       if(popular == "fantasy"){
@@ -2332,12 +2377,12 @@ function bookSellingIndex(){
         bsIndex = bsIndex - bsIndex * 0.5;
       }
     
-      previousGenre == "fantasy";
+      previousGenre = "fantasy";
       console.log(bsIndex);           
   } //end of fantasy
   
   else if (genre == "historical"){
-
+      bsIndex = 0;
       bsIndex = bsIndex + (points * 1000 * levelOfFame);
       //If historical is popular now
       if(popular == "historical"){
@@ -2391,12 +2436,12 @@ function bookSellingIndex(){
         bsIndex = bsIndex - bsIndex * 0.5;
       }
     
-      previousGenre == "historical";
+      previousGenre = "historical";
       console.log(bsIndex);           
   } //end of historical
   
   else if (genre == "horror"){
-
+      bsIndex = 0;
       bsIndex = bsIndex + (points * 1000 * levelOfFame);
       //If horror is popular now
       if(popular == "horror"){
@@ -2450,12 +2495,12 @@ function bookSellingIndex(){
         bsIndex = bsIndex - bsIndex * 0.5;
       }
     
-      previousGenre == "horror";
+      previousGenre = "horror";
       console.log(bsIndex);           
   } //end of horror
   
    else if (genre == "romance"){
-
+      bsIndex = 0;
       bsIndex = bsIndex + (points * 1000 * levelOfFame);
       //If romance is popular now
       if(popular == "romance"){
@@ -2509,12 +2554,12 @@ function bookSellingIndex(){
         bsIndex = bsIndex - bsIndex * 0.5;
       }
     
-      previousGenre == "romance";
+      previousGenre = "romance";
       console.log(bsIndex);           
   } //end of romance
   
    else if (genre == "scienceFiction"){
-
+      bsIndex = 0;
       bsIndex = bsIndex + (points * 1000 * levelOfFame);
       //If scienceFiction is popular now
       if(popular == "scienceFiction"){
@@ -2564,11 +2609,11 @@ function bookSellingIndex(){
         bsIndex = bsIndex + bsIndex * 0.5
       }
     
-      if(genre == previousGenre){
+      if(genre === previousGenre){
         bsIndex = bsIndex - bsIndex * 0.5;
       }
     
-      previousGenre == "scienceFiction";
+      previousGenre = "scienceFiction";
       console.log(bsIndex);           
   } //end of scienceFiction
   bsIndex = Math.round(bsIndex);
@@ -2576,8 +2621,10 @@ function bookSellingIndex(){
 
 //FUNCTION TO START SELLING BOOK WITH PUBLISHER
 $(".sign").on("click", function(){
+  $(".textEditor").removeAttr("disabled");
+  
   bookSellingIndex();
-
+  
   wholeAmount = 0;
   wholeAmount = bsIndex * 20;
   wholeAmount = wholeAmount * royaltiesPercent;
@@ -2597,7 +2644,7 @@ $(".sign").on("click", function(){
   }
   
   if(genre === "basedOnTheGame"){
-    levelOfBasedOnTheGame = levelOfBasedOnTheGame + points;
+    levelOfBasedOnTheGameProgress = levelOfBasedOnTheGameProgress + points;
   }
   
   if(genre === "biography"){
@@ -2640,11 +2687,197 @@ $(".sign").on("click", function(){
     levelOfScienceFictionProgress = levelOfScienceFictionProgress + points;
   }
   
+  $(".receivedMessage, .decisionMessage").remove();
+  $(".window").removeClass("windowOpen");
+  $(".mailContent").removeClass("mailContentVisible");
+  $(".letter").removeClass("show");
 });
 
 
 //FUNCTION TO PUBLISH BOOK #SELF-PUBLISHING
 $(".payPublish").on("click", function(){
+  
+  totalCostToPay = 0;
+  
+  var materialsQuality1 = $(".materialsQuality").val();
+  materialsQuality1 = materialsQuality1 * 1000;
+  var coverDesign1 = $(".coverDesign").val();
+  coverDesign1 = coverDesign1 * 150;
+  var languageVersions1 = $(".languageVersions").val();
+  languageVersions1 = languageVersions1 * 9000;
+  var marketing1 = $(".marketing").val();
+  marketing1 = marketing1 * 10000;
+  
+  totalCostToPay = materialsQuality1 + coverDesign1 + languageVersions1 + marketing1;
+  
+   //I think it's not necessary
+   $(".plusOrMinus").empty();
+   $(".operations").empty();
+  
+   //Add minus and monthlyRoyalties (in number)
+   $(".plusOrMinus").append("-$");
+   $(".operations").append(totalCostToPay);
+  
+   //This is cost, so display it red
+   $(".plusOrMinus, .operations").css("color", "red");
+  
+   //Wait two seconds
+   setTimeout(function(){
+     //And remove green number
+     $(".plusOrMinus").empty();
+     $(".operations").empty();
+    
+     //Add monthlyRoyalties to accountBalance
+     accountBalance = accountBalance - totalCostToPay;
+     //And display new account balance
+     $(".accountBalance").empty();
+     $(".accountBalance").append(accountBalance);
+   }, 2000) 
+  
+  if(points === 0){
+    totalIncome = totalCostToPay * 0.25;
+  }
+  
+  if(points === 1){
+    totalIncome = totalCostToPay * 0.30;
+  }
+  
+  if(points === 2){
+    totalIncome = totalCostToPay * 0.35;
+  }
+  
+  if(points === 3){
+    totalIncome = totalCostToPay * 0.40;
+  }
+  
+  if(points === 4){
+    totalIncome = totalCostToPay * 0.45;
+  }
+  
+  if(points === 5){
+    totalIncome = totalCostToPay * 0.50;
+  }
+  
+  if(points === 6){
+    totalIncome = totalCostToPay * 0.60;
+  }
+  
+  if(points === 7){
+    totalIncome = totalCostToPay * 0.70;
+  }
+  
+  if(points === 8){
+    totalIncome = totalCostToPay * 0.80;
+  }
+  
+  if(points === 9){
+    totalIncome = totalCostToPay * 0.90;
+  }
+  
+  if(points === 10){
+    totalIncome = totalCostToPay * 1;
+  }
+  
+  if(points === 11){
+    totalIncome = totalCostToPay * 1.10;
+  }
+  
+  if(points === 12){
+    totalIncome = totalCostToPay * 1.20;
+  }
+  
+  if(points === 13){
+    totalIncome = totalCostToPay * 1.30;
+  }
+  
+  if(points === 14){
+    totalIncome = totalCostToPay * 1.40;
+  }
+  
+  if(points === 15){
+    totalIncome = totalCostToPay * 1.50;
+  }
+  
+  if(points === 16){
+    totalIncome = totalCostToPay * 2;
+  }
+  
+  if(points === 17){
+    totalIncome = totalCostToPay * 2.25;
+  }
+  
+  if(points === 18){
+    totalIncome = totalCostToPay * 3;
+  }
+  
+  if(points === 19){
+    totalIncome = totalCostToPay * 3.5;
+  }
+  
+  if(points === 20){
+    totalIncome = totalCostToPay * 4;
+  }
+  
+  
+  wholeAmount = 0;
+  wholeAmount = totalIncome / 12;
+  wholeAmount = Math.round(wholeAmount);
+  console.log(wholeAmount);
+  
+  monthlyRoyalties.push(wholeAmount);
+  
+  dateOfPublish = "" + month + year;
+  
+  dates.push(dateOfPublish);
+  console.log(dateOfPublish);
+  
+  if(genre === "adventure"){
+    levelOfAdventureProgress = levelOfAdventureProgress + points;
+  }
+  
+  if(genre === "basedOnTheGame"){
+    levelOfBasedOnTheGameProgress = levelOfBasedOnTheGameProgress + points;
+  }
+  
+  if(genre === "biography"){
+    levelOfBiographyProgress = levelOfBiographyProgress + points;
+  }
+  
+  if(genre === "comedy"){
+    levelOfComedyProgress = levelOfComedyProgress + points;
+  }
+  
+  if(genre === "comicBook"){
+    levelOfComicBookProgress = levelOfComicBookProgress + points;
+  }
+  
+  if(genre === "criminal"){
+    levelOfCriminalProgress = levelOfCriminalProgress + points;
+  }
+  
+  if(genre === "fable"){
+    levelOfFableProgress = levelOfFableProgress + points;
+  }
+  
+  if(genre === "fantasy"){
+    levelOfFantasyProgress = levelOfFantasyProgress + points;
+  }
+  
+  if(genre === "historical"){
+    levelOfHistoricalProgress = levelOfHistoricalProgress + points;
+  }
+  
+  if(genre === "horror"){
+    levelOfHorrorProgress = levelOfHorrorProgress + points;
+  }
+  
+  if(genre === "romance"){
+    levelOfRomanceProgress = levelOfRomanceProgress + points;
+  }
+  
+  if(genre === "scienceFiction"){
+    levelOfScienceFictionProgress = levelOfScienceFictionProgress + points;
+  }
   
 });
 
