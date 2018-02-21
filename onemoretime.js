@@ -341,6 +341,8 @@ $(".close").on("click", function closing() {
   $(".bar").css("background-color", "gray");
   $(".sendBook").attr("disabled", "true");
   $(".publishByYourself").attr("disabled", "true");
+  $(".premiereContent").removeClass("premiereContentVisible");
+  
   
   $(".mailContent").removeClass("mailContentVisible");
   $(".bankContent").removeClass("bankContentVisible");
@@ -2639,6 +2641,10 @@ $(".sign").on("click", function(){
   dates.push(dateOfPublish);
   console.log(dateOfPublish);
   
+  levelOfFameProgress = levelOfFameProgress + points;
+  
+  fans = fans + (bsIndex * 0.05);
+  
   if(genre === "adventure"){
     levelOfAdventureProgress = levelOfAdventureProgress + points;
   }
@@ -2687,10 +2693,15 @@ $(".sign").on("click", function(){
     levelOfScienceFictionProgress = levelOfScienceFictionProgress + points;
   }
   
+  
+  //#PREMIERE WINDOW
+  
   $(".receivedMessage, .decisionMessage").remove();
-  $(".window").removeClass("windowOpen");
+  //$(".window").removeClass("windowOpen");
   $(".mailContent").removeClass("mailContentVisible");
   $(".letter").removeClass("show");
+  
+  $(".premiereContent").addClass("premiereContentVisible");
 });
 
 
@@ -2830,6 +2841,8 @@ $(".payPublish").on("click", function(){
   
   dates.push(dateOfPublish);
   console.log(dateOfPublish);
+  
+  levelOfFameProgress = levelOfFameProgress + points;
   
   if(genre === "adventure"){
     levelOfAdventureProgress = levelOfAdventureProgress + points;
@@ -3315,7 +3328,8 @@ $(".buyCourse10").on("click", function(){
 
 
 $(".handle").on("click", function(){
-  fans = fans + 1000;
+  $(".textEditor").remove();
+  $(".menuStart").prepend("<button class='menuOption company firstOption'><p>name of company</p><i class='material-icons'>work</i></button>");
 });
 
 
