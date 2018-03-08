@@ -1078,18 +1078,18 @@ box-shadow: 4px -4px 24px 0px rgba(0,0,0,0.75);
   margin: 2% auto 0;
 }
 
-.premiereContent article {
 
-}
 
 .premiereContent h2 {
   font-size: 1.8rem;
-  margin: 2% auto 0 auto;
+  margin: 1% auto 0 auto;
 }
 
+/*
 .premiereContent h2:first-of-type {
   margin-top: auto; 
 }
+*/
 
 .premiereContent span {
   margin-left: auto;
@@ -1104,6 +1104,32 @@ box-shadow: 4px -4px 24px 0px rgba(0,0,0,0.75);
   font-size: 2.8rem
 }
 
+.dolarSign {
+  visibility: hidden;
+}
+
+.showDolar {
+  visibility: visible;
+}
+
+.iconAnimation {
+  animation-name: iconAnimation;
+  animation-duration: 3.5s;
+}
+
+@keyframes iconAnimation {
+  0% {transform: rotate(0deg)}
+  100% {transform: rotate(360deg)}
+}
+
+.hideIcon {
+  display: none;
+}
+
+.showIcon {
+  display: flex;
+}
+
 .ratingRecord, .soldPiecesRecord, .monthlyRoyaltiesRecord {
   font-size: 1.5rem;
   visibility: hidden;
@@ -1113,8 +1139,17 @@ box-shadow: 4px -4px 24px 0px rgba(0,0,0,0.75);
   display: flex;
 }
 
+.ratingHeader, .rating, .salesHeader, .soldPieces, .royaltiesHeader, .monthlyRoyalties {
+  visibility: hidden;
+}
 
+.showingContent {
+  visibility: visible;
+}
 
+.salesHeader {
+  margin-top: 0;
+}
 
 
 

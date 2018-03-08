@@ -60,7 +60,7 @@ var day = 0,
   moneySavingCourse = false,
    
   bsIndex = 0,
-  //dodać kod do zwiększania royaltiesPercent przez lvlOfFame i specialSkill  
+  //dodać kod do zwiększania royaltiesPercent przez lvlOfFame 
   royaltiesPercent = 0.03, 
     
     
@@ -71,7 +71,11 @@ var day = 0,
   allMonthlyRoyalties = 0,
     
   totalCostToPay,
-  totalIncome;
+  totalIncome,
+    
+  ratingRecord = 0,
+  soldPiecesRecord = 0,
+  monthlyRoyaltiesRecord = 0;
 
 
 
@@ -2625,6 +2629,14 @@ function bookSellingIndex(){
 $(".sign").on("click", function(){
   $(".textEditor").removeAttr("disabled");
   
+  $(".ratingHeader, .rating").removeClass("showingContent");
+  $(".salesHeader, .soldPieces").removeClass("showingContent");
+  $(".royaltiesHeader, .monthlyRoyalties").removeClass("showingContent");
+  
+  $(".monthlyRoyaltiesRecord").removeClass("showingContent");
+  $(".soldPiecesRecord").removeClass("showingContent");
+  $(".ratingRecord").removeClass("showingContent");
+  
   bookSellingIndex();
   
   wholeAmount = 0;
@@ -2641,7 +2653,12 @@ $(".sign").on("click", function(){
   dates.push(dateOfPublish);
   console.log(dateOfPublish);
   
-  levelOfFameProgress = levelOfFameProgress + points;
+  if(!personalBrandCourse){
+    levelOfFameProgress = levelOfFameProgress + points; 
+  } else{
+    levelOfFameProgress = levelOfFameProgress + (points + points * 0.25);
+  }
+  
   
   fans = fans + (bsIndex * 0.05);
   
@@ -2702,6 +2719,51 @@ $(".sign").on("click", function(){
   $(".letter").removeClass("show");
   
   $(".premiereContent").addClass("premiereContentVisible");
+  
+  
+  
+  function showRating(){
+    $(".ratingHeader, .rating").addClass("showingContent");
+    $(".rating").empty();
+    $(".rating").append(points / 2);
+    
+    if((points / 2) > ratingRecord){
+      ratingRecord = points / 2;
+      $(".ratingRecord").addClass("showingContent");
+    }
+      
+  }
+  
+  function showSales(){
+    $(".salesHeader, .soldPieces").addClass("showingContent");
+    $(".soldPieces").empty();
+    $(".soldPieces").append(bsIndex);
+    
+    if(bsIndex > soldPiecesRecord){
+      soldPiecesRecord = bsIndex;
+      $(".soldPiecesRecord").addClass("showingContent");
+    }
+    
+  }
+  
+  function showRoyalties(){
+    $(".royaltiesHeader, .monthlyRoyalties").addClass("showingContent");
+    $(".cashHere").empty();
+    $(".cashHere").append(wholeAmount);
+    
+    if(wholeAmount > monthlyRoyaltiesRecord){
+      monthlyRoyaltiesRecord = wholeAmount;
+      $(".monthlyRoyaltiesRecord").addClass("showingContent");
+    }
+    
+  }
+  
+  setTimeout(showRating, 1500);
+  setTimeout(showSales, 4500);
+  setTimeout(showRoyalties, 7500);
+  
+  
+  
 });
 
 
@@ -2739,7 +2801,12 @@ $(".payPublish").on("click", function(){
      $(".operations").empty();
     
      //Add monthlyRoyalties to accountBalance
-     accountBalance = accountBalance - totalCostToPay;
+     if(!selfPublishingSpecialist){
+       accountBalance = accountBalance - totalCostToPay;
+     } else {
+       accountBalance = accountBalance - (totalCostToPay - 0.10 * totalCostToPay);
+     }
+     
      //And display new account balance
      $(".accountBalance").empty();
      $(".accountBalance").append(accountBalance);
@@ -3269,6 +3336,7 @@ $(".buyCourse9").on("click", function(){
   $(".buyCourse9").css("cursor", "default");
   
   favoriteOfThePublishers = true;
+  royaltiesPercent = royaltiesPercent + 0.03;
   }
   
 });
@@ -3324,13 +3392,20 @@ $(".buyCourse10").on("click", function(){
 
 
 
-
-
-
 $(".handle").on("click", function(){
-  $(".textEditor").remove();
-  $(".menuStart").prepend("<button class='menuOption company firstOption'><p>name of company</p><i class='material-icons'>work</i></button>");
+  var url = window.location.href; 
 });
+
+
+
+
+
+
+
+//$(".handle").on("click", function(){
+//  $(".textEditor").remove();
+//  $(".menuStart").prepend("<button class='menuOption company firstOption'><p>name of company</p><i class='material-icons'>work</i></button>");
+//});
 
 
 
@@ -3372,12 +3447,6 @@ $(".handle").on("click", function(){
   //$(".bookTitle").val(test);
 
 //});
-
-
-
-
-
-
 
 
 
