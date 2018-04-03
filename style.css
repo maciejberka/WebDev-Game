@@ -431,7 +431,6 @@ box-shadow: 4px -4px 24px 0px rgba(0,0,0,0.75);
 
 .textEditorContent4 p {
   margin: auto;
-  display: none;
 }
 
 .skillUnlocked {
@@ -1421,6 +1420,10 @@ background-size: 400% 400%;
 /*Don't delete this class*/
 .visible {
   visibility: visible;
+}
+
+.no-visible {
+  visibility: hidden;
 }
 
 .show {

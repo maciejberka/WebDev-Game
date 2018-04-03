@@ -8,7 +8,7 @@ var day = 0,
   genre,
   title,
    
-  accountBalance = 25000,
+  accountBalance = 55000,
   monthlyCosts = 2000,  
 
   fans = 100,
@@ -3030,7 +3030,9 @@ $(".buyCourse1").on("click", function(){
   $(".buyCourse1").css("cursor", "default");
   
   beautifulDescriptions = true;
-    
+  
+  //Show bought skill in writing process
+  $(".skill2").removeClass("no-visible");  
   }
  
 });
@@ -3070,6 +3072,9 @@ $(".buyCourse2").on("click", function(){
   $(".buyCourse2").css("cursor", "default");
   
   plotTwist = true;
+    
+  //Show bought skill in writing process
+  $(".skill3").removeClass("no-visible");
   }
   
 });
@@ -3109,6 +3114,9 @@ $(".buyCourse3").on("click", function(){
   $(".buyCourse3").css("cursor", "default");
   
   addictiveStoryline = true;
+  
+  //Show bought skill in writing process
+  $(".skill4").removeClass("no-visible");  
   }
   
 });
@@ -3148,6 +3156,9 @@ $(".buyCourse4").on("click", function(){
   $(".buyCourse4").css("cursor", "default");
   
   excellentDialogs = true;
+    
+  //Show bought skill in writing process
+  $(".skill5").removeClass("no-visible");  
   }
   
 });
@@ -3187,6 +3198,9 @@ $(".buyCourse5").on("click", function(){
   $(".buyCourse5").css("cursor", "default");
   
   reliableCharacters = true;
+    
+  //Show bought skill in writing process
+  $(".skill6").removeClass("no-visible");  
   }
   
 });
@@ -3227,6 +3241,9 @@ $(".buyCourse6").on("click", function(){
   $(".buyCourse6").css("cursor", "default");
   
   fastWriting = true;
+  
+  //Show bought skill in writing process
+  $(".skill1").removeClass("no-visible");  
   }
   
 });
@@ -3345,6 +3362,9 @@ $(".buyCourse9").on("click", function(){
   
   favoriteOfThePublishers = true;
   royaltiesPercent = royaltiesPercent + 0.03;
+    
+  //Show bought skill in writing process
+  $(".skill7").removeClass("no-visible");  
   }
   
 });
@@ -3384,6 +3404,9 @@ $(".buyCourse10").on("click", function(){
   $(".buyCourse10").css("cursor", "default");
   
   selfPublishingSpecialist = true;
+    
+  //Show bought skill in writing process
+  $(".skill8").removeClass("no-visible");  
   }
   
 });
