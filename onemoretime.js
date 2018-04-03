@@ -351,6 +351,7 @@ $(".close").on("click", function closing() {
   $(".mailContent").removeClass("mailContentVisible");
   $(".bankContent").removeClass("bankContentVisible");
   $(".shopContent").removeClass("shopContentVisible");
+  $(".coursesContent").removeClass("shopContentVisible");
   $(".statsContent").removeClass("statsContentVisible");
   $(".statsContent2").removeClass("statsContentVisible");
   $(".statsContent3").removeClass("statsContentVisible");
@@ -388,7 +389,7 @@ $(".textEditor").on("click", function () {
   $(".settingsContent").removeClass("settingsContentVisible");
   $(".helpContent").removeClass("helpContentVisible");
   $(".authorContent").removeClass("authorContentVisible");
-
+  $(".coursesContent").removeClass("shopContentVisible");
 });
 
 //After click at .mail menuOption make content of mail visible  
@@ -407,6 +408,7 @@ $(".mail").on("click", function () {
   $(".settingsContent").removeClass("settingsContentVisible");
   $(".helpContent").removeClass("helpContentVisible");
   $(".authorContent").removeClass("authorContentVisible");
+  $(".coursesContent").removeClass("shopContentVisible");
 });
 
 //After click at .bank menuOption make content of bank visible  
@@ -423,6 +425,7 @@ $(".bank").on("click", function () {
   $(".settingsContent").removeClass("settingsContentVisible");
   $(".helpContent").removeClass("helpContentVisible");
   $(".authorContent").removeClass("authorContentVisible");
+  $(".coursesContent").removeClass("shopContentVisible");
 });
 
 //After click at .shop menuOption make content of shop visible  
@@ -439,6 +442,7 @@ $(".shop").on("click", function () {
   $(".settingsContent").removeClass("settingsContentVisible");
   $(".helpContent").removeClass("helpContentVisible");
   $(".authorContent").removeClass("authorContentVisible");
+  $(".coursesContent").removeClass("shopContentVisible");
 });
 
 //After click at .stats menuOption make content of stats visible  
@@ -455,6 +459,7 @@ $(".stats").on("click", function () {
   $(".settingsContent").removeClass("settingsContentVisible");
   $(".helpContent").removeClass("helpContentVisible");
   $(".authorContent").removeClass("authorContentVisible");
+  $(".coursesContent").removeClass("shopContentVisible");
 });
 
 $(".writerStats").on("click", function(){
@@ -481,6 +486,7 @@ $(".settings").on("click", function () {
   $(".statsContent").removeClass("statsContentVisible");
   $(".helpContent").removeClass("helpContentVisible");
   $(".authorContent").removeClass("authorContentVisible");
+  $(".coursesContent").removeClass("shopContentVisible");
 });
 
 //After click at .help menuOption make content of help visible  
@@ -497,6 +503,7 @@ $(".help").on("click", function () {
   $(".statsContent3").removeClass("statsContentVisible");
   $(".settingsContent").removeClass("settingsContentVisible");
   $(".authorContent").removeClass("authorContentVisible");
+  $(".coursesContent").removeClass("shopContentVisible");
 });
 
 //After click at .author menuOption make content of author visible  
@@ -513,6 +520,7 @@ $(".author").on("click", function () {
   $(".statsContent3").removeClass("statsContentVisible");
   $(".settingsContent").removeClass("settingsContentVisible");
   $(".helpContent").removeClass("helpContentVisible");
+  $(".coursesContent").removeClass("shopContentVisible");
 });
 
 //THE END OF THIS FUCKING "OPENING/CLOSING WINDOWS" SECTION 
@@ -3402,29 +3410,12 @@ $(".handle").on("click", function(){
 
 
 
-//$(".handle").on("click", function(){
-//  $(".textEditor").remove();
-//  $(".menuStart").prepend("<button class='menuOption company firstOption'><p>name of company</p><i class='material-icons'>work</i></button>");
-//});
+$(".handle").on("click", function(){
+  $(".textEditor").remove();
+  $(".menuStart").prepend("<button class='menuOption company firstOption'><p>name of company</p><i class='material-icons'>work</i></button>");
+});
 
 
-
-//$(".handle").on("click", function(){
-//  var dateOfPremiere = "" + month + year;
-//  console.log(dateOfPremiere);
-//});
-//
-//var monthlyTantiems = [2000, 2000, 2000, 2000, 1000];
-//var wholeTantiem = 0;
-//
-//$(".handle").on("click", function(){
-//  
-//  for(var x = 0; x < monthlyTantiems.length; x++){
-//    wholeTantiem+=monthlyTantiems[x];
-//  }
-//  console.log(wholeTantiem);
-//  
-//});
 
 
 

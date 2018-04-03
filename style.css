@@ -1310,9 +1310,13 @@ background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, 
   margin-left: 0.5px;
 }
 
+
 .mute, .save {
   color: #000000;
-  
+}
+
+.muteActive{
+  color: red;
 }
 
 .saveAnimation {
