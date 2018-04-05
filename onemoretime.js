@@ -3423,6 +3423,7 @@ $(".buyCourse10").on("click", function(){
 
 
 
+
 $(".handle").on("click", function(){
   var url = window.location.href; 
 });
@@ -3432,7 +3433,7 @@ $(".handle").on("click", function(){
 
 
 
-
+//Po założeniu wydawanictwa
 $(".handle").on("click", function(){
   $(".textEditor").remove();
   $(".menuStart").prepend("<button class='menuOption company firstOption'><p>name of company</p><i class='material-icons'>work</i></button>");
