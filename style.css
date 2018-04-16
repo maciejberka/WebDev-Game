@@ -767,6 +767,14 @@ box-shadow: 4px -4px 24px 0px rgba(0,0,0,0.75);
   background-color: #686868;
 }
 
+.loan {
+  display: none;
+}
+
+.investment {
+  display: none;
+}
+
 .bankContentVisible {
   display: flex;
 }

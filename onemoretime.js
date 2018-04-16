@@ -8,7 +8,7 @@ var day = 0,
   genre,
   title,
    
-  accountBalance = 55000,
+  accountBalance = 25000,
   monthlyCosts = 2000,  
 
   fans = 100,
@@ -523,7 +523,7 @@ $(".author").on("click", function () {
   $(".coursesContent").removeClass("shopContentVisible");
 });
 
-//THE END OF THIS FUCKING "OPENING/CLOSING WINDOWS" SECTION 
+//THE END OF "OPENING/CLOSING WINDOWS" SECTION 
 
 
 
